@@ -864,19 +864,19 @@ var PROGRAMS_ALL = [
 ];
 var PROGRAMS_ONLINE = ['Luyện thi IELTS Online (từ 14 tuổi)'];
 var CENTERS = [
-  {n:'YOLA Cống Quỳnh', d:'Quận 1 (cũ)', a:'Tầng 2, Toà nhà Vimedimex, 246 Cống Quỳnh, Phường Bến Thành, TP.HCM'},
-  {n:'YOLA Lũy Bán Bích', d:'Quận Tân Phú (cũ)', a:'861 Lũy Bán Bích, Phường Phú Thọ Hòa, TP.HCM'},
-  {n:'YOLA Bình Tân', d:'Quận Bình Tân (cũ)', a:'26-28 Đường số 17A, Phường An Lạc, TP.HCM'},
-  {n:'YOLA Hoàng Trọng Mậu', d:'Quận 7 (cũ)', a:'52-54-56 Hoàng Trọng Mậu, Phường Tân Hưng, TP.HCM'},
-  {n:'YOLA Trần Não', d:'Quận 2 (cũ)', a:'115 Trần Não, Phường An Khánh, TP.HCM'},
-  {n:'YOLA Nguyễn Tri Phương', d:'Quận 10 (cũ)', a:'431 - 433 Nguyễn Tri Phương, Phường Diên Hồng, TP.HCM'},
-  {n:'YOLA Đặng Văn Bi', d:'TP. Thủ Đức (cũ)', a:'156 Đặng Văn Bi, Phường Thủ Đức, TP.HCM'},
-  {n:'YOLA Điện Biên Phủ', d:'Quận Bình Thạnh (cũ)', a:'521 Điện Biên Phủ, Phường Thạnh Mỹ Tây, TP.HCM'},
-  {n:'YOLA Phan Văn Trị', d:'Quận Gò Vấp (cũ)', a:'366A8 Phan Văn Trị, Phường An Nhơn, TP.HCM'},
-  {n:'YOLA Phan Đăng Lưu', d:'Quận Phú Nhuận (cũ)', a:'128B Phan Đăng Lưu, Phường Đức Nhuận, TP.HCM'},
-  {n:'YOLA Cộng Hoà', d:'Quận Tân Bình (cũ)', a:'99 Cộng Hòa, Phường Tân Sơn Nhất, TP.HCM'},
-  {n:'YOLA Đỗ Xuân Hợp', d:'Quận 9 (cũ)', a:'299B Đỗ Xuân Hợp, Phường Phước Long, TP.HCM'},
-  {n:'YOLA Huỳnh Tấn Phát', d:'Quận 7 (cũ)', a:'785 Huỳnh Tấn Phát, Phường Phú Thuận, Quận 7, TP.HCM'}
+  {n:'YOLA Cống Quỳnh', crm:'SG2', d:'Quận 1 (cũ)', a:'Tầng 2, Toà nhà Vimedimex, 246 Cống Quỳnh, Phường Bến Thành, TP.HCM'},
+  {n:'YOLA Lũy Bán Bích', crm:'SG10', d:'Quận Tân Phú (cũ)', a:'861 Lũy Bán Bích, Phường Phú Thọ Hòa, TP.HCM'},
+  {n:'YOLA Bình Tân', crm:'SG11', d:'Quận Bình Tân (cũ)', a:'26-28 Đường số 17A, Phường An Lạc, TP.HCM'},
+  {n:'YOLA Hoàng Trọng Mậu', crm:'SG15', d:'Quận 7 (cũ)', a:'52-54-56 Hoàng Trọng Mậu, Phường Tân Hưng, TP.HCM'},
+  {n:'YOLA Trần Não', crm:'SG13', d:'Quận 2 (cũ)', a:'115 Trần Não, Phường An Khánh, TP.HCM'},
+  {n:'YOLA Nguyễn Tri Phương', crm:'SG19', d:'Quận 10 (cũ)', a:'431 - 433 Nguyễn Tri Phương, Phường Diên Hồng, TP.HCM'},
+  {n:'YOLA Đặng Văn Bi', crm:'SG9', d:'TP. Thủ Đức (cũ)', a:'156 Đặng Văn Bi, Phường Thủ Đức, TP.HCM'},
+  {n:'YOLA Điện Biên Phủ', crm:'SG6', d:'Quận Bình Thạnh (cũ)', a:'521 Điện Biên Phủ, Phường Thạnh Mỹ Tây, TP.HCM'},
+  {n:'YOLA Phan Văn Trị', crm:'SG5', d:'Quận Gò Vấp (cũ)', a:'366A8 Phan Văn Trị, Phường An Nhơn, TP.HCM'},
+  {n:'YOLA Phan Đăng Lưu', crm:'SG7', d:'Quận Phú Nhuận (cũ)', a:'128B Phan Đăng Lưu, Phường Đức Nhuận, TP.HCM'},
+  {n:'YOLA Cộng Hoà', crm:'SG3', d:'Quận Tân Bình (cũ)', a:'99 Cộng Hòa, Phường Tân Sơn Nhất, TP.HCM'},
+  {n:'YOLA Đỗ Xuân Hợp', crm:'SG18', d:'Quận 9 (cũ)', a:'299B Đỗ Xuân Hợp, Phường Phước Long, TP.HCM'},
+  {n:'YOLA Huỳnh Tấn Phát', crm:'SG20', d:'Quận 7 (cũ)', a:'785 Huỳnh Tấn Phát, Phường Phú Thuận, Quận 7, TP.HCM'}
 ];
 var ONLINE_LABEL = 'YOLA Online — học tại nhà';
 
@@ -1061,7 +1061,16 @@ function renderLeadForm(mount){
   });
   mount.querySelector('form').addEventListener('submit',function(e){
     e.preventDefault();
-    toast('✓ Giao diện demo — form sẽ được kết nối hệ thống lead ở bước tiếp theo.');
+    var ok = sendLead(
+      progSel.value, centerSel.value,
+      mount.querySelector('#f-name-'+sfx).value.trim(),
+      mount.querySelector('#f-phone-'+sfx).value.trim(),
+      'Đăng ký tư vấn qua form (' + sfx + ')'
+    );
+    if(ok){
+      toast('✓ YOLA đã nhận thông tin. Đội ngũ tư vấn sẽ liên hệ trong thời gian sớm nhất!');
+      e.target.reset(); applyMode(false);
+    }
   });
   FORMS[sfx]={applyMode:applyMode, modeBtns:modeBtns};
 }
@@ -1276,7 +1285,7 @@ document.addEventListener('keydown',function(e){if(e.key==='Escape'&&!amodal.hid
 /* ===== Chatbot thu lead ===== */
 /* Dán URL Google Apps Script Web App vào đây để lead tự lưu về Google Sheet.
    Khi để trống, chatbot chạy ở chế độ demo (không gửi đi đâu). */
-var LEAD_WEBHOOK_URL = '';
+var LEAD_WEBHOOK_URL = 'https://script.google.com/macros/s/AKfycbyM0bJjUfB1lMvhrQOue_MRT1Wc7N_RrEnoMCLtC14phUYcHxBax2MtBswfzTOKzIWJAQ/exec';
 
 var cbTeaser=document.getElementById('cbot-teaser'),
     cbPanel=document.getElementById('cbot-panel'),
@@ -1298,23 +1307,63 @@ document.getElementById('cbot-open1').addEventListener('click',cbOpen);
 document.getElementById('cbot-hide').addEventListener('click',function(){ cbTeaser.hidden=true; cbTeaserHidden=true; });
 document.getElementById('cbot-close').addEventListener('click',cbClose);
 document.getElementById('cbot-skip').addEventListener('click',cbClose);
-cbForm.addEventListener('submit',function(e){
-  e.preventDefault();
-  var data={
-    name: document.getElementById('cb-name').value.trim(),
-    phone: document.getElementById('cb-phone').value.trim(),
-    program: document.getElementById('cb-prog').value,
-    center: document.getElementById('cb-center').value,
-    source: 'chatbot',
-    page: location.href
+/* Map tên hiển thị → mã program CRM (theo bảng mã trong sheet lead) */
+var PROGRAM_CRM = {
+  'Tiếng Anh cho bé Mầm non (4–5 tuổi)': 'YOLA International Program (3-6)',
+  'Tiếng Anh Thiếu nhi (6–11 tuổi)': 'JUNIOR PRIMARY',
+  'Tiếng Anh Thiếu niên (10–14 tuổi)': 'JUNIOR',
+  'Tiếng Anh nền tảng — Pre-IELTS (từ 14 tuổi)': 'EFL',
+  'Luyện thi IELTS (từ 14 tuổi)': 'IELTS',
+  'Luyện thi IELTS Online (từ 14 tuổi)': '2024 IELTS ONLINE',
+  'Luyện thi Digital SAT': 'SAT'
+};
+function centerCRM(display){
+  if(!display || display==='Chọn trung tâm') return '';
+  if(display===ONLINE_LABEL) return 'SG00';
+  for(var i=0;i<CENTERS.length;i++){
+    if(display.indexOf(CENTERS[i].n)===0) return CENTERS[i].crm || '';
+  }
+  return display; /* fallback: giữ nguyên nếu không khớp */
+}
+function utmParam(k){
+  try{ return new URLSearchParams(location.search).get(k) || ''; }catch(e){ return ''; }
+}
+function sendLead(progDisplay, centerDisplay, name, phone, descNote){
+  var payload={
+    full_name: name,
+    phone_number: phone,
+    program: PROGRAM_CRM[progDisplay] || '',
+    center: centerCRM(centerDisplay),
+    description: descNote + (PROGRAM_CRM[progDisplay] ? '' : ' — Quan tâm: ' + progDisplay),
+    landing_page_url: location.href,
+    submitted_at: new Date().toISOString(),
+    utm_source: utmParam('utm_source'),
+    utm_medium: utmParam('utm_medium'),
+    utm_campaign: utmParam('utm_campaign'),
+    utm_content: utmParam('utm_content'),
+    utm_term: utmParam('utm_term'),
+    gclid: utmParam('gclid'),
+    referrer: document.referrer || '',
+    device: (window.innerWidth<=820 ? 'mobile' : 'desktop'),
+    page_path: location.pathname
   };
   if(LEAD_WEBHOOK_URL){
-    var body=Object.keys(data).map(function(k){return encodeURIComponent(k)+'='+encodeURIComponent(data[k])}).join('&');
-    fetch(LEAD_WEBHOOK_URL,{method:'POST',mode:'no-cors',headers:{'Content-Type':'application/x-www-form-urlencoded'},body:body})
+    fetch(LEAD_WEBHOOK_URL,{method:'POST',mode:'no-cors',headers:{'Content-Type':'text/plain;charset=utf-8'},body:JSON.stringify(payload)})
       .catch(function(){});
-  }else{
-    toast('Demo — chưa kết nối Google Sheet. Dán URL Apps Script vào LEAD_WEBHOOK_URL để kích hoạt.');
+    return true;
   }
+  toast('Demo — chưa kết nối Google Sheet. Dán URL Apps Script vào LEAD_WEBHOOK_URL để kích hoạt.');
+  return false;
+}
+cbForm.addEventListener('submit',function(e){
+  e.preventDefault();
+  sendLead(
+    document.getElementById('cb-prog').value,
+    document.getElementById('cb-center').value,
+    document.getElementById('cb-name').value.trim(),
+    document.getElementById('cb-phone').value.trim(),
+    'Đăng ký tư vấn qua chatbot'
+  );
   cbSent=true;
   cbForm.style.display='none';
   cbOk.hidden=false;
