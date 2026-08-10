@@ -1,0 +1,1327 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>YOLA – Lộ trình tiếng Anh đến các trường đại học quốc tế hàng đầu</title>
+<meta name="description" content="Hệ sinh thái chương trình tiếng Anh YOLA cho mọi độ tuổi: YIP Mầm non, Junior Primary, Junior Secondary, EFL, IELTS, IELTS Online, Digital SAT. Đăng ký nhận tư vấn ngay.">
+<style>
+@font-face{font-family:'SVN-Gilroy';src:url(assets/font_regular.woff2) format('woff2');font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:'SVN-Gilroy';src:url(assets/font_medium.woff2) format('woff2');font-weight:500;font-style:normal;font-display:swap}
+@font-face{font-family:'SVN-Gilroy';src:url(assets/font_semibold.woff2) format('woff2');font-weight:600;font-style:normal;font-display:swap}
+@font-face{font-family:'SVN-Gilroy';src:url(assets/font_bold.woff2) format('woff2');font-weight:700;font-style:normal;font-display:swap}
+@font-face{font-family:'SVN-Gilroy';src:url(assets/font_xbold.woff2) format('woff2');font-weight:800;font-style:normal;font-display:swap}
+:root{
+  --blue:#179EF1;         /* Primary Blue Light */
+  --navy:#002467;         /* Primary Blue Dark */
+  --lime:#90EB36;
+  --sky:#76D9F6;
+  --pink:#FDB0C9;
+  --yellow:#FEE454;
+  --grey:#F6F9FF;
+  --ink:#0B1B3B;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'SVN-Gilroy',system-ui,-apple-system,sans-serif;color:var(--ink);background:#fff;line-height:1.55;-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+a{text-decoration:none;color:inherit}
+.wrap{max-width:1180px;margin:0 auto;padding:0 24px}
+h1,h2,h3{line-height:1.2;font-weight:700}
+.eyebrow{display:inline-block;font-weight:700;font-size:14px;letter-spacing:.06em;text-transform:uppercase;color:var(--blue);background:rgba(23,158,241,.10);border-radius:999px;padding:7px 16px;margin-bottom:14px}
+.sec-title{font-size:clamp(26px,3.6vw,40px);font-weight:800;color:var(--navy);margin-bottom:14px}
+.sec-sub{font-size:clamp(15px,1.6vw,18px);color:#42527a;max-width:720px;font-weight:500}
+section{padding:72px 0}
+/* ===== CTA button with slanted tail (brand guideline 3.6) ===== */
+.cta{position:relative;display:inline-flex;align-items:center;gap:0;font-weight:700;text-transform:uppercase;font-size:15px;letter-spacing:.03em;cursor:pointer;border:none;white-space:nowrap}
+.cta .lbl{background:var(--navy);color:#fff;padding:15px 22px;transition:filter .2s}
+.cta .tail{width:16px;align-self:stretch;background:var(--navy);clip-path:polygon(0 0,55% 0,100% 100%,45% 100%);margin-left:5px;transition:filter .2s}
+.cta:hover .lbl,.cta:hover .tail{filter:brightness(1.25)}
+.cta.light .lbl,.cta.light .tail{background:var(--blue);color:#fff}
+.cta.white .lbl,.cta.white .tail{background:#fff;color:var(--blue)}
+.cta.white:hover .lbl,.cta.white:hover .tail{filter:brightness(.94)}
+/* ===== Header ===== */
+header{position:sticky;top:0;z-index:120;background:#fff;box-shadow:0 1px 0 rgba(0,36,103,.08)}
+.nav{display:flex;align-items:center;gap:28px;height:68px}
+.nav .logo img{height:34px;width:auto}
+.nav nav{display:flex;gap:26px;font-weight:600;font-size:15px;color:var(--navy);margin-left:auto}
+.nav nav a:hover{color:var(--blue)}
+.nav .hotline{display:flex;align-items:center;gap:8px;font-weight:700;color:var(--navy);font-size:15px}
+.nav .hotline svg{width:18px;height:18px;fill:var(--blue)}
+.nav .cta .lbl{padding:11px 16px;font-size:13px}
+.burger{display:none;background:none;border:none;cursor:pointer;padding:6px}
+.burger span{display:block;width:22px;height:2.6px;background:var(--navy);margin:4.6px 0;border-radius:2px}
+/* ===== Hero ===== */
+.hero{background:var(--blue);color:#fff;overflow:hidden;position:relative;padding:64px 0 0}
+.hero > .wrap{padding-bottom:56px}
+.hero .wrap{display:grid;grid-template-columns:1.05fr .95fr;gap:32px;align-items:center;position:relative}
+.hero .promo-tag{display:inline-flex;align-items:center;gap:8px;background:var(--yellow);color:var(--navy);font-weight:800;border-radius:999px;padding:8px 18px;font-size:14px;letter-spacing:.02em;margin-bottom:18px}
+.hero h1{font-size:clamp(32px,4.6vw,54px);font-weight:800;margin-bottom:14px}
+.hero h1 .hl{color:var(--yellow)}
+.hero .sub{font-size:clamp(16px,1.8vw,19px);font-weight:500;max-width:520px;opacity:.96;margin-bottom:24px}
+.countdown{display:flex;gap:10px;margin-bottom:26px}
+.countdown .cell{background:rgba(0,36,103,.35);border-radius:12px;min-width:70px;padding:10px 8px;text-align:center}
+.countdown b{display:block;font-size:26px;font-weight:800;line-height:1}
+.countdown span{font-size:11.5px;font-weight:600;opacity:.85;text-transform:uppercase;letter-spacing:.05em}
+.hero .btns{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:40px}
+.hero .btn2{display:inline-flex;align-items:center;padding:15px 22px;border:2px solid rgba(255,255,255,.75);color:#fff;font-weight:700;font-size:15px;text-transform:uppercase;letter-spacing:.03em}
+.hero .btn2:hover{background:rgba(255,255,255,.12)}
+.hero-art{position:relative;align-self:end;display:flex;align-items:flex-end;justify-content:center}
+.hero-art svg{width:100%;max-width:520px;height:auto;display:block}
+.hero-art .mascot{position:absolute;right:4%;bottom:8%;width:130px}
+.hero-note{font-size:12px;opacity:.8;margin-bottom:18px}
+.stat-strip{background:var(--navy);color:#fff;padding:22px 0}
+.stat-strip .wrap{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.stat-strip .s b{display:block;font-size:clamp(20px,2.4vw,28px);font-weight:800;color:var(--sky)}
+.stat-strip .s span{font-size:13.5px;font-weight:500;opacity:.9}
+/* ===== Form ===== */
+.form-sec{background:var(--grey);padding:64px 0}
+.form-card{background:#fff;border-radius:20px;box-shadow:0 12px 40px rgba(0,36,103,.10);padding:38px;max-width:960px;margin:0 auto;position:relative;overflow:visible}
+.form-card h2{color:var(--navy);font-size:clamp(22px,2.6vw,30px);font-weight:800;margin-bottom:6px}
+.form-card p.lead{color:#42527a;font-weight:500;margin-bottom:22px;font-size:15.5px}
+.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.field{display:flex;flex-direction:column;gap:6px}
+.field label{font-weight:700;font-size:13.5px;color:var(--navy)}
+.field input,.field select{font-family:inherit;font-size:15px;font-weight:500;padding:13px 14px;border:1.6px solid #D8E2F4;border-radius:12px;color:var(--ink);background:#fff;outline:none;transition:border .2s}
+.field input:focus,.field select:focus{border-color:var(--blue)}
+.mode{display:flex;background:#EDF3FE;border-radius:999px;padding:5px;gap:4px}
+.mode button{flex:1;border:none;background:transparent;font-family:inherit;font-weight:700;font-size:14px;color:#42527a;padding:10px 12px;border-radius:999px;cursor:pointer;transition:all .2s}
+.mode button.on{background:var(--blue);color:#fff}
+.consent{font-size:12.5px;color:#6b7a9c;margin-top:14px;font-weight:500}
+.form-actions{margin-top:18px;display:flex;align-items:center;gap:16px;flex-wrap:wrap}
+.hero-card{padding:28px 26px;max-width:460px;margin-left:auto;position:relative}
+.hero-card .mascot-peek{position:absolute;top:-58px;right:20px;width:96px}
+.hero-card .form-grid{grid-template-columns:1fr}
+.hero-card .form-grid{gap:12px}
+.hero-card .field input,.hero-card .field select{padding:11px 13px;font-size:14px}
+.hero-card .consent{font-size:11px;margin-top:10px}
+.hero .hero-art{align-self:center}
+.toast{position:fixed;left:50%;bottom:90px;transform:translateX(-50%) translateY(20px);background:var(--navy);color:#fff;font-weight:600;font-size:14px;padding:13px 22px;border-radius:12px;opacity:0;pointer-events:none;transition:all .3s;z-index:300;max-width:90vw;text-align:center}
+.toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
+/* ===== Why ===== */
+.why-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:38px}
+.why{background:#fff;border:1.6px solid #E4ECFA;border-radius:18px;padding:26px;transition:all .25s}
+.why:hover{border-color:var(--blue);box-shadow:0 10px 30px rgba(23,158,241,.12);transform:translateY(-3px)}
+.why .ic{width:52px;height:52px;border-radius:14px;display:flex;align-items:center;justify-content:center;margin-bottom:16px}
+.why h3{font-size:18px;color:var(--navy);margin-bottom:8px;font-weight:700}
+.why p{font-size:14.5px;color:#42527a;font-weight:500}
+/* ===== Programs ===== */
+.prog-sec{background:var(--grey)}
+.prog-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:38px}
+.prog{background:#fff;border-radius:20px;overflow:hidden;border:1.6px solid #E4ECFA;display:flex;flex-direction:column;transition:all .25s}
+.prog:hover{box-shadow:0 14px 38px rgba(0,36,103,.13);transform:translateY(-4px)}
+.prog .visual{background:var(--blue);position:relative;padding:26px 22px 14px;min-height:150px;display:flex;align-items:flex-end;justify-content:center}
+.prog .visual img{width:72%;max-width:250px}
+.prog .age{position:absolute;top:14px;left:14px;background:#fff;color:var(--navy);font-weight:800;font-size:12.5px;border-radius:999px;padding:6px 13px;z-index:2;box-shadow:0 2px 8px rgba(0,36,103,.15)}
+.prog .visual.photo{padding:0;min-height:0;display:block}
+.prog .visual.photo img{width:100%;max-width:none;height:185px;object-fit:cover;display:block}
+.prog-wide .visual.photo{display:flex}
+.prog-wide .visual.photo img{height:100%;min-height:230px}
+.prog .body{padding:22px;display:flex;flex-direction:column;flex:1}
+.prog h3{font-size:19px;color:var(--navy);font-weight:800;margin-bottom:4px}
+.prog .tag{font-size:13px;font-weight:700;margin-bottom:10px}
+.prog ul{list-style:none;margin:0 0 14px;display:flex;flex-direction:column;gap:7px}
+.prog li{font-size:14px;color:#42527a;font-weight:500;padding-left:20px;position:relative}
+.prog li::before{content:"";position:absolute;left:0;top:7px;width:9px;height:9px;border-radius:3px;background:var(--sky)}
+.prog .path{font-size:12.5px;font-weight:700;color:var(--navy);background:var(--grey);border-radius:10px;padding:9px 12px;margin-bottom:16px}
+.prog .cta{margin-top:auto}
+.prog .cta .lbl{flex:1;text-align:center;padding:13px 16px;font-size:13.5px}
+.prog.p-pink li::before{background:var(--pink)}
+.prog.p-yellow li::before{background:var(--yellow)}
+.prog.p-green li::before{background:var(--lime)}
+.prog-wide{grid-column:1/-1;flex-direction:row}
+.prog-wide .visual{width:34%;min-height:auto;padding:26px}
+.prog-wide .visual img{width:82%}
+.prog-wide .body{flex:1}
+.prog-wide .wide-cols{display:grid;grid-template-columns:1.2fr .8fr;gap:22px;align-items:start}
+.prog-wide .wide-cols .cta{margin-top:14px}
+/* ===== Achievements ===== */
+.ach{background:var(--navy);color:#fff;position:relative;overflow:hidden}
+.ach .sec-title{color:#fff}
+.ach .sec-sub{color:#B9C8E8}
+.ach-hero{text-align:center;margin-top:44px}
+.ach-hero b{display:block;font-size:clamp(64px,9vw,124px);font-weight:800;line-height:1;color:var(--yellow);letter-spacing:-.01em}
+.ach-hero span{display:block;margin-top:14px;font-size:clamp(15px,1.9vw,21px);font-weight:700;color:#fff;text-transform:uppercase;letter-spacing:.04em}
+.ach-cards{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:44px}
+.ach-cards .ac{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.10);border-radius:18px;padding:26px 20px;text-align:center;transition:background .2s}
+.ach-cards .ac:hover{background:rgba(255,255,255,.12)}
+.ach-cards .ac b{display:block;font-size:clamp(30px,3.4vw,44px);font-weight:800;color:var(--yellow);margin-bottom:8px;line-height:1.05}
+.ach-cards .ac span{font-size:14px;font-weight:500;color:#D5DFF5;line-height:1.5}
+.ach .shelf-deco{position:absolute;right:-10px;bottom:0;width:300px;opacity:.35}
+.stu-head{display:flex;align-items:center;justify-content:center;margin-top:56px;margin-bottom:20px;text-align:center}
+.stu-head h3{font-size:clamp(26px,3.4vw,38px);font-weight:800;color:#fff}
+.stu-tabs{display:flex;gap:10px;margin-bottom:28px;flex-wrap:wrap;justify-content:center}
+.stu-tabs button{font-family:inherit;font-weight:800;font-size:13.5px;letter-spacing:.04em;text-transform:uppercase;padding:10px 24px;border-radius:12px;border:1.6px solid rgba(255,255,255,.45);background:transparent;color:#fff;cursor:pointer;transition:all .2s}
+.stu-tabs button.on{background:var(--blue);border-color:var(--blue)}
+.stu-wrap{position:relative}
+.stu-arrow{position:absolute;top:150px;z-index:5;width:46px;height:46px;border-radius:50%;border:none;background:#fff;color:var(--navy);font-size:24px;line-height:1;cursor:pointer;box-shadow:0 6px 20px rgba(0,0,0,.25);transition:transform .15s}
+.stu-arrow:hover{transform:scale(1.08)}
+.stu-arrow.left{left:-8px}
+.stu-arrow.right{right:-8px}
+.stu-scroll{display:grid;grid-auto-flow:column;grid-auto-columns:236px;gap:16px;overflow-x:auto;scroll-behavior:smooth;padding-bottom:10px;scrollbar-width:none;align-items:stretch}
+.stu-scroll::-webkit-scrollbar{display:none}
+.stu{background:#fff;border-radius:16px;overflow:hidden;color:var(--ink);display:flex;flex-direction:column}
+.stu .ph{position:relative;background:#EAF2FC;aspect-ratio:3/4;overflow:hidden}
+.stu .ph img{width:100%;height:100%;object-fit:cover;object-position:center top;display:block}
+.stu .score{position:absolute;left:10px;bottom:10px;max-width:calc(100% - 20px);line-height:1.3;background:var(--lime);color:var(--navy);font-weight:800;font-size:13px;border-radius:8px;padding:5px 10px;box-shadow:0 2px 8px rgba(0,36,103,.18)}
+.stu .nm{padding:12px 14px;min-height:64px}
+.stu .nm b{display:block;color:var(--navy);font-size:14.5px;font-weight:800;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.stu .nm span{display:block;font-size:12px;color:#42527a;font-weight:500;line-height:1.4;overflow:hidden;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical}
+/* video frame */
+.video-frame{margin-top:36px;border-radius:20px;overflow:hidden;background:var(--navy);position:relative;aspect-ratio:16/9;max-width:860px;margin-left:auto;margin-right:auto}
+.video-frame iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.video-ph{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;color:#fff}
+.video-ph .vp-play{width:72px;height:72px;border-radius:50%;background:var(--blue);display:flex;align-items:center;justify-content:center;font-size:24px;padding-left:6px;margin-bottom:8px}
+.video-ph b{font-size:19px;font-weight:800}
+.video-ph .vp-note{font-size:13px;color:#B9C8E8;font-weight:500}
+/* ===== Tech ===== */
+.tech-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:22px;margin-top:38px}
+.tech{background:var(--grey);border-radius:18px;padding:24px}
+.tech .ic{width:48px;height:48px;border-radius:12px;background:#fff;display:flex;align-items:center;justify-content:center;margin-bottom:14px;box-shadow:0 4px 14px rgba(0,36,103,.08)}
+.tech h3{font-size:16.5px;color:var(--navy);margin-bottom:6px}
+.tech p{font-size:13.5px;color:#42527a;font-weight:500}
+/* ===== Activities ===== */
+.act-sec{background:var(--grey)}
+.act-scroll{display:grid;grid-auto-flow:column;grid-auto-columns:min(320px,80vw);gap:20px;overflow-x:auto;padding:38px 4px 18px;scroll-snap-type:x mandatory}
+.act-scroll::-webkit-scrollbar{height:8px}
+.act-scroll::-webkit-scrollbar-thumb{background:#c9d8f0;border-radius:8px}
+.act{background:#fff;border-radius:18px;overflow:hidden;border:1.6px solid #E4ECFA;scroll-snap-align:start;display:flex;flex-direction:column}
+.act{cursor:pointer;transition:all .25s}
+.act:hover{box-shadow:0 12px 32px rgba(0,36,103,.14);transform:translateY(-3px);border-color:var(--blue)}
+.act .top{height:180px;position:relative;background:#EAF2FC}
+.act .top img{width:100%;height:100%;object-fit:cover}
+.act .more{font-size:12.5px;font-weight:800;color:var(--blue);margin-top:8px;display:inline-block}
+/* ===== Activity gallery modal ===== */
+.amodal{position:fixed;inset:0;z-index:400;display:flex;align-items:center;justify-content:center;padding:20px}
+.amodal[hidden]{display:none}
+.amodal-bg{position:absolute;inset:0;background:rgba(4,16,44,.72);backdrop-filter:blur(3px)}
+.amodal-card{position:relative;background:#fff;border-radius:22px;max-width:720px;width:100%;max-height:90vh;display:flex;flex-direction:column;z-index:2;animation:tmIn .3s ease;overflow:hidden}
+.amodal-head{display:flex;align-items:flex-start;justify-content:space-between;gap:16px;padding:22px 24px 14px;border-bottom:1.6px solid #EEF3FC}
+.amodal-head h3{font-size:clamp(18px,2.4vw,24px);font-weight:800;color:var(--navy);line-height:1.25}
+.amodal-body{overflow-y:auto;padding:18px 24px 26px}
+.amodal-body .cap{font-size:14.5px;color:#42527a;font-weight:500;line-height:1.6;margin-bottom:10px}
+.amodal-body .cap.lead-cap{font-weight:600;color:var(--navy)}
+.amodal-body .cap .tick{color:var(--blue);font-weight:800;margin-right:4px}
+.am-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:16px}
+.am-grid img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:12px;display:block}
+.amodal-body::-webkit-scrollbar{width:8px}
+.amodal-body::-webkit-scrollbar-thumb{background:#C9D8F0;border-radius:8px}
+.act .body{padding:20px}
+.act h3{font-size:17px;color:var(--navy);margin-bottom:6px}
+.act p{font-size:13.5px;color:#42527a;font-weight:500}
+.act .badge{position:absolute;top:12px;left:12px;background:#fff;border-radius:999px;font-size:11.5px;font-weight:800;color:var(--navy);padding:5px 11px}
+/* ===== Teachers ===== */
+.teach{display:grid;grid-template-columns:1fr 1fr;gap:44px;align-items:center}
+.teach-facts{display:flex;flex-direction:column;gap:14px;margin-top:26px}
+.tf{display:flex;gap:14px;align-items:flex-start;background:var(--grey);border-radius:14px;padding:16px 18px}
+.tf .dot{width:38px;height:38px;border-radius:11px;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-weight:800;color:var(--navy)}
+.tf b{color:var(--navy);font-size:15px;display:block}
+.tf span{font-size:13.5px;color:#42527a;font-weight:500}
+.tfac{overflow:hidden;padding:14px 0 0}
+.tfac-stage{position:relative;height:452px;perspective:900px}
+.tfc{position:absolute;left:50%;top:0;width:274px;margin-left:-137px;background:#fff;border-radius:18px;overflow:hidden;box-shadow:0 14px 40px rgba(0,36,103,.16);cursor:pointer;transition:transform .45s,opacity .45s,box-shadow .3s;opacity:0;pointer-events:none;border:1.6px solid #E4ECFA}
+.tfc.pos-l,.tfc.pos-c,.tfc.pos-r{opacity:1;pointer-events:auto}
+.tfc.pos-l{transform:translateX(-70%) scale(.86);z-index:1}
+.tfc.pos-r{transform:translateX(70%) scale(.86);z-index:1}
+.tfc.pos-c{transform:translateX(0) scale(1.04);z-index:3;box-shadow:0 22px 54px rgba(0,36,103,.28);border-color:var(--blue)}
+.tfc .fph{position:relative;height:310px;background:#CDEBFB}
+.tfc .fph img{width:100%;height:100%;object-fit:cover;object-position:top}
+.tfc .fbadge{position:absolute;top:10px;left:10px;background:#fff;color:var(--navy);font-weight:800;font-size:9.5px;letter-spacing:.08em;border-radius:999px;padding:5px 10px}
+.tfc .fbody{padding:13px 15px 15px}
+.tfc .fbody b{display:block;color:var(--navy);font-size:16px;font-weight:800;margin-bottom:5px}
+.tfc .fmeta{font-size:12px;color:#42527a;font-weight:600;margin-bottom:7px;min-height:16px}
+.tfc .fmeta .hl{color:var(--blue);font-weight:800}
+.tfc .fmore{font-size:12px;font-weight:800;color:var(--blue)}
+.tfac-ctrl{display:flex;align-items:center;justify-content:center;gap:16px;margin-top:6px}
+.tfac-ctrl button{width:40px;height:40px;border-radius:50%;border:1.6px solid #CBD9F0;background:#fff;color:var(--navy);font-size:22px;cursor:pointer;line-height:1;transition:all .2s}
+.tfac-ctrl button:hover{background:var(--blue);border-color:var(--blue);color:#fff}
+.tdots{display:flex;gap:7px}
+.tdots i{width:8px;height:8px;border-radius:50%;background:#C9D8F0;cursor:pointer}
+.tdots i.on{background:var(--blue);width:22px;border-radius:999px}
+/* ===== Teacher modal ===== */
+.tmodal{position:fixed;inset:0;z-index:400;display:flex;align-items:center;justify-content:center;padding:20px}
+.tmodal[hidden]{display:none}
+.tmodal-bg{position:absolute;inset:0;background:rgba(4,16,44,.72);backdrop-filter:blur(3px)}
+.tmodal-card{position:relative;background:#fff;border-radius:22px;max-width:980px;width:100%;max-height:92vh;overflow:auto;display:grid;grid-template-columns:0.85fr 1.15fr;z-index:2;animation:tmIn .3s ease}
+@keyframes tmIn{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
+.tmodal-x{position:absolute;top:14px;right:14px;width:42px;height:42px;border-radius:50%;border:none;background:#fff;color:var(--navy);font-size:16px;font-weight:700;cursor:pointer;z-index:5;box-shadow:0 4px 14px rgba(0,36,103,.18)}
+.tmodal-x:hover{background:var(--grey)}
+.tmodal-photo{position:relative;background:#CDEBFB;min-height:420px}
+.tmodal-photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:top}
+.tm-badge{position:absolute;top:16px;left:16px;background:#fff;color:var(--navy);font-weight:800;font-size:11px;letter-spacing:.08em;border-radius:999px;padding:7px 14px;z-index:2}
+.tmodal-body{padding:44px 40px 36px}
+.tm-eyebrow{display:block;font-size:12.5px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--blue);margin-bottom:8px}
+.tmodal-body h3{font-size:clamp(28px,3.4vw,42px);font-weight:800;color:var(--navy);margin-bottom:20px}
+.tm-chips{display:grid;grid-template-columns:repeat(3,auto);gap:12px;margin-bottom:24px}
+.tm-chip{border-radius:14px;padding:13px 16px;background:var(--grey);border:1.6px solid #E4ECFA;min-width:120px}
+.tm-chip i{display:block;font-style:normal;font-size:10px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:#6b7a9c;margin-bottom:4px}
+.tm-chip b{font-size:16.5px;font-weight:800;color:var(--navy)}
+.tm-chip.dark{background:var(--navy);border-color:var(--navy)}
+.tm-chip.dark i{color:#9FB4DF}
+.tm-chip.dark b{color:#fff}
+.tm-cols{display:grid;grid-template-columns:1fr 1fr;gap:26px;margin-bottom:20px}
+.tm-cols h4{font-size:13px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:var(--navy);margin-bottom:10px}
+.tm-cols ul{list-style:none;display:flex;flex-direction:column;gap:8px}
+.tm-cols li{font-size:14.5px;color:#42527a;font-weight:500;padding-left:16px;position:relative}
+.tm-cols li::before{content:"";position:absolute;left:0;top:8px;width:7px;height:7px;border-radius:50%;background:var(--blue)}
+.tm-certs{border-top:1.6px solid #E4ECFA;padding-top:16px;display:flex;gap:18px;flex-wrap:wrap}
+.tm-certs span{font-size:14px;font-weight:800;color:var(--blue)}
+@media(max-width:760px){
+  .tmodal-card{grid-template-columns:1fr}
+  .tmodal-photo{min-height:280px;height:280px}
+  .tmodal-body{padding:26px 22px}
+  .tm-chips{grid-template-columns:1fr 1fr}
+  .tm-cols{grid-template-columns:1fr}
+  .tfac-stage{height:400px}
+  .tfc{width:200px;margin-left:-100px}
+  .tfc .fph{height:225px}
+  .tfc.pos-l{transform:translateX(-72%) scale(.86)}
+  .tfc.pos-r{transform:translateX(72%) scale(.86)}
+}
+/* ===== Centers: list + map ===== */
+.map-layout{display:grid;grid-template-columns:0.9fr 1.1fr;gap:26px;margin-top:36px;align-items:stretch}
+.clist{display:flex;flex-direction:column;gap:14px;max-height:640px;overflow-y:auto;padding-right:10px}
+.clist::-webkit-scrollbar{width:7px}
+.clist::-webkit-scrollbar-thumb{background:#AFCBEF;border-radius:8px}
+.citem{background:#fff;border:1.6px solid #E4ECFA;border-radius:16px;padding:18px 20px;display:flex;gap:16px;align-items:flex-start;cursor:pointer;transition:all .2s;text-align:left;font-family:inherit}
+.citem:hover{border-color:var(--blue)}
+.citem.on{border-color:var(--blue);box-shadow:0 8px 24px rgba(23,158,241,.14)}
+.citem .num{width:40px;height:40px;border-radius:12px;background:var(--navy);color:#fff;font-weight:800;font-size:15px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.citem.on .num{background:var(--blue)}
+.citem b{display:block;color:var(--navy);font-size:15.5px;font-weight:800;margin-bottom:3px}
+.citem span{font-size:13.5px;color:#42527a;font-weight:500}
+.map-panel{position:relative;border-radius:20px;overflow:hidden;border:1.6px solid #E4ECFA;min-height:520px;background:#EAF2FC}
+.map-panel iframe{position:absolute;top:0;bottom:0;left:-340px;width:calc(100% + 340px);height:100%;border:0}
+@media(max-width:560px){.map-panel iframe{left:-280px;width:calc(100% + 280px)}}
+.map-cover{position:absolute;top:0;left:0;width:320px;height:200px;pointer-events:auto;z-index:2}
+.map-cover .mcv{position:absolute;top:10px;left:10px;right:10px;bottom:10px;background:#fff;border-radius:14px;box-shadow:0 6px 20px rgba(0,36,103,.10);padding:18px 20px;display:flex;flex-direction:column;gap:4px;justify-content:center}
+.map-cover .mcv i{font-style:normal;font-size:11px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--blue)}
+.map-cover .mcv b{color:var(--navy);font-size:16.5px;font-weight:800;line-height:1.25}
+.map-cover .mcv span{font-size:12.5px;color:#42527a;font-weight:500}
+.map-card{position:absolute;left:16px;right:16px;bottom:16px;background:#fff;border-radius:16px;box-shadow:0 12px 34px rgba(0,36,103,.18);padding:16px 18px;display:flex;gap:14px;align-items:center;z-index:3}
+.map-card .mc-ic{width:42px;height:42px;border-radius:50%;background:rgba(23,158,241,.12);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.map-card .mc-tx{flex:1;min-width:0}
+.map-card em{display:block;font-style:normal;font-size:11px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--blue);margin-bottom:2px}
+.map-card b{display:block;color:var(--navy);font-size:16px;font-weight:800}
+.map-card span{display:block;font-size:13px;color:#42527a;font-weight:500;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.mc-btn{background:var(--blue);color:#fff;border:none;font-family:inherit;font-weight:800;font-size:13.5px;text-transform:uppercase;letter-spacing:.03em;border-radius:999px;padding:14px 20px;cursor:pointer;flex-shrink:0;transition:filter .2s}
+.mc-btn:hover{filter:brightness(1.1)}
+/* ===== Teachers grid ===== */
+.tgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:40px}
+.tcard{background:#fff;border:1.6px solid #E4ECFA;border-radius:16px;padding:20px;transition:all .2s}
+.tcard:hover{border-color:var(--blue);box-shadow:0 8px 24px rgba(23,158,241,.10)}
+.tava{position:relative;width:64px;height:64px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:20px;margin-bottom:12px}
+.tava .tsc{position:absolute;bottom:-7px;left:50%;transform:translateX(-50%);background:var(--navy);color:#fff;font-size:10px;font-weight:800;border-radius:999px;padding:3px 8px;white-space:nowrap;letter-spacing:.02em}
+.tcard b{display:block;color:var(--navy);font-size:15.5px;font-weight:800;margin-bottom:4px}
+.tcard span{font-size:13px;color:#42527a;font-weight:500}
+/* ===== Footer ===== */
+footer{background:var(--navy);color:#C6D3EE;padding:56px 0 90px;font-size:14px}
+.foot-grid{display:grid;grid-template-columns:1.3fr 1fr 1fr;gap:40px}
+footer .logo img{height:36px;margin-bottom:18px}
+footer h4{color:#fff;font-size:15px;font-weight:700;margin-bottom:14px}
+footer li{list-style:none;margin-bottom:9px;font-weight:500}
+footer a:hover{color:#fff}
+.foot-note{border-top:1px solid rgba(255,255,255,.14);margin-top:40px;padding-top:20px;font-size:12.5px;color:#8FA2CC;font-weight:500}
+/* ===== Chatbot thu lead ===== */
+.cbot{position:fixed;right:18px;bottom:84px;z-index:320;display:flex;flex-direction:column;align-items:flex-end;gap:12px}
+.cbot-fab{position:relative;width:60px;height:60px;border-radius:50%;border:none;background:var(--blue);cursor:pointer;box-shadow:0 10px 28px rgba(0,36,103,.32);transition:transform .2s;overflow:hidden}
+.cbot-fab:hover{transform:scale(1.07)}
+.cbot-fab img{position:absolute;left:50%;bottom:-6px;transform:translateX(-50%);width:52px}
+.cbot-fab .dot{position:absolute;top:4px;right:4px;width:12px;height:12px;border-radius:50%;background:#38D96E;border:2px solid #fff}
+.cbot-teaser{background:#fff;border-radius:16px;box-shadow:0 14px 40px rgba(0,36,103,.22);padding:18px 20px;max-width:290px;animation:tmIn .3s ease}
+.cbot-teaser b{display:block;color:var(--navy);font-size:15.5px;font-weight:800;margin-bottom:5px}
+.cbot-teaser p{font-size:14px;color:#42527a;font-weight:500;line-height:1.5;margin-bottom:13px}
+.cbot-teaser-btns{display:flex;gap:8px}
+.cbot-teaser-btns button{font-family:inherit;font-weight:800;font-size:13.5px;border-radius:10px;padding:10px 18px;cursor:pointer;border:none;background:var(--navy);color:#fff}
+.cbot-teaser-btns button.ghost{background:#EEF3FC;color:var(--navy)}
+.cbot-panel{width:min(340px,calc(100vw - 36px));background:#fff;border-radius:18px;box-shadow:0 18px 50px rgba(0,36,103,.30);overflow:hidden;animation:tmIn .3s ease}
+.cbot-head{display:flex;align-items:center;gap:11px;background:var(--navy);color:#fff;padding:13px 15px}
+.cbot-ava{width:42px;height:42px;border-radius:50%;background:var(--blue);overflow:hidden;position:relative;flex-shrink:0}
+.cbot-ava img{position:absolute;left:50%;bottom:-4px;transform:translateX(-50%);width:36px}
+.cbot-head b{display:block;font-size:15px;font-weight:800;line-height:1.2}
+.cbot-head span{font-size:11.5px;color:#9FB4DF;font-weight:500}
+.cbot-close{margin-left:auto;background:none;border:none;color:#fff;font-size:15px;cursor:pointer;padding:6px;opacity:.85}
+.cbot-close:hover{opacity:1}
+.cbot-body{padding:14px;max-height:min(430px,60vh);overflow-y:auto;background:var(--grey)}
+.cbot-msg{background:#fff;border-radius:4px 14px 14px 14px;padding:11px 13px;font-size:13.5px;color:var(--ink);font-weight:500;line-height:1.5;margin-bottom:12px;box-shadow:0 2px 8px rgba(0,36,103,.06)}
+.cbot-msg.ok{background:#EAF9EF;color:#14682f;font-weight:600}
+.cbot-form .cfield{background:#fff;border:1.6px solid #E4ECFA;border-radius:12px;padding:8px 12px;margin-bottom:9px}
+.cbot-form label{display:block;font-size:11px;font-weight:800;color:var(--navy);margin-bottom:2px}
+.cbot-form input,.cbot-form select{width:100%;border:none;outline:none;font-family:inherit;font-size:14px;font-weight:500;color:var(--ink);background:transparent;padding:3px 0}
+.cbot-btns{display:flex;gap:8px;margin-top:11px}
+.cbot-btns .go{flex:1;font-family:inherit;font-weight:800;font-size:13.5px;text-transform:uppercase;letter-spacing:.02em;border:none;border-radius:10px;background:var(--blue);color:#fff;padding:12px;cursor:pointer}
+.cbot-btns .go:hover{filter:brightness(1.08)}
+.cbot-btns .ghost{font-family:inherit;font-weight:800;font-size:13.5px;border:none;border-radius:10px;background:#EEF3FC;color:var(--navy);padding:12px 16px;cursor:pointer}
+@media(max-width:560px){.cbot{bottom:78px;right:12px}}
+/* ===== Floating ===== */
+.float-cta{position:fixed;right:18px;bottom:18px;z-index:200;display:flex;flex-direction:column;gap:10px;align-items:flex-end}
+.float-cta .call{display:flex;align-items:center;gap:9px;background:#fff;color:var(--navy);font-weight:800;font-size:14px;border-radius:999px;padding:12px 18px;box-shadow:0 8px 26px rgba(0,36,103,.25)}
+.float-cta .call svg{width:17px;height:17px;fill:var(--blue)}
+.float-cta .reg{background:var(--yellow);color:var(--navy);font-weight:800;font-size:14px;text-transform:uppercase;border-radius:999px;padding:14px 22px;box-shadow:0 8px 26px rgba(0,36,103,.25);letter-spacing:.02em}
+/* ===== Responsive ===== */
+@media(max-width:980px){
+  .why-grid,.prog-grid{grid-template-columns:repeat(2,1fr)}
+  .ach-cards{grid-template-columns:repeat(2,1fr)}
+  .tech-grid{grid-template-columns:repeat(2,1fr)}
+  .tgrid{grid-template-columns:repeat(2,1fr)}
+  .teach{grid-template-columns:1fr}
+  .map-layout{grid-template-columns:1fr}
+  .clist{max-height:340px;order:2}
+  .map-panel{min-height:430px;order:1}
+  .foot-grid{grid-template-columns:1fr 1fr}
+  .nav nav{display:none;position:absolute;top:68px;left:0;right:0;background:#fff;flex-direction:column;gap:0;padding:10px 24px 18px;box-shadow:0 14px 30px rgba(0,36,103,.12)}
+  .nav nav.open{display:flex}
+  .nav nav a{padding:12px 0;border-bottom:1px solid #EEF3FC}
+  .burger{display:block;margin-left:auto}
+  .nav .hotline{margin-left:0}
+  .nav .cta{display:none}
+}
+@media(max-width:820px){
+  .hero .wrap{grid-template-columns:1fr}
+  .hero-art{margin-top:40px}
+  .hero-card{margin:0 auto;max-width:520px}
+  .stat-strip .wrap{grid-template-columns:repeat(2,1fr)}
+  .form-grid{grid-template-columns:1fr}
+  .prog-wide{flex-direction:column}
+  .prog-wide .visual{width:100%;min-height:150px}
+  .prog-wide .visual img{width:50%;max-width:220px}
+  .prog-wide .wide-cols{grid-template-columns:1fr}
+}
+@media(max-width:560px){
+  section{padding:52px 0}
+  .ach-cards{grid-template-columns:repeat(2,1fr);gap:12px}
+  .ach-cards .ac{padding:18px 14px}
+  .tech-grid,.tgrid{grid-template-columns:1fr}
+  .foot-grid{grid-template-columns:1fr}
+  .map-card{flex-wrap:wrap}
+  .map-card .mc-btn{width:100%}
+}
+/* ===== Mobile-friendly: khóa học vuốt ngang + why dạng dòng gọn ===== */
+.swipe-hint{display:none}
+@media(max-width:640px){
+  .prog-grid{display:grid;grid-auto-flow:column;grid-auto-columns:84%;grid-template-columns:none;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;padding:4px 2px 10px;scrollbar-width:none}
+  .prog-grid::-webkit-scrollbar{display:none}
+  .prog{scroll-snap-align:center}
+  .prog .visual{min-height:104px;padding:18px 16px 10px}
+  .prog .visual img{width:52%;max-width:170px}
+  .prog .visual.photo{padding:0;min-height:0}
+  .prog .visual.photo img{width:100%;max-width:none;height:150px}
+  .prog .body{padding:16px 18px}
+  .prog li{font-size:13.5px}
+  .prog-wide{grid-column:auto;flex-direction:column}
+  .prog-wide .visual{width:100%;min-height:104px}
+  .prog-wide .wide-cols{grid-template-columns:1fr;gap:10px}
+  .swipe-hint{display:block;text-align:center;font-size:12.5px;font-weight:700;color:var(--blue);margin-top:4px}
+  .why-grid{grid-template-columns:1fr;gap:10px;margin-top:26px}
+  .why{display:grid;grid-template-columns:auto 1fr;column-gap:14px;row-gap:2px;align-items:start;padding:14px 16px;border-radius:14px}
+  .why:hover{transform:none}
+  .why .ic{grid-row:1/3;width:42px;height:42px;border-radius:11px;margin-bottom:0}
+  .why h3,.why p{grid-column:2}
+  .why .ic svg{width:20px;height:20px}
+  .why h3{font-size:15px;margin-bottom:2px}
+  .why p{font-size:12.5px;line-height:1.45}
+}
+</style>
+</head>
+<body>
+
+<!-- ============ HEADER ============ -->
+<header>
+  <div class="wrap nav">
+    <a class="logo" href="#top" aria-label="YOLA"><img src="assets/img_logo_blue.png" alt="YOLA – Trung tâm Anh ngữ"></a>
+    <button class="burger" aria-label="Menu" onclick="document.getElementById('mnav').classList.toggle('open')"><span></span><span></span><span></span></button>
+    <nav id="mnav">
+      <a href="#chuong-trinh">Chương trình</a>
+      <a href="#vi-sao">Vì sao chọn YOLA</a>
+      <a href="#thanh-tich">Thành tích</a>
+      <a href="#hoat-dong">Hoạt động</a>
+      <a href="#trung-tam">Hệ thống trung tâm</a>
+    </nav>
+    <a class="cta" href="#dang-ky"><span class="lbl">Đăng ký ngay</span><span class="tail"></span></a>
+  </div>
+</header>
+
+<!-- ============ HERO ============ -->
+<div class="hero" id="top">
+  <div class="wrap">
+    <div>
+      <span class="promo-tag">🎁 Chỉ 50 suất học thử mỗi tháng</span>
+      <h1>Trải nghiệm <span class="hl">học thử miễn phí</span> chuẩn quốc tế tại YOLA</h1>
+      <p class="sub">Nhận học bổng lên tới 15.700.000đ (áp dụng có điều kiện) và miễn phí bài kiểm tra năng lực đầu vào chuẩn quốc tế trị giá 200.000đ.</p>
+      <div class="btns">
+        <a class="btn2" href="#chuong-trinh">Xem chương trình</a>
+      </div>
+      <p class="hero-note">(*) Chương trình học thử áp dụng cho: Tiếng Anh Thiếu nhi, Tiếng Anh Thiếu niên, Tiếng Anh nền tảng và Luyện thi IELTS.</p>
+    </div>
+    <div class="hero-art">
+      <div class="form-card hero-card" id="hero-form-card">
+        <img class="mascot-peek" src="assets/img_mascot_peek.png" alt="Mascot voi YOLA">
+        <h2 style="font-size:21px">Đăng ký nhận tư vấn và ưu đãi học phí</h2>
+        <p class="lead" style="margin-bottom:16px;font-size:14px">Để lại thông tin, YOLA liên hệ tư vấn lộ trình và ưu đãi phù hợp nhất.</p>
+        <div class="fmount" data-suffix="hero"></div>
+      </div>
+    </div>
+  </div>
+  <div class="stat-strip">
+    <div class="wrap">
+      <div class="s"><b>17+ năm</b><span>kinh nghiệm đào tạo Anh ngữ học thuật</span></div>
+      <div class="s"><b>13 trung tâm</b><span>tại TP.HCM &amp; nền tảng học online</span></div>
+      <div class="s"><b>68.000+</b><span>học viên đạt chuẩn vào top 100 ĐH thế giới</span></div>
+      <div class="s"><b>100%</b><span>giáo viên đạt chứng chỉ giảng dạy quốc tế</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- ============ WHY ============ -->
+<section id="vi-sao">
+  <div class="wrap">
+    <span class="eyebrow">Vì sao chọn YOLA</span>
+    <h2 class="sec-title">Nền tảng tiếng Anh học thuật vững chắc cho mọi hoài bão lớn</h2>
+    <p class="sec-sub">Từ năm 2009, YOLA theo đuổi một sứ mệnh: trao nền tảng Anh ngữ học thuật và nuôi dưỡng khát khao tri thức cho thế hệ trẻ Việt Nam.</p>
+    <div class="why-grid">
+      <div class="why"><div class="ic" style="background:rgba(23,158,241,.12)"><svg width="26" height="26" viewBox="0 0 24 24" fill="#179EF1"><path d="M12 3 1 8l11 5 9-4.09V17h2V8L12 3zm-7 9.18V16c0 2.21 3.13 4 7 4s7-1.79 7-4v-3.82l-7 3.18-7-3.18z"/></svg></div><h3>17+ năm Anh ngữ học thuật</h3><p>Hơn 68.000 học viên đạt chuẩn đầu vào các đại học top 100 thế giới, tổng giá trị học bổng trên 2.000 tỷ đồng.</p></div>
+      <div class="why"><div class="ic" style="background:rgba(253,176,201,.28)"><svg width="26" height="26" viewBox="0 0 24 24" fill="#e2557f"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg></div><h3>Giáo viên top 3% thị trường</h3><p>100% giáo viên đạt chứng chỉ giảng dạy quốc tế; đội ngũ luyện thi đạt IELTS 8.0–9.0 và tốt nghiệp các đại học hàng đầu.</p></div>
+      <div class="why"><div class="ic" style="background:rgba(254,228,84,.35)"><svg width="26" height="26" viewBox="0 0 24 24" fill="#c9a800"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-9 14H7v-7h3v7zm4 0h-3V7h3v10zm4 0h-3v-4h3v4z"/></svg></div><h3>Giáo trình chuẩn quốc tế</h3><p>Chương trình bám sát chuẩn CEFR, Cambridge và các kỳ thi IELTS, SAT — 90% học viên đạt điểm Cambridge như kỳ vọng.</p></div>
+      <div class="why"><div class="ic" style="background:rgba(118,217,246,.3)"><svg width="26" height="26" viewBox="0 0 24 24" fill="#0b8ecf"><path d="M12 2a7 7 0 0 0-7 7c0 2.38 1.19 4.47 3 5.74V17a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-2.26c1.81-1.27 3-3.36 3-5.74a7 7 0 0 0-7-7zM9 21a1 1 0 0 0 1 1h4a1 1 0 0 0 1-1v-1H9v1z"/></svg></div><h3>Công nghệ Yola Learning</h3><p>LMS độc quyền với AI Speaking Lab chấm phát âm đến từng âm tiết, gợi ý ôn tập cá nhân hóa và báo cáo học tập qua Zalo OA.</p></div>
+      <div class="why"><div class="ic" style="background:rgba(144,235,54,.25)"><svg width="26" height="26" viewBox="0 0 24 24" fill="#4f9e0e"><path d="M9 16.17 4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg></div><h3>Cam kết đầu ra rõ ràng</h3><p>Cam kết điểm IELTS thi thật, chuẩn Cambridge cho khối thiếu nhi; hỗ trợ học lại miễn phí nếu chưa đạt kết quả kỳ vọng.</p></div>
+      <div class="why"><div class="ic" style="background:rgba(0,36,103,.1)"><svg width="26" height="26" viewBox="0 0 24 24" fill="#002467"><path d="M4 6h16v2H4zm2 4h12v2H6zm-2 4h16v2H4zm2 4h12v2H6z" opacity="0"/><path d="M13 3 4 9v12h6v-7h4v7h6V9l-7-6z"/></svg></div><h3>Lộ trình liền mạch 4 tuổi → 18+</h3><p>Một hệ sinh thái duy nhất từ mầm non đến luyện thi du học — con lên cấp không phải đổi môi trường, đổi phương pháp.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PROGRAMS ============ -->
+<section class="prog-sec" id="chuong-trinh">
+  <div class="wrap">
+    <span class="eyebrow">Hệ sinh thái chương trình</span>
+    <h2 class="sec-title">Chương trình học cho mọi độ tuổi</h2>
+    <p class="sec-sub">Chọn đúng điểm khởi đầu — YOLA đồng hành trọn lộ trình đến mục tiêu Cambridge, IELTS, SAT và cánh cổng đại học quốc tế.</p>
+    <div class="prog-grid">
+
+      <div class="prog p-pink">
+        <div class="visual photo"><span class="age">4–5 tuổi</span><img src="assets/img_p_yip.jpg" alt="Lớp tiếng Anh mầm non tại YOLA"></div>
+        <div class="body">
+          <h3>Tiếng Anh cho bé Mầm non</h3>
+          <div class="tag" style="color:#e2557f">Khởi đầu tự tin bằng tiếng Anh</div>
+          <ul>
+            <li>Tiếng Anh + 3 môn kỹ năng thế kỷ 21: Công nghệ, Sáng tạo, Lãnh đạo — dạy 100% bằng tiếng Anh</li>
+            <li>Học mà chơi, xây phản xạ nghe nói tự nhiên như trẻ bản xứ</li>
+            <li>Nền tảng vững vàng trước khi vào lớp 1</li>
+          </ul>
+          <div class="path">Lộ trình: 2 giai đoạn khám phá, sẵn sàng vào lớp 1</div>
+          <a class="cta" href="#dang-ky"><span class="lbl">Nhận tư vấn</span><span class="tail"></span></a>
+        </div>
+      </div>
+
+      <div class="prog p-pink">
+        <div class="visual photo"><span class="age">6–11 tuổi</span><img src="assets/img_p_jp.jpg" alt="Lớp tiếng Anh thiếu nhi tại YOLA"></div>
+        <div class="body">
+          <h3>Tiếng Anh Thiếu nhi</h3>
+          <div class="tag" style="color:#e2557f">Tiếng Anh tiểu học chuẩn Cambridge</div>
+          <ul>
+            <li>Phát triển toàn diện 4 kỹ năng và bộ kỹ năng 6Cs</li>
+            <li>Cam kết chuẩn đầu ra Cambridge Starters – Movers – Flyers</li>
+            <li>Mô hình O2O: học tại lớp + luyện tập online có hướng dẫn</li>
+          </ul>
+          <div class="path">Lộ trình: 4 cấp độ theo chuẩn Cambridge Starters – Movers – Flyers</div>
+          <a class="cta" href="#dang-ky"><span class="lbl">Nhận tư vấn</span><span class="tail"></span></a>
+        </div>
+      </div>
+
+      <div class="prog p-yellow">
+        <div class="visual photo"><span class="age">10–14 tuổi</span><img src="assets/img_p_js.jpg" alt="Lớp tiếng Anh thiếu niên tại YOLA"></div>
+        <div class="body">
+          <h3>Tiếng Anh Thiếu niên</h3>
+          <div class="tag" style="color:#c9a800">Chuyển tiếp tiếng Anh học thuật</div>
+          <ul>
+            <li>Học tiếng Anh qua nội dung môn học, đậm chất học thuật</li>
+            <li>Chuẩn bị chứng chỉ KET/PET và nền tảng tiến lên IELTS</li>
+            <li>Rèn tư duy phản biện và kỹ năng thuyết trình</li>
+          </ul>
+          <div class="path">Lộ trình: 4 cấp độ, hướng chuẩn KET/PET &amp; nền tảng IELTS</div>
+          <a class="cta" href="#dang-ky"><span class="lbl">Nhận tư vấn</span><span class="tail"></span></a>
+        </div>
+      </div>
+
+      <div class="prog p-yellow">
+        <div class="visual photo"><span class="age">14+ tuổi</span><img src="assets/img_p_efl.jpg" alt="Lớp tiếng Anh nền tảng tại YOLA"></div>
+        <div class="body">
+          <h3>Tiếng Anh nền tảng — Pre-IELTS</h3>
+          <div class="tag" style="color:#c9a800">Lấy lại căn bản, sẵn sàng luyện thi</div>
+          <ul>
+            <li>Dành cho học sinh THPT, sinh viên, người đi làm mất gốc</li>
+            <li>Xây nền tảng học thuật trước khi vào lộ trình IELTS</li>
+            <li>Đầu ra tương đương B1 — khoảng IELTS 4.5</li>
+          </ul>
+          <div class="path">Lộ trình: A1 → A2 → B1 Lower → B1 Upper</div>
+          <a class="cta" href="#dang-ky"><span class="lbl">Nhận tư vấn</span><span class="tail"></span></a>
+        </div>
+      </div>
+
+      <div class="prog p-green">
+        <div class="visual photo"><span class="age">Lớp 9+</span><img src="assets/img_p_ielts.jpg" alt="Lớp luyện thi IELTS tại YOLA"></div>
+        <div class="body">
+          <h3>Luyện thi IELTS</h3>
+          <div class="tag" style="color:#4f9e0e">Cam kết điểm IELTS thi thật</div>
+          <ul>
+            <li>Giáo viên chuẩn IELTS 8.0+, phương pháp B-L-A-S-T độc quyền</li>
+            <li>AI Speaking Lab luyện nói, sửa phát âm đến từng âm tiết</li>
+            <li>Bổ trợ Crash Course Writing/Speaking sát kỳ thi</li>
+          </ul>
+          <div class="path">Lộ trình: IELTS 5.0 → 5.5 → 6.0 → 6.5 → 7.0+</div>
+          <a class="cta" href="#dang-ky"><span class="lbl">Nhận tư vấn</span><span class="tail"></span></a>
+        </div>
+      </div>
+
+      <div class="prog p-green">
+        <div class="visual photo"><span class="age">Lớp 8+</span><img src="assets/img_p_ieltson.jpg" alt="Lớp luyện thi IELTS Online tại YOLA"></div>
+        <div class="body">
+          <h3>Luyện thi IELTS Online</h3>
+          <div class="tag" style="color:#4f9e0e">Tăng +0.5 band mỗi khóa, học mọi nơi</div>
+          <ul>
+            <li>Lớp trực tuyến tương tác cùng giáo viên chuẩn quốc tế</li>
+            <li>Có lộ trình Pre IELTS Online cho người mất gốc (13+)</li>
+            <li>Dịch vụ sửa bài Writing &amp; luyện Speaking 1-1 kèm theo</li>
+          </ul>
+          <div class="path">Lộ trình: 4 cấp độ, đầu ra hướng đến IELTS 6.5 – 7.0</div>
+          <a class="cta" href="#dang-ky"><span class="lbl">Nhận tư vấn</span><span class="tail"></span></a>
+        </div>
+      </div>
+
+      <div class="prog p-green prog-wide">
+        <div class="visual photo"><span class="age">Lớp 10+</span><img src="assets/img_p_sat.jpg" alt="Đội ngũ giáo viên luyện thi Digital SAT tại YOLA"></div>
+        <div class="body">
+          <h3>Luyện thi Digital SAT</h3>
+          <div class="tag" style="color:#4f9e0e">Bệ phóng du học Mỹ</div>
+          <div class="wide-cols">
+            <ul>
+              <li>Luyện thi SAT trên máy với nền tảng luyện đề chuyên sâu</li>
+              <li>Cam kết tiến bộ +100 điểm sau khóa học</li>
+              <li>Tùy chọn lớp nhóm hoặc lộ trình 1-1 cá nhân hóa</li>
+            </ul>
+            <div>
+              <div class="path">Lộ trình: khóa cấp tốc hoặc chuyên sâu, có lớp kèm 1-1</div>
+              <a class="cta" href="#dang-ky"><span class="lbl">Nhận tư vấn</span><span class="tail"></span></a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <p class="swipe-hint">← Vuốt ngang để xem tất cả chương trình →</p>
+  </div>
+</section>
+
+<!-- ============ FORM (giữa trang) ============ -->
+<div class="form-sec" id="dang-ky">
+  <div class="wrap">
+    <div class="form-card">
+      <h2>Nhận tư vấn lộ trình &amp; học phí</h2>
+      <p class="lead">Để lại thông tin, YOLA sẽ liên hệ tư vấn lộ trình phù hợp và kiểm tra trình độ miễn phí.</p>
+      <div class="fmount" data-suffix="mid"></div>
+    </div>
+  </div>
+</div>
+
+<!-- ============ ACHIEVEMENTS ============ -->
+<section class="ach" id="thanh-tich">
+  <div class="wrap">
+    <span class="eyebrow" style="background:rgba(255,255,255,.12);color:#76D9F6">Thành tích</span>
+    <h2 class="sec-title">Kết quả tạo nên niềm tin</h2>
+    <p class="sec-sub">Những con số YOLA và học viên cùng nhau viết nên sau hơn 17 năm.</p>
+    <div class="ach-hero">
+      <b>68.000+</b>
+      <span>Học viên đạt chuẩn đầu vào top 100 đại học thế giới</span>
+    </div>
+    <div class="ach-cards">
+      <div class="ac"><b>2.000 tỷ+</b><span>đồng giá trị học bổng từ các đại học danh tiếng</span></div>
+      <div class="ac"><b>90%</b><span>học viên đạt điểm Cambridge như kỳ vọng</span></div>
+      <div class="ac"><b>16.000+</b><span>học viên đạt IELTS 6.0 trở lên</span></div>
+      <div class="ac"><b>5.800+</b><span>học viên chinh phục IELTS 7.0+</span></div>
+    </div>
+    <div class="stu-head">
+      <h3>Gương mặt vàng YOLA</h3>
+    </div>
+    <div class="stu-tabs" id="stu-tabs"></div>
+    <div class="stu-wrap">
+      <button type="button" class="stu-arrow left" id="stu-prev" aria-label="Trước">‹</button>
+      <div class="stu-scroll" id="stu-scroll"></div>
+      <button type="button" class="stu-arrow right" id="stu-next" aria-label="Sau">›</button>
+    </div>
+  </div>
+</section>
+
+<!-- ============ TECH ============ -->
+<section>
+  <div class="wrap">
+    <span class="eyebrow">Công nghệ học tập</span>
+    <h2 class="sec-title">Yola Learning — người bạn đồng hành sau giờ lên lớp</h2>
+    <p class="sec-sub">Nền tảng học tập độc quyền kết nối lớp học, học viên và phụ huynh trên một hành trình.</p>
+    <div class="tech-grid">
+      <div class="tech"><div class="ic">🎙️</div><h3>AI Speaking Lab</h3><p>Luyện nói cùng AI, chấm điểm và sửa phát âm chi tiết đến từng âm tiết.</p></div>
+      <div class="tech"><div class="ic">🧭</div><h3>Ôn tập cá nhân hóa</h3><p>Hệ thống gợi ý bài luyện dựa trên điểm mạnh — điểm yếu của từng học viên.</p></div>
+      <div class="tech"><div class="ic">🖥️</div><h3>Practice Test chuẩn thi máy</h3><p>Mô phỏng đề thi IELTS trên máy, cập nhật ngân hàng đề hằng tháng.</p></div>
+      <div class="tech"><div class="ic">📲</div><h3>Báo cáo qua Zalo OA</h3><p>Phụ huynh nhận báo cáo chuyên cần và kết quả học tập định kỳ, minh bạch.</p></div>
+    </div>
+    <div class="video-frame" id="video-frame">
+      <div class="video-ph" id="video-ph">
+        <span class="vp-play">▶</span>
+        <b>Video giới thiệu Yola Learning</b>
+        <span class="vp-note">Video sẽ được cập nhật — tự động phát khi cuộn tới</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ACTIVITIES ============ -->
+<section class="act-sec" id="hoat-dong">
+  <div class="wrap">
+    <span class="eyebrow">Hoạt động ngoại khóa</span>
+    <h2 class="sec-title">Học tiếng Anh bằng cả trải nghiệm</h2>
+    <p class="sec-sub">Bên cạnh lớp học, học viên YOLA lớn lên qua chuỗi workshop và lớp trải nghiệm sáng tạo diễn ra quanh năm — bấm vào từng hoạt động để xem thêm hình ảnh.</p>
+  </div>
+  <div class="wrap">
+    <div class="act-scroll" id="act-scroll"></div>
+  </div>
+  <!-- Modal thư viện hoạt động -->
+  <div class="amodal" id="amodal" hidden>
+    <div class="amodal-bg" id="amodal-bg"></div>
+    <div class="amodal-card" role="dialog" aria-modal="true">
+      <div class="amodal-head">
+        <h3 id="am-title"></h3>
+        <button class="tmodal-x" id="amodal-x" aria-label="Đóng" style="position:static">✕</button>
+      </div>
+      <div class="amodal-body" id="am-body"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ TEACHERS ============ -->
+<section>
+  <div class="wrap teach">
+    <div>
+      <span class="eyebrow">Đội ngũ giảng dạy</span>
+      <h2 class="sec-title">Người dẫn đường được tuyển chọn kỹ lưỡng</h2>
+      <p class="sec-sub">Mỗi giáo viên YOLA đi qua quy trình tuyển chọn thuộc nhóm khắt khe nhất thị trường.</p>
+      <div class="teach-facts">
+        <div class="tf"><div class="dot" style="background:rgba(23,158,241,.15)">3%</div><div><b>Top 3% ứng viên được chọn</b><span>Quy trình tuyển chọn và huấn luyện chuẩn học thuật.</span></div></div>
+        <div class="tf"><div class="dot" style="background:rgba(144,235,54,.3)">✓</div><div><b>100% chứng chỉ giảng dạy quốc tế</b><span>TESOL, CELTA và các chứng chỉ chuyên môn tương đương.</span></div></div>
+        <div class="tf"><div class="dot" style="background:rgba(254,228,84,.4)">8.0+</div><div><b>Đội ngũ luyện thi IELTS 8.0–9.0</b><span>Nhiều giáo viên tốt nghiệp các đại học hàng đầu thế giới.</span></div></div>
+      </div>
+    </div>
+    <div class="tfac">
+      <div class="tfac-stage" id="tfac-stage"></div>
+      <div class="tfac-ctrl">
+        <button type="button" id="t-prev" aria-label="Giáo viên trước">‹</button>
+        <div class="tdots" id="tdots"></div>
+        <button type="button" id="t-next" aria-label="Giáo viên sau">›</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ MODAL HỒ SƠ GIÁO VIÊN ============ -->
+<div class="tmodal" id="tmodal" hidden>
+  <div class="tmodal-bg" id="tmodal-bg"></div>
+  <div class="tmodal-card" role="dialog" aria-modal="true">
+    <button class="tmodal-x" id="tmodal-x" aria-label="Đóng">✕</button>
+    <div class="tmodal-photo"><span class="tm-badge">YOLA EFL FACULTY</span><img id="tm-img" src="" alt=""></div>
+    <div class="tmodal-body">
+      <span class="tm-eyebrow">Hồ sơ giảng viên</span>
+      <h3 id="tm-name"></h3>
+      <div class="tm-chips" id="tm-chips"></div>
+      <div class="tm-cols">
+        <div id="tm-edu-w"><h4>Học vấn</h4><ul id="tm-edu"></ul></div>
+        <div id="tm-pro-w"><h4>Kinh nghiệm chuyên môn</h4><ul id="tm-pro"></ul></div>
+      </div>
+      <div class="tm-certs" id="tm-certs"></div>
+    </div>
+  </div>
+</div>
+
+<!-- ============ CENTERS ============ -->
+<section class="prog-sec" id="trung-tam" style="padding-bottom:88px">
+  <div class="wrap">
+    <span class="eyebrow">Hệ thống trung tâm</span>
+    <h2 class="sec-title">13 trung tâm tại TP.HCM &amp; lớp học online</h2>
+    <p class="sec-sub">Chọn trung tâm gần nhà trên bản đồ, hoặc học linh hoạt mọi nơi cùng YOLA Online.</p>
+    <div class="map-layout">
+      <div class="clist" id="clist"></div>
+      <div class="map-panel">
+        <iframe id="mapframe" title="Bản đồ trung tâm YOLA" loading="lazy" referrerpolicy="no-referrer" allow=""></iframe>
+        <div class="map-card">
+          <div class="mc-ic"><svg viewBox="0 0 24 24" fill="#179EF1" width="22" height="22"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5A2.5 2.5 0 1 1 12 6a2.5 2.5 0 0 1 0 5.5z"/></svg></div>
+          <div class="mc-tx">
+            <em>Đang xem trên bản đồ</em>
+            <b id="mc-name"></b>
+            <span id="mc-addr"></span>
+          </div>
+          <button class="mc-btn" id="mc-pick" type="button">Chọn trung tâm này</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FORM (cuối trang) ============ -->
+<div class="form-sec" id="dang-ky-2" style="background:#fff">
+  <div class="wrap">
+    <div class="form-card" style="border:1.6px solid #E4ECFA">
+      <h2>Bắt đầu lộ trình cùng YOLA ngay hôm nay</h2>
+      <p class="lead">Đã chọn được trung tâm gần nhà? Để lại thông tin để YOLA xếp lịch kiểm tra trình độ miễn phí.</p>
+      <div class="fmount" data-suffix="bot"></div>
+    </div>
+  </div>
+</div>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <div class="logo"><img src="assets/img_logo_white.png" alt="YOLA"></div>
+        <p style="font-weight:500;margin-bottom:12px">Công ty Cổ phần Giáo dục YOLA<br>Tầng 2, Tòa nhà Vimedimex, 246 Cống Quỳnh, Phường Bến Thành, TP. Hồ Chí Minh</p>
+        <p style="font-weight:500">GCN ĐKDN số 0309139430 do Sở KH&amp;ĐT TP.HCM cấp, đăng ký lần đầu ngày 24/07/2009</p>
+      </div>
+      <div>
+        <h4>Chương trình</h4>
+        <ul>
+          <li><a href="#chuong-trinh">Tiếng Anh cho bé Mầm non (4–5 tuổi)</a></li>
+          <li><a href="#chuong-trinh">Tiếng Anh Thiếu nhi (6–11 tuổi)</a></li>
+          <li><a href="#chuong-trinh">Tiếng Anh Thiếu niên (10–14 tuổi)</a></li>
+          <li><a href="#chuong-trinh">Tiếng Anh nền tảng — Pre-IELTS</a></li>
+          <li><a href="#chuong-trinh">Luyện thi IELTS &amp; IELTS Online</a></li>
+          <li><a href="#chuong-trinh">Luyện thi Digital SAT</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Liên hệ</h4>
+        <ul>
+          <li>Email: <a href="mailto:cskh@yola.vn">cskh@yola.vn</a></li>
+          <li><a href="#dang-ky">Đăng ký nhận tư vấn lộ trình</a></li>
+          <li><a href="#trung-tam">Tìm trung tâm gần bạn</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-note">© 2026 YOLA. Trang giới thiệu chương trình — số liệu thành tích và thông tin chương trình cập nhật theo công bố chính thức của YOLA. Ưu đãi (nếu có) áp dụng theo điều kiện tại từng thời điểm.</div>
+  </div>
+</footer>
+
+<!-- ============ FLOATING ============ -->
+<div class="float-cta">
+  <a class="reg" href="#dang-ky">Đăng ký ngay</a>
+</div>
+
+<!-- ============ CHATBOT THU LEAD ============ -->
+<div class="cbot" id="cbot">
+  <div class="cbot-teaser" id="cbot-teaser" hidden>
+    <b>YOLA English</b>
+    <p>Ba mẹ cần tư vấn lộ trình tiếng Anh cho con? Nhắn cho YOLA nhé!</p>
+    <div class="cbot-teaser-btns">
+      <button type="button" id="cbot-open1">Chat ngay</button>
+      <button type="button" class="ghost" id="cbot-hide">Ẩn</button>
+    </div>
+  </div>
+  <div class="cbot-panel" id="cbot-panel" hidden>
+    <div class="cbot-head">
+      <span class="cbot-ava"><img src="assets/img_mascot_book.png" alt="YOLA"></span>
+      <div><b>YOLA English</b><span>Thường trả lời trong vài phút</span></div>
+      <button type="button" class="cbot-close" id="cbot-close" aria-label="Đóng">✕</button>
+    </div>
+    <div class="cbot-body" id="cbot-body">
+      <div class="cbot-msg">Phụ huynh cho em xin thông tin để YOLA tư vấn lộ trình và ưu đãi phù hợp cho mình ạ 💙</div>
+      <form class="cbot-form" id="cbot-form">
+        <div class="cfield"><label>Tên đầy đủ *</label><input id="cb-name" type="text" placeholder="Nhập tên đầy đủ" required></div>
+        <div class="cfield"><label>Số điện thoại *</label><input id="cb-phone" type="tel" placeholder="Nhập số điện thoại" required pattern="[0-9\s+.-]{9,14}"></div>
+        <div class="cfield"><label>Chương trình quan tâm</label><select id="cb-prog"></select></div>
+        <div class="cfield"><label>Trung tâm gần bạn</label><select id="cb-center"></select></div>
+        <div class="cbot-btns">
+          <button type="submit" class="go">Nhận tư vấn ngay</button>
+          <button type="button" class="ghost" id="cbot-skip">Bỏ qua</button>
+        </div>
+      </form>
+      <div class="cbot-msg ok" id="cbot-ok" hidden>✓ YOLA đã nhận thông tin của ba mẹ. Đội ngũ tư vấn sẽ liên hệ trong thời gian sớm nhất ạ!</div>
+    </div>
+  </div>
+  <button type="button" class="cbot-fab" id="cbot-fab" aria-label="Chat với YOLA">
+    <img src="assets/img_mascot_peek.png" alt="Chat với YOLA">
+    <span class="dot"></span>
+  </button>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script>
+/* ===== Data ===== */
+var PROGRAMS_ALL = [
+  'Chưa rõ — cần tư vấn',
+  'Tiếng Anh cho bé Mầm non (4–5 tuổi)',
+  'Tiếng Anh Thiếu nhi (6–11 tuổi)',
+  'Tiếng Anh Thiếu niên (10–14 tuổi)',
+  'Tiếng Anh nền tảng — Pre-IELTS (từ 14 tuổi)',
+  'Luyện thi IELTS (từ 14 tuổi)',
+  'Luyện thi IELTS Online (từ 14 tuổi)',
+  'Luyện thi Digital SAT'
+];
+var PROGRAMS_ONLINE = ['Luyện thi IELTS Online (từ 14 tuổi)'];
+var CENTERS = [
+  {n:'YOLA Cống Quỳnh', d:'Quận 1 (cũ)', a:'Tầng 2, Toà nhà Vimedimex, 246 Cống Quỳnh, Phường Bến Thành, TP.HCM'},
+  {n:'YOLA Lũy Bán Bích', d:'Quận Tân Phú (cũ)', a:'861 Lũy Bán Bích, Phường Phú Thọ Hòa, TP.HCM'},
+  {n:'YOLA Bình Tân', d:'Quận Bình Tân (cũ)', a:'26-28 Đường số 17A, Phường An Lạc, TP.HCM'},
+  {n:'YOLA Hoàng Trọng Mậu', d:'Quận 7 (cũ)', a:'52-54-56 Hoàng Trọng Mậu, Phường Tân Hưng, TP.HCM'},
+  {n:'YOLA Trần Não', d:'Quận 2 (cũ)', a:'115 Trần Não, Phường An Khánh, TP.HCM'},
+  {n:'YOLA Nguyễn Tri Phương', d:'Quận 10 (cũ)', a:'431 - 433 Nguyễn Tri Phương, Phường Diên Hồng, TP.HCM'},
+  {n:'YOLA Đặng Văn Bi', d:'TP. Thủ Đức (cũ)', a:'156 Đặng Văn Bi, Phường Thủ Đức, TP.HCM'},
+  {n:'YOLA Điện Biên Phủ', d:'Quận Bình Thạnh (cũ)', a:'521 Điện Biên Phủ, Phường Thạnh Mỹ Tây, TP.HCM'},
+  {n:'YOLA Phan Văn Trị', d:'Quận Gò Vấp (cũ)', a:'366A8 Phan Văn Trị, Phường An Nhơn, TP.HCM'},
+  {n:'YOLA Phan Đăng Lưu', d:'Quận Phú Nhuận (cũ)', a:'128B Phan Đăng Lưu, Phường Đức Nhuận, TP.HCM'},
+  {n:'YOLA Cộng Hoà', d:'Quận Tân Bình (cũ)', a:'99 Cộng Hòa, Phường Tân Sơn Nhất, TP.HCM'},
+  {n:'YOLA Đỗ Xuân Hợp', d:'Quận 9 (cũ)', a:'299B Đỗ Xuân Hợp, Phường Phước Long, TP.HCM'},
+  {n:'YOLA Huỳnh Tấn Phát', d:'Quận 7 (cũ)', a:'785 Huỳnh Tấn Phát, Phường Phú Thuận, Quận 7, TP.HCM'}
+];
+var ONLINE_LABEL = 'YOLA Online — học tại nhà';
+
+var TEACHERS = [
+  {img:'assets/img_t07.jpg', name:'Lã Thị Hải Yến', exp:'5+ năm', score:'IELTS 8.0', eduTop:'University of Birmingham',
+   edu:['MA in Applied Linguistics – University of Birmingham','BA in Finance and Banking'],
+   pro:['IELTS Teacher at YOLA','Teacher Trainer at YOLA','Lecturer – ISB-UEH'],
+   certs:['TESOL Certified','IELTS 8.0']},
+  {img:'assets/img_t05.jpg', name:'Phan Hồ Thanh Trúc', exp:'10+ năm', score:'IELTS 8.5', eduTop:'Curtin University',
+   edu:["Master's Degree in Applied Linguistics – Curtin University"],
+   pro:['Teacher at YOLA','Lecturer at UEH (University of Economics HCMC)','Lecturer at OU (Open University)'],
+   certs:['IELTS 8.5']},
+  {img:'assets/img_t06.jpg', name:'Lê Trung Hậu', exp:'6+ năm', score:'IELTS 8.0', eduTop:'Curtin University',
+   edu:['MA in Applied Linguistics – Curtin University','BA in English Language Teaching – USSH'],
+   pro:['Teacher Trainer at YOLA','Secondary & High School English Teacher','Teacher at UTS (US Vietnam Talent International School)'],
+   certs:['TESOL Certified','IELTS 8.0']},
+  {img:'assets/img_t03.jpg', name:'Đoàn Thị Tố Như', exp:'14+ năm', score:'IELTS 8.0', eduTop:'Victoria University',
+   edu:['MA in TESOL – Victoria University','BA in Business English'],
+   pro:['Head Teacher at YOLA','Former Teacher at VUS','Former Teacher at Studylink – A Study Abroad Agency','Second language: Chinese'],
+   certs:['TESOL Certified','IELTS 8.0']},
+  {img:'assets/img_t09.jpg', name:'Nguyễn Diệu Minh', exp:'7+ năm', score:'IELTS 8.0', eduTop:'University of Melbourne',
+   edu:['MA in TESOL – University of Melbourne'],
+   pro:['EFL / IELTS Teacher at YOLA'],
+   certs:['CELTA Certified','IELTS 8.0']},
+  {img:'assets/img_t01.jpg', name:'Lê Phúc Hải', exp:'7+ năm', score:'IELTS 8.0', eduTop:'University of Greenwich',
+   edu:['Master in Business Administration','BA in Banking & Finance – University of Greenwich'],
+   pro:['IELTS Teacher at YOLA','Teacher Trainer at YOLA'],
+   certs:['TESOL Certified','IELTS 8.0']},
+  {img:'assets/img_t02.jpg', name:'Huỳnh Phương Nhi', exp:'8+ năm', score:'IELTS 8.5', eduTop:'Quy Nhon University',
+   edu:['BA in Pedagogy of English – Quy Nhon University'],
+   pro:['IELTS/English Teacher at YOLA','Former IELTS Teacher at ZIM Academy','Former ESL Teacher at Langmaster','Graduated as Valedictorian'],
+   certs:['Pedagogy Certified','IELTS 8.5']},
+  {img:'assets/img_t04.jpg', name:'Nguyễn Thiên An', exp:'10+ năm', score:'IELTS 8.0', eduTop:'MA in Linguistics',
+   edu:['MA in Linguistics','Ph.D. student in Human Resources Management'],
+   pro:['Teacher at YOLA','Lecturer – International School of Business (UEH)','Pedagogy Teaching Certificate'],
+   certs:['IELTS 8.0','TESOL Certified']},
+  {img:'assets/img_t10.jpg', name:'Kiều Minh Trang', exp:'8+ năm', score:'IELTS 8.5', eduTop:'Curtin University',
+   edu:['MA in Applied Linguistics – Curtin University','BA in English Language Teaching – Sai Gon University'],
+   pro:['IELTS Teacher at YOLA','Lecturer at Van Lang University','Former Teacher at ZIM Academy'],
+   certs:['Pedagogy Certified','IELTS 8.5']}
+];
+var STUDENT_TABS = {
+  'IELTS': [
+    {n:'Khánh Vy', s:'THPT Nguyễn Thượng Hiền', sc:'IELTS 8.5', img:'https://yola.vn/wp-content/uploads/2025/10/Mai-Nguyen-Khanh-Vy-IELTS-8.5-Hinh-cam-bang-2-e1761012166231-768x1147.jpg'},
+    {n:'Tú Uyên', s:'THPT Đinh Thiện Lý', sc:'IELTS 8.5', img:'https://yola.vn/wp-content/uploads/2025/10/Nguyen-Tu-Uyen-IEL-8.5-CB.jpg'},
+    {n:'Như Dũng', s:'THPT Mạc Đĩnh Chi', sc:'IELTS 8.0', img:'https://yola.vn/wp-content/uploads/2025/10/Nguyễn-Như-Dũng-IELTS-8.0-Hình-cầm-bằng-768x1024.jpeg'},
+    {n:'Nhã Uyên', s:'THPT Chuyên Lê Hồng Phong', sc:'IELTS 8.0', img:'https://yola.vn/wp-content/uploads/2025/10/Screenshot-2025-10-29-at-10.46.15.png'},
+    {n:'Gia Khang', s:'Quốc tế Á châu', sc:'IELTS 8.0', img:'https://yola.vn/wp-content/uploads/2025/10/IMG_8830-768x1024.jpg'},
+    {n:'Kiến Bách', s:'THCS Chuyên Trần Đại Nghĩa', sc:'IELTS 8.0', img:'https://yola.vn/wp-content/uploads/2025/10/Hình-cầm-bằng-e1761709446506-768x1070.jpg'},
+    {n:'Minh Nhân', s:'THPT Trần Khai Nguyên', sc:'IELTS 8.0', img:'https://yola.vn/wp-content/uploads/2025/10/Minh-nhân-e1761709355213.jpg'},
+    {n:'Quốc Đạt', s:'VGU', sc:'IELTS 8.0', img:'https://yola.vn/wp-content/uploads/2025/10/IMG_4869-768x1024.jpeg'},
+    {n:'Ý Nguyên', s:'THPT Nguyễn Thị Minh Khai', sc:'IELTS 8.0', img:'https://yola.vn/wp-content/uploads/2025/10/Dương-Ý-Nguyên-IELTS-8.0-Hình-cầm-bằng-e1761709069687-768x983.jpeg'},
+    {n:'Quang Khánh', s:'Phổ thông Năng khiếu', sc:'IELTS 8.0', img:'https://yola.vn/wp-content/uploads/2025/10/Dương-Quang-Khánh-Hình-cầm-bằng-IELTS-8.0-768x1025.jpg'},
+    {n:'Quang Đăng', s:'PTTH Gia Định', sc:'IELTS 8.0', img:'https://yola.vn/wp-content/uploads/2025/10/Screenshot-2025-10-29-at-10.33.14-1-768x1159.jpg'},
+    {n:'Mỹ Mỹ', s:'THPT Bùi Thị Xuân', sc:'IELTS 8.0', img:'https://yola.vn/wp-content/uploads/2025/10/Lâm-Mỹ-Mỹ-IELTS-8.0-Hình-cầm-bằng-e1761708783822-768x1034.jpg'},
+    {n:'Minh Vũ', s:'THPT Chuyên Lê Hồng Phong', sc:'IELTS 8.0', img:'https://yola.vn/wp-content/uploads/2025/10/Nguyễn-Minh-Vũ-IELTS-8.0-Hình-cầm-bằng-768x1024.jpg'},
+    {n:'Nguyên Khang', s:'THCS Trần Hưng Đạo', sc:'IELTS 8.0', img:'https://yola.vn/wp-content/uploads/2025/10/Thân-Nguyên-Khang-IELTS-8.0-Hình-cầm-bằng-768x1164.jpg'},
+    {n:'Bạch Vân', s:'THPT Phước Kiển', sc:'IELTS 8.0', img:'https://yola.vn/wp-content/uploads/2025/10/Screenshot-2025-10-21-at-22.07.28-1-768x1028.jpg'},
+    {n:'Nguyên Huy', s:'THPT Đức Trọng', sc:'IELTS 8.0', img:'https://yola.vn/wp-content/uploads/2025/10/Screenshot-2025-10-21-at-22.05.31-1-768x1058.jpg'},
+    {n:'Khải Ca', s:'THCS Hà Huy Tập', sc:'IELTS 8.0', img:'https://yola.vn/wp-content/uploads/2025/10/Ngo-Khai-Ca-IELTS-8.0-Hinh-cam-bang-e1761059016405-768x1402.jpg'},
+    {n:'Minh Quân', s:'ĐH Tôn Đức Thắng', sc:'IELTS 8.0', img:'https://yola.vn/wp-content/uploads/2025/10/Tran-Minh-Quan-IELTS-8.0-Anh-cam-bang-768x1024.jpg'},
+    {n:'Hiền Nga', s:'THPT Phú Nhuận', sc:'IELTS 8.0', img:'https://yola.vn/wp-content/uploads/2025/10/Vu-Hien-Nga-IELTS-8.0-Hinh-cam-bang-768x1022.jpeg'},
+    {n:'Hồng Ánh', s:'THPT Lê Quý Đôn', sc:'IELTS 8.0', img:'https://yola.vn/wp-content/uploads/2025/10/Screenshot-2025-10-21-at-08.43.04-768x997.png'},
+    {n:'Đông Quân', s:'THPT Đinh Thiện Lý', sc:'IELTS 8.0', img:'https://yola.vn/wp-content/uploads/2025/10/Duong-Le-Dong-Quan-IEL-8.0-Hinh-cam-bang-768x1365.jpg'},
+    {n:'Minh Hà', s:'Quốc tế Canada', sc:'IELTS 8.0', img:'https://yola.vn/wp-content/uploads/2025/10/Pham-Nguyen-Minh-Ha-Hinh-cam-bang-IELTS-8.0-scaled-e1761010671911-768x1058.jpeg'},
+    {n:'Ngọc Phú', s:'THPT Chuyên Trần Đại Nghĩa', sc:'IELTS 8.0', img:'https://yola.vn/wp-content/uploads/2025/10/Nguyen-Ngoc-Phu-IELTS-8.0-Hinh-cam-bang-768x1464.jpg'},
+    {n:'Khả Minh', s:'Phổ thông Năng khiếu', sc:'IELTS 8.0', img:'https://yola.vn/wp-content/uploads/2025/10/Screenshot-2025-10-14-at-23.15.02-1-768x1059.jpg'},
+    {n:'Lê Minh', s:'THPT Phú Nhuận', sc:'IELTS 8.0', img:'https://yola.vn/wp-content/uploads/2025/10/IMG_3568-scaled-e1761010356721-768x1002.jpg'},
+    {n:'Bảo Hân', s:'ĐH Y Dược TP.HCM', sc:'IELTS 8.0', img:'https://yola.vn/wp-content/uploads/2025/10/vu-han-chan-dung-768x668.jpg'},
+    {n:'Vĩ Huê', s:'THPT Mạc Đĩnh Chi', sc:'IELTS 8.0', img:'https://yola.vn/wp-content/uploads/2025/10/stu-img-4.jpg'},
+    {n:'Thiên Hương', s:'THPT Đinh Thiện Lý', sc:'IELTS 8.0', img:'https://yola.vn/wp-content/uploads/2025/10/stu-img-7.jpg'},
+    {n:'An Nhiên', s:'THPT Chuyên Lê Hồng Phong', sc:'IELTS 8.0', img:'https://yola.vn/wp-content/uploads/2025/10/Screenshot-2025-10-14-at-23.10.13-1-768x961.jpg'},
+    {n:'Gia Long', s:'THPT Linh Trung', sc:'IELTS 7.5', img:'https://yola.vn/wp-content/uploads/2025/10/stu-img-6.jpg'}
+  ],
+  'CAMBRIDGE': [
+    {n:'Mai Chi', s:'TH Nguyễn Thượng Hiền', sc:'FLYERS 15 KHIÊN', img:'https://yola.vn/wp-content/uploads/2025/10/Copy-of-Nguyen-Mai-Chi-Flyers-15-khien-Hinh-cam-bang-scaled.jpg'},
+    {n:'Lưu Quang', s:'TH Phước Bình', sc:'MOVERS 15 KHIÊN', img:'https://yola.vn/wp-content/uploads/2025/10/Copy-of-Tran-Duc-Luu-Quang-Movers-15-khien-Hinh-cam-bang-scaled.jpg'},
+    {n:'Minh Trí', s:'TH Đống Đa', sc:'MOVERS 15 KHIÊN', img:'https://yola.vn/wp-content/uploads/2025/10/Copy-of-Nguyen-Tan-Minh-Tri-Movers-15-khien-Hinh-cam-bang.jpg'},
+    {n:'Minh Bảo', s:'THCS Trần Đại Nghĩa', sc:'FLYERS 15 KHIÊN', img:'https://yola.vn/wp-content/uploads/2025/10/Copy-of-Nguyen-Minh-Bao-Hinh-cam-bang-FLYERS-15-KHIEN-scaled.jpg'},
+    {n:'Khánh Thy', s:'TH An Bình', sc:'STARTERS 15 KHIÊN', img:'https://yola.vn/wp-content/uploads/2025/10/Copy-of-Nguyen-Le-Khanh-Thy-STARTERS-15-KHIEN-Hinh-cam-bang-scaled.jpeg'},
+    {n:'Chi Mai', s:'Trường Quốc Tế Mỹ (AISVN)', sc:'PET 162', img:'https://yola.vn/wp-content/uploads/2025/10/Copy-of-Nguyen-Le-Chi-Mai-PET-162-CB.jpg'},
+    {n:'Minh Quân', s:'THCS Hoàng Hoa Thám', sc:'KET 146', img:'https://yola.vn/wp-content/uploads/2025/10/Copy-of-Nguyen-Ho-Minh-Quan-KET-146-Hinh-cam-bang.png'},
+    {n:'Nhật Nguyên', s:'TH Trần Danh Lâm', sc:'KET 146', img:'https://yola.vn/wp-content/uploads/2025/10/Copy-of-Nguyen-Hoang-Nhat-Nguyen-KET-146-Hinh-cam-bang-scaled.jpg'},
+    {n:'Ân Phúc', s:'Sao Việt (Vstar School)', sc:'FLYERS 15 KHIÊN', img:'https://yola.vn/wp-content/uploads/2025/10/Copy-of-Nguyen-An-Phuc-Flyers-15-khien-Hinh-cam-bang-scaled.jpg'},
+    {n:'Nam Khánh', s:'THCS Trần Quốc Toản 1', sc:'PET 164', img:'https://yola.vn/wp-content/uploads/2025/10/Le-Quang-Nam-Khanh-PET-164-Hinh-cam-bang-scaled.jpg'},
+    {n:'Anh Minh', s:'TH Nguyễn Hiền', sc:'FLYERS 15 KHIÊN', img:'https://yola.vn/wp-content/uploads/2025/10/Copy-of-Le-Thai-Anh-Minh-FLYERS-15-KHIEN-Hinh-cam-bang-scaled.jpeg'},
+    {n:'Tương Lam', s:'TH Lê Đức Thọ', sc:'STARTERS 15 KHIÊN', img:'https://yola.vn/wp-content/uploads/2025/10/Copy-of-Huynh-Ngoc-Tuong-Lam-STARTERS-15-khien-Hinh-cam-bang-scaled.jpg'},
+    {n:'Đan Anh', s:'TH Lê Ngọc Hân', sc:'FLYERS 15 KHIÊN', img:'https://yola.vn/wp-content/uploads/2025/10/Copy-of-Le-Nguyen-Dan-Anh-Flyers-15-cam-bang.jpg'},
+    {n:'Bảo Hân', s:'TH Thực hành – ĐH Sài Gòn', sc:'MOVERS 15 KHIÊN', img:'https://yola.vn/wp-content/uploads/2025/10/Copy-of-Tran-Nguyen-Bao-Han-Movers-15k-CB.jpeg'},
+    {n:'Hồng Quang', s:'Song ngữ Quốc tế Hoàng Gia', sc:'KET 144', img:'https://yola.vn/wp-content/uploads/2025/10/Copy-of-Pham-Hong-Quang-Hinh-cam-bang-KET-144-scaled.jpeg'},
+    {n:'Khả Hân', s:'TH Võ Thị Sáu', sc:'FLYERS 15 KHIÊN', img:'https://yola.vn/wp-content/uploads/2025/10/Copy-of-Nguyen-Tran-Kha-Han-Flyers-15-khien-Hinh-cam-bang.jpg'},
+    {n:'Thanh Phong', s:'TH, THCS & THPT Trương Vĩnh Ký', sc:'KET 141', img:'https://yola.vn/wp-content/uploads/2025/10/Nguyen-Thanh-Phong-KET-141-CB.jpg'},
+    {n:'Minh Thư', s:'TH Lương Thế Vinh', sc:'FLYERS 15 KHIÊN', img:'https://yola.vn/wp-content/uploads/2025/10/Copy-of-Nguyen-Thai-Minh-Thu-Flyers-15-khien-Hinh-cam-bang.jpg'},
+    {n:'Phúc An', s:'TH Bình Triệu', sc:'FLYERS 15 KHIÊN', img:'https://yola.vn/wp-content/uploads/2025/10/Copy-of-Nguyen-Phuc-An-Flyers-15-khien-Hinh-cam-bang.jpg'},
+    {n:'Hà My', s:'THCS Võ Văn Tần', sc:'KET 143', img:'https://yola.vn/wp-content/uploads/2025/10/Copy-of-Nguyen-Ngoc-Ha-My-KET-143-Hinh-cam-bang-scaled.jpg'},
+    {n:'Minh Tâm', s:'TH Võ Thị Sáu', sc:'KET 141', img:'https://yola.vn/wp-content/uploads/2025/10/Copy-of-Nguyen-Minh-Tam-KET-141-Hinh-cam-bang.jpg'},
+    {n:'Nguyễn Kim', s:'TH Cổ Loa', sc:'FLYERS 15 KHIÊN', img:'https://yola.vn/wp-content/uploads/2025/10/Copy-of-Nguyen-Kim-Flyers-15-khien-CB-scaled.jpg'},
+    {n:'Uyên Thư', s:'TH Nguyễn Văn Trỗi', sc:'FLYERS 15 KHIÊN', img:'https://yola.vn/wp-content/uploads/2025/10/Copy-of-Le-Uyen-Thu-Flyers-15-khien-CB-scaled.jpg'},
+    {n:'Thảo Nhi', s:'THCS Nguyễn Thị Định', sc:'FLYERS 15 KHIÊN', img:'https://yola.vn/wp-content/uploads/2025/10/Copy-of-Le-Phuong-Thao-Nhi-Flyers-15-khien-Hinh-cam-bang-scaled.jpg'},
+    {n:'Minh Trí', s:'TH Nguyễn Văn Trỗi', sc:'FLYERS 15 KHIÊN', img:'https://yola.vn/wp-content/uploads/2025/10/Copy-of-Le-Hoang-Minh-Tri-Flyers-15-khien-Hinh-cam-bang.jpeg'},
+    {n:'Phương Nghi', s:'THCS Lê Văn Việt', sc:'FLYERS 15 KHIÊN', img:'https://yola.vn/wp-content/uploads/2025/10/Copy-of-Ha-Phuong-Nghi-Hinh-cam-bang-Flyers-15-khien.jpg'},
+    {n:'Khánh Vy', s:'', sc:'PET 161', img:'https://yola.vn/wp-content/uploads/2025/10/Copy-of-Do-Ngoc-Khanh-Vy-PET-161-Hinh-cam-bang-e1760935296699.jpg'},
+    {n:'Việt Duy', s:'TH Phước Bình', sc:'MOVERS 15 KHIÊN', img:'https://yola.vn/wp-content/uploads/2025/10/Vo-Viet-Duy-Movers-15-khien-Hinh-cam-bang-e1760457039817.jpg'},
+    {n:'Sơn Quân', s:'TH Đặng Văn Ngữ', sc:'FLYERS 15 KHIÊN', img:'https://yola.vn/wp-content/uploads/2025/10/Vu-Huynh-Son-Quan-Flyers-15-khien-CB-scaled.jpg'}
+  ],
+  'SAT': [
+    {n:'Minh Trung', s:'Luyện thi Digital SAT', sc:'SAT 1560', img:'https://yola.vn/wp-content/uploads/2025/10/MINH-TRUG.jpg'},
+    {n:'Minh Khang', s:'Luyện thi Digital SAT', sc:'SAT 1420', img:'https://yola.vn/wp-content/uploads/2025/10/Nguyen-Minh-Khang-SAT-1420-CD.jpg'},
+    {n:'Minh Thi', s:'Luyện thi Digital SAT', sc:'SAT 1530', img:'https://yola.vn/wp-content/uploads/2025/10/20.jpg'},
+    {n:'Hà Phương', s:'Luyện thi Digital SAT', sc:'SAT 1530', img:'https://yola.vn/wp-content/uploads/2025/10/19.jpg'},
+    {n:'Cẩm Hạnh', s:'Luyện thi Digital SAT', sc:'SAT 1510', img:'https://yola.vn/wp-content/uploads/2025/10/22.jpg'},
+    {n:'Duy Bảo', s:'Luyện thi Digital SAT', sc:'SAT 1550', img:'https://yola.vn/wp-content/uploads/2025/10/21.jpg'},
+    {n:'Quang Anh', s:'Luyện thi Digital SAT', sc:'SAT 1500', img:'https://yola.vn/wp-content/uploads/2025/10/18.jpg'},
+    {n:'Kỷ Nguyên', s:'Luyện thi Digital SAT', sc:'SAT 1510', img:'https://yola.vn/wp-content/uploads/2025/10/23.jpg'},
+    {n:'Trí Thành', s:'Luyện thi Digital SAT', sc:'SAT 1540', img:'https://yola.vn/wp-content/uploads/2025/10/17.jpg'},
+    {n:'Minh Phúc', s:'Luyện thi Digital SAT', sc:'SAT 1480', img:'https://yola.vn/wp-content/uploads/2025/10/24.jpg'}
+  ],
+  'DU HỌC': [
+    {n:'Minh Anh', s:'THPT Chuyên Trần Đại Nghĩa', sc:'Học bổng University of Calgary', img:'https://yola.vn/wp-content/uploads/2025/10/DSC08857-scaled.jpg'},
+    {n:'Vĩ Hào', s:'THPT Mạc Đĩnh Chi', sc:'Học bổng Arizona State University', img:'https://yola.vn/wp-content/uploads/2025/10/DSC08849-scaled.jpg'},
+    {n:'Minh Thành', s:'THPT Chuyên Lê Hồng Phong', sc:'Học bổng Purdue University', img:'https://yola.vn/wp-content/uploads/2025/10/DSC08836-scaled.jpg'},
+    {n:'Ngọc Khánh', s:'Trung học Thực hành Sài Gòn', sc:'Học bổng Oregon State University', img:'https://yola.vn/wp-content/uploads/2025/10/DSC08834-scaled.jpg'},
+    {n:'Tường Anh', s:'THPT Chuyên Lê Hồng Phong', sc:'Học bổng University of Queensland', img:'https://yola.vn/wp-content/uploads/2025/10/DSC08829-scaled.jpg'},
+    {n:'Hoàng Long', s:'Trường Phổ thông Năng khiếu', sc:'Học bổng University of Alberta (Canada)', img:'https://yola.vn/wp-content/uploads/2025/10/DSC08821-scaled.jpg'},
+    {n:'Hải Dương', s:'THPT Gia Định', sc:'Học bổng Edmonds College', img:'https://yola.vn/wp-content/uploads/2025/10/DSC08811-scaled.jpg'},
+    {n:'Hải Anh', s:'THPT Gia Định', sc:'Học bổng Edmonds College', img:'https://yola.vn/wp-content/uploads/2025/10/DSC08803-scaled.jpg'},
+    {n:'Minh Đức', s:'THPT Chuyên Lê Hồng Phong', sc:'Học bổng Johns Hopkins University', img:'https://yola.vn/wp-content/uploads/2025/10/DSC08792-scaled.jpg'},
+    {n:'Anh Thư', s:'Phổ thông Năng khiếu', sc:'Học bổng Furman University', img:'https://yola.vn/wp-content/uploads/2025/10/DSC08733-scaled.jpg'}
+  ]
+};
+var STUDENTS = STUDENT_TABS['IELTS'];
+/* Dán ID video YouTube vào đây (vd 'dQw4w9WgXcQ') — video tự phát (tắt tiếng) khi cuộn tới */
+var YT_VIDEO_ID = '';
+
+/* ===== Lead form: render vào 3 vị trí ===== */
+function fillSelect(sel, items, selected){
+  sel.innerHTML='';
+  items.forEach(function(v){
+    var o=document.createElement('option'); o.textContent=v; o.value=v;
+    if(v===selected)o.selected=true;
+    sel.appendChild(o);
+  });
+}
+function centerOptions(){
+  return ['Chọn trung tâm'].concat(CENTERS.map(function(c){return c.n+' — '+c.d})).concat([ONLINE_LABEL]);
+}
+var FORMS = {};
+function renderLeadForm(mount){
+  var sfx = mount.dataset.suffix;
+  mount.innerHTML =
+  '<form id="leadform-'+sfx+'">'+
+    '<div class="form-grid">'+
+      '<div class="field" style="grid-column:1/-1"><label>Hình thức học</label>'+
+        '<div class="mode" id="mode-'+sfx+'"><button type="button" class="on">Tại trung tâm</button><button type="button">Online</button></div></div>'+
+      '<div class="field"><label for="f-name-'+sfx+'">Họ tên phụ huynh / học viên *</label><input id="f-name-'+sfx+'" type="text" placeholder="Nguyễn Văn A" required></div>'+
+      '<div class="field"><label for="f-phone-'+sfx+'">Số điện thoại *</label><input id="f-phone-'+sfx+'" type="tel" placeholder="09xx xxx xxx" required pattern="[0-9\\s+.-]{9,14}"></div>'+
+      '<div class="field"><label for="f-prog-'+sfx+'">Chương trình quan tâm</label><select id="f-prog-'+sfx+'"></select></div>'+
+      '<div class="field"><label for="f-center-'+sfx+'">Trung tâm gần bạn</label><select id="f-center-'+sfx+'"></select></div>'+
+    '</div>'+
+    '<div class="form-actions"><button class="cta light" type="submit"><span class="lbl">Đăng ký tư vấn</span><span class="tail"></span></button></div>'+
+    '<p class="consent">Bằng việc đăng ký, bạn đồng ý cho YOLA liên hệ tư vấn qua điện thoại/Zalo và đồng ý với chính sách bảo mật thông tin của YOLA.</p>'+
+  '</form>';
+  var progSel = mount.querySelector('#f-prog-'+sfx);
+  var centerSel = mount.querySelector('#f-center-'+sfx);
+  var modeBtns = mount.querySelectorAll('#mode-'+sfx+' button');
+  function applyMode(online, keepCenter){
+    if(online){
+      fillSelect(progSel, PROGRAMS_ONLINE, PROGRAMS_ONLINE[0]);
+      fillSelect(centerSel, [ONLINE_LABEL], ONLINE_LABEL);
+    }else{
+      fillSelect(progSel, PROGRAMS_ALL, PROGRAMS_ALL[0]);
+      fillSelect(centerSel, centerOptions(), keepCenter || 'Chọn trung tâm');
+    }
+  }
+  applyMode(false);
+  modeBtns.forEach(function(b,i){
+    b.addEventListener('click',function(){
+      modeBtns.forEach(function(x){x.classList.remove('on')});
+      b.classList.add('on');
+      applyMode(i===1);
+    });
+  });
+  mount.querySelector('form').addEventListener('submit',function(e){
+    e.preventDefault();
+    toast('✓ Giao diện demo — form sẽ được kết nối hệ thống lead ở bước tiếp theo.');
+  });
+  FORMS[sfx]={applyMode:applyMode, modeBtns:modeBtns};
+}
+document.querySelectorAll('.fmount').forEach(renderLeadForm);
+function toast(msg){
+  var t=document.getElementById('toast');
+  t.textContent=msg; t.classList.add('show');
+  clearTimeout(t._tm); t._tm=setTimeout(function(){t.classList.remove('show')},3200);
+}
+
+/* ===== Centers list + map ===== */
+var mapframe=document.getElementById('mapframe');
+var current=0;
+function mapSrc(c){
+  return 'https://maps.google.com/maps?q='+encodeURIComponent(c.n+', '+c.a)+'&z=16&hl=vi&output=embed';
+}
+function showCenter(i){
+  current=i;
+  var c=CENTERS[i];
+  mapframe.src=mapSrc(c);
+  document.getElementById('mc-name').textContent=c.n+' — '+c.d;
+  document.getElementById('mc-addr').textContent=c.a;
+  document.querySelectorAll('.citem').forEach(function(el,j){el.classList.toggle('on',j===i)});
+}
+var clist=document.getElementById('clist');
+CENTERS.forEach(function(c,i){
+  var b=document.createElement('button');
+  b.type='button'; b.className='citem';
+  b.innerHTML='<span class="num">'+(i+1)+'</span><span style="min-width:0"><b>'+c.n+' — '+c.d+'</b><span>'+c.a+'</span></span>';
+  b.addEventListener('click',function(){showCenter(i)});
+  clist.appendChild(b);
+});
+showCenter(0);
+document.getElementById('mc-pick').addEventListener('click',function(){
+  var c=CENTERS[current];
+  var f=FORMS['bot'];
+  f.modeBtns[1].classList.remove('on'); f.modeBtns[0].classList.add('on');
+  f.applyMode(false, c.n+' — '+c.d);
+  document.getElementById('dang-ky-2').scrollIntoView({behavior:'smooth'});
+  toast('✓ Đã chọn '+c.n+' — điền thông tin bên dưới để đăng ký nhé!');
+});
+
+/* ===== Student achievements carousel (theo tab) ===== */
+STUDENT_TABS['IELTS']=STUDENTS;
+var stu=document.getElementById('stu-scroll');
+var stuTabs=document.getElementById('stu-tabs');
+function renderStudents(list){
+  stu.innerHTML='';
+  list.forEach(function(s){
+    var d=document.createElement('div'); d.className='stu';
+    d.innerHTML='<div class="ph"><img loading="lazy" src="'+s.img+'" alt="'+s.n+' — '+s.sc+'"><span class="score">'+s.sc+'</span></div><div class="nm"><b>'+s.n+'</b><span>'+s.s+'</span></div>';
+    stu.appendChild(d);
+  });
+  stu.scrollTo({left:0});
+}
+Object.keys(STUDENT_TABS).forEach(function(k){
+  if(!STUDENT_TABS[k] || !STUDENT_TABS[k].length) return; /* tab trống tự ẩn */
+  var b=document.createElement('button'); b.type='button'; b.textContent=k;
+  b.addEventListener('click',function(){
+    stuTabs.querySelectorAll('button').forEach(function(x){x.classList.remove('on')});
+    b.classList.add('on');
+    renderStudents(STUDENT_TABS[k]);
+  });
+  stuTabs.appendChild(b);
+});
+if(stuTabs.firstChild){stuTabs.firstChild.classList.add('on');renderStudents(STUDENT_TABS[stuTabs.firstChild.textContent]);}
+document.getElementById('stu-prev').addEventListener('click',function(){stu.scrollBy({left:-472,behavior:'smooth'})});
+document.getElementById('stu-next').addEventListener('click',function(){stu.scrollBy({left:472,behavior:'smooth'})});
+
+/* ===== Teacher coverflow carousel + modal hồ sơ ===== */
+var tstage=document.getElementById('tfac-stage'), tdots=document.getElementById('tdots'), tcur=0, ttimer;
+TEACHERS.forEach(function(t,i){
+  var c=document.createElement('div'); c.className='tfc';
+  var meta='';
+  if(t.exp) meta+='<span class="hl">'+t.exp+'</span> kinh nghiệm';
+  if(t.exp&&t.score) meta+=' &nbsp;•&nbsp; ';
+  if(t.score) meta+='<span class="hl">'+t.score+'</span>';
+  c.innerHTML='<div class="fph"><span class="fbadge">YOLA FACULTY</span><img src="'+t.img+'" alt="'+t.name+'" loading="lazy"></div>'+
+    '<div class="fbody"><b>'+t.name+'</b><div class="fmeta">'+meta+'</div><span class="fmore">Nhấn để xem hồ sơ →</span></div>';
+  c.addEventListener('click',function(){
+    if(i===tcur){openTM(t);}else{tgo(i);}
+  });
+  tstage.appendChild(c);
+  var d=document.createElement('i'); if(i===0)d.className='on';
+  d.addEventListener('click',function(){tgo(i)});
+  tdots.appendChild(d);
+});
+function tgo(i){
+  tcur=(i+TEACHERS.length)%TEACHERS.length;
+  var n=TEACHERS.length;
+  document.querySelectorAll('.tfc').forEach(function(el,j){
+    el.classList.remove('pos-l','pos-c','pos-r');
+    if(j===tcur) el.classList.add('pos-c');
+    else if(j===(tcur-1+n)%n) el.classList.add('pos-l');
+    else if(j===(tcur+1)%n) el.classList.add('pos-r');
+  });
+  document.querySelectorAll('.tdots i').forEach(function(el,j){el.classList.toggle('on',j===tcur)});
+  clearInterval(ttimer); ttimer=setInterval(function(){tgo(tcur+1)},4500);
+}
+tgo(0);
+document.getElementById('t-prev').addEventListener('click',function(){tgo(tcur-1)});
+document.getElementById('t-next').addEventListener('click',function(){tgo(tcur+1)});
+
+var tmodal=document.getElementById('tmodal');
+function openTM(t){
+  document.getElementById('tm-img').src=t.img;
+  document.getElementById('tm-img').alt=t.name;
+  document.getElementById('tm-name').textContent=t.name;
+  var chips='';
+  if(t.score) chips+='<div class="tm-chip dark"><i>Điểm IELTS</i><b>'+t.score+'</b></div>';
+  if(t.eduTop) chips+='<div class="tm-chip"><i>Học vấn nổi bật</i><b>'+t.eduTop+'</b></div>';
+  if(t.exp) chips+='<div class="tm-chip"><i>Kinh nghiệm giảng dạy</i><b>'+t.exp+'</b></div>';
+  document.getElementById('tm-chips').innerHTML=chips;
+  var eduW=document.getElementById('tm-edu-w'), proW=document.getElementById('tm-pro-w');
+  eduW.style.display=t.edu.length?'':'none';
+  document.getElementById('tm-edu').innerHTML=t.edu.map(function(x){return '<li>'+x+'</li>'}).join('');
+  proW.style.display=t.pro.length?'':'none';
+  document.getElementById('tm-pro').innerHTML=t.pro.map(function(x){return '<li>'+x+'</li>'}).join('');
+  var certs=document.getElementById('tm-certs');
+  certs.style.display=t.certs.length?'':'none';
+  certs.innerHTML=t.certs.map(function(x){return '<span>✓ '+x+'</span>'}).join('');
+  tmodal.hidden=false;
+  document.body.style.overflow='hidden';
+  clearInterval(ttimer);
+}
+function closeTM(){tmodal.hidden=true;document.body.style.overflow='';tgo(tcur);}
+document.getElementById('tmodal-x').addEventListener('click',closeTM);
+document.getElementById('tmodal-bg').addEventListener('click',closeTM);
+document.addEventListener('keydown',function(e){if(e.key==='Escape'&&!tmodal.hidden)closeTM()});
+
+/* ===== YouTube video: tự phát khi cuộn tới ===== */
+(function(){
+  var frame=document.getElementById('video-frame');
+  if(!YT_VIDEO_ID){return}
+  document.getElementById('video-ph').style.display='none';
+  var ifr=document.createElement('iframe');
+  ifr.src='https://www.youtube.com/embed/'+YT_VIDEO_ID+'?enablejsapi=1&mute=1&playsinline=1&rel=0';
+  ifr.allow='autoplay; encrypted-media; picture-in-picture';
+  ifr.allowFullscreen=true;
+  frame.appendChild(ifr);
+  function cmd(c){ifr.contentWindow.postMessage(JSON.stringify({event:'command',func:c,args:[]}),'*')}
+  new IntersectionObserver(function(en){
+    en.forEach(function(e){ e.isIntersecting ? cmd('playVideo') : cmd('pauseVideo'); });
+  },{threshold:.45}).observe(frame);
+})();
+
+/* ===== Hoạt động ngoại khóa: cards + gallery modal ===== */
+var ACT_B64={0:['assets/img_act_0_0.jpg','assets/img_act_0_1.jpg','assets/img_act_0_2.jpg','assets/img_act_0_3.jpg','assets/img_act_0_4.jpg','assets/img_act_0_5.jpg','assets/img_act_0_6.jpg','assets/img_act_0_7.jpg'],1:['assets/img_act_1_0.jpg','assets/img_act_1_1.jpg','assets/img_act_1_2.jpg','assets/img_act_1_3.jpg','assets/img_act_1_4.jpg','assets/img_act_1_5.jpg','assets/img_act_1_6.jpg','assets/img_act_1_7.jpg'],2:['assets/img_act_2_0.jpg','assets/img_act_2_1.jpg','assets/img_act_2_2.jpg','assets/img_act_2_3.jpg','assets/img_act_2_4.jpg','assets/img_act_2_5.jpg','assets/img_act_2_6.jpg','assets/img_act_2_7.jpg'],3:['assets/img_act_3_0.jpg','assets/img_act_3_1.jpg','assets/img_act_3_2.jpg','assets/img_act_3_3.jpg','assets/img_act_3_4.jpg','assets/img_act_3_5.jpg','assets/img_act_3_6.jpg','assets/img_act_3_7.jpg'],4:['assets/img_act_4_0.jpg','assets/img_act_4_1.jpg','assets/img_act_4_2.jpg','assets/img_act_4_3.jpg','assets/img_act_4_4.jpg','assets/img_act_4_5.jpg','assets/img_act_4_6.jpg','assets/img_act_4_7.jpg'],5:['assets/img_act_5_0.jpg','assets/img_act_5_1.jpg','assets/img_act_5_2.jpg','assets/img_act_5_3.jpg','assets/img_act_5_4.jpg','assets/img_act_5_5.jpg','assets/img_act_5_6.jpg','assets/img_act_5_7.jpg']};
+function AI(d,i){return ACT_B64[d][i]}
+var ACTIVITIES = [
+ {dir:5, badge:'Lớp trải nghiệm', title:'YOLAxMILO — Lớp tiếng Anh tinh thần đồng đội',
+  intro:'Trải nghiệm hoàn toàn miễn phí: học tiếng Anh qua chủ đề & dự án, rèn tinh thần đồng đội và kỹ năng cảm xúc – xã hội.',
+  caps:['Với trải nghiệm hoàn toàn miễn phí, Lớp Tiếng Anh Tinh Thần Đồng Đội mang đến hành trình học tiếng Anh cực vui và bổ ích, cùng các đặc quyền nổi bật:',
+   '✔ HỌC TIẾNG ANH QUA CHỦ ĐỀ & DỰ ÁN cùng đội ngũ giáo viên ưu tú, môi trường 100% tiếng Anh',
+   '✔ PHÁT TRIỂN KỸ NĂNG XÃ HỘI & CẢM XÚC: con biết chơi đẹp - chơi vui, tập thể là trên hết, thắng không kiêu - thua không nản, học có đội - chơi có hội',
+   '✔ VUI KHÁM PHÁ cùng quà tặng, dự án & giấy chứng nhận sau khi hoàn thành lớp']},
+ {dir:3, badge:'Workshop', title:'Workshop Your Feeling Matters',
+  intro:'Cơ hội cho các bạn nhận biết cảm xúc tích cực, hạn chế cảm xúc tiêu cực cùng thực hành giao tiếp tiếng Anh cực vui.',
+  caps:['Cơ hội cho các bạn nhận biết cảm xúc tích cực, hạn chế cảm xúc tiêu cực cùng thực hành giao tiếp tiếng Anh cực vui.']},
+ {dir:2, badge:'Workshop', title:'Workshop Thiêng liêng hai tiếng Gia Đình',
+  intro:'Bài học về lòng biết ơn, sự chia sẻ và thấu hiểu công lao ba mẹ — con lớn khôn trong tình yêu thương.',
+  caps:['✔ Mỗi hành động nhỏ để giúp đỡ ba mẹ đều chứa đựng rất nhiều tình cảm của con',
+   '✔ Mỗi ngày một chút như thế sẽ xây dựng cho con ý thức về lòng biết ơn, sự chia sẻ và thấu hiểu công lao của ba mẹ hơn nữa',
+   '✔ YOLA luôn nỗ lực để mở rộng chủ đề học tập, với mong muốn tuổi thơ của con tại YOLA không chỉ giàu kiến thức tiếng Anh, mà còn làm giàu trải nghiệm, lớn khôn trong tình yêu thương.']},
+ {dir:4, badge:'Workshop', title:'Workshop làm nến thơm — Học tiếng Anh qua sáng tạo',
+  intro:'Tự tay làm nên món quà ý nghĩa, tự do thể hiện ý tưởng và học tiếng Anh qua hoạt động sáng tạo.',
+  caps:['Tích cực tạo môi trường học vui - giỏi tiếng Anh, YOLA thường xuyên tổ chức các hoạt động sáng tạo, cho các em cơ hội tự do thể hiện ý tưởng, tự tay làm nên món quà ý nghĩa, bày tỏ tình cảm đến ba mẹ, ông bà…']},
+ {dir:1, badge:'Workshop', title:'Workshop Kiến Thức Tài Chính Tuổi Teen',
+  intro:'Tiếng Anh ứng dụng vào kiến thức tài chính — vừa gia tăng kiến thức, vừa mang lại niềm vui và sự mới lạ.',
+  caps:['Tại YOLA, tiếng Anh của các em không chỉ gói gọn trong bài tập ngữ pháp, mà còn mở rộng và ứng dụng trong đa dạng lĩnh vực, vừa gia tăng kiến thức, vừa mang lại niềm vui và sự mới lạ, từ đó hình thành đam mê học tập cho các em.']},
+ {dir:0, badge:'Workshop', title:'Pizza Making Workshop 2025',
+  intro:'Một hoạt động – gấp đôi niềm vui – nhân ba sự tự tin: sáng tạo pizza, từ vựng làm bánh, giao tiếp cùng giáo viên nước ngoài.',
+  caps:['Một hoạt động – gấp đôi niềm vui – nhân ba sự tự tin cho con:',
+   '✔ Tự tin sáng tạo với chiếc pizza cực "wow"',
+   '✔ Tự tin sử dụng từ vựng tiếng Anh về quy trình làm bánh',
+   '✔ Tự tin giao tiếp cùng giáo viên nước ngoài và bạn bè']}
+];
+var actScroll=document.getElementById('act-scroll');
+ACTIVITIES.forEach(function(a,i){
+  var d=document.createElement('div'); d.className='act';
+  d.innerHTML='<div class="top"><img src="'+AI(a.dir,0)+'" alt="'+a.title+'" loading="lazy"><span class="badge">'+a.badge+'</span></div>'+
+    '<div class="body"><h3>'+a.title+'</h3><p>'+a.intro+'</p><span class="more">Xem hình ảnh hoạt động →</span></div>';
+  d.addEventListener('click',function(){openAM(a)});
+  actScroll.appendChild(d);
+});
+var amodal=document.getElementById('amodal');
+function openAM(a){
+  document.getElementById('am-title').textContent=a.title;
+  var b=document.getElementById('am-body');
+  b.innerHTML='';
+  a.caps.forEach(function(c,j){
+    var p=document.createElement('p');
+    p.className='cap'+(j===0&&c.indexOf('✔')!==0?' lead-cap':'');
+    p.innerHTML=c.replace(/✔/g,'<span class="tick">✔</span>');
+    b.appendChild(p);
+  });
+  var grid=document.createElement('div'); grid.className='am-grid';
+  for(var i=0;i<ACT_B64[a.dir].length;i++){
+    var im=document.createElement('img'); im.src=AI(a.dir,i); im.alt=a.title; im.loading='lazy';
+    grid.appendChild(im);
+  }
+  b.appendChild(grid);
+  b.scrollTop=0;
+  amodal.hidden=false;
+  document.body.style.overflow='hidden';
+}
+function closeAM(){amodal.hidden=true;document.body.style.overflow=''}
+document.getElementById('amodal-x').addEventListener('click',closeAM);
+document.getElementById('amodal-bg').addEventListener('click',closeAM);
+document.addEventListener('keydown',function(e){if(e.key==='Escape'&&!amodal.hidden)closeAM()});
+
+/* ===== Chatbot thu lead ===== */
+/* Dán URL Google Apps Script Web App vào đây để lead tự lưu về Google Sheet.
+   Khi để trống, chatbot chạy ở chế độ demo (không gửi đi đâu). */
+var LEAD_WEBHOOK_URL = '';
+
+var cbTeaser=document.getElementById('cbot-teaser'),
+    cbPanel=document.getElementById('cbot-panel'),
+    cbFab=document.getElementById('cbot-fab'),
+    cbForm=document.getElementById('cbot-form'),
+    cbOk=document.getElementById('cbot-ok'),
+    cbSent=false, cbTeaserHidden=false;
+fillSelect(document.getElementById('cb-prog'), PROGRAMS_ALL, PROGRAMS_ALL[0]);
+fillSelect(document.getElementById('cb-center'), centerOptions(), 'Chọn trung tâm');
+/* Teaser hiện sau 3 giây nếu chưa mở chat */
+setTimeout(function(){ if(cbPanel.hidden && !cbTeaserHidden) cbTeaser.hidden=false; }, 3000);
+function cbOpen(){
+  cbTeaser.hidden=true; cbPanel.hidden=false;
+  if(!cbSent){ cbForm.style.display=''; cbOk.hidden=true; }
+}
+function cbClose(){ cbPanel.hidden=true; }
+cbFab.addEventListener('click',function(){ cbPanel.hidden ? cbOpen() : cbClose(); });
+document.getElementById('cbot-open1').addEventListener('click',cbOpen);
+document.getElementById('cbot-hide').addEventListener('click',function(){ cbTeaser.hidden=true; cbTeaserHidden=true; });
+document.getElementById('cbot-close').addEventListener('click',cbClose);
+document.getElementById('cbot-skip').addEventListener('click',cbClose);
+cbForm.addEventListener('submit',function(e){
+  e.preventDefault();
+  var data={
+    name: document.getElementById('cb-name').value.trim(),
+    phone: document.getElementById('cb-phone').value.trim(),
+    program: document.getElementById('cb-prog').value,
+    center: document.getElementById('cb-center').value,
+    source: 'chatbot',
+    page: location.href
+  };
+  if(LEAD_WEBHOOK_URL){
+    var body=Object.keys(data).map(function(k){return encodeURIComponent(k)+'='+encodeURIComponent(data[k])}).join('&');
+    fetch(LEAD_WEBHOOK_URL,{method:'POST',mode:'no-cors',headers:{'Content-Type':'application/x-www-form-urlencoded'},body:body})
+      .catch(function(){});
+  }else{
+    toast('Demo — chưa kết nối Google Sheet. Dán URL Apps Script vào LEAD_WEBHOOK_URL để kích hoạt.');
+  }
+  cbSent=true;
+  cbForm.style.display='none';
+  cbOk.hidden=false;
+});
+
+/* Close mobile nav on click */
+document.querySelectorAll('#mnav a').forEach(function(a){a.addEventListener('click',function(){document.getElementById('mnav').classList.remove('open')})});
+</script>
+</body>
+</html>
