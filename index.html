@@ -124,8 +124,8 @@ header{position:sticky;top:0;z-index:120;background:#fff;box-shadow:0 1px 0 rgba
 .prog .age{position:absolute;top:14px;left:14px;background:#fff;color:var(--navy);font-weight:800;font-size:12.5px;border-radius:999px;padding:6px 13px;z-index:2;box-shadow:0 2px 8px rgba(0,36,103,.15)}
 .prog .visual.photo{padding:0;min-height:0;display:block}
 .prog .visual.photo img{width:100%;max-width:none;height:185px;object-fit:cover;display:block}
-.prog-wide .visual.photo{display:flex}
-.prog-wide .visual.photo img{height:100%;min-height:230px}
+.prog-wide .visual.photo{display:flex;align-items:center;justify-content:center;background:var(--blue)}
+.prog-wide .visual.photo img{height:185px;min-height:0;max-height:185px;object-fit:cover}
 .prog .body{padding:22px;display:flex;flex-direction:column;flex:1}
 .prog h3{font-size:19px;color:var(--navy);font-weight:800;margin-bottom:4px}
 .prog .tag{font-size:13px;font-weight:700;margin-bottom:10px}
@@ -423,8 +423,11 @@ footer a:hover{color:#fff}
   .prog .body{padding:16px 18px}
   .prog li{font-size:13.5px}
   .prog-wide{grid-column:auto;flex-direction:column}
-  .prog-wide .visual{width:100%;min-height:104px}
+  .prog-wide .visual{width:100%;min-height:0}
+  .prog-wide .visual.photo img{height:150px;min-height:0}
   .prog-wide .wide-cols{grid-template-columns:1fr;gap:10px}
+  .prog-wide .wide-cols>div{display:flex;flex-direction:column}
+  .prog-wide .wide-cols .cta{margin-top:auto}
   .swipe-hint{display:block;text-align:center;font-size:12.5px;font-weight:700;color:var(--blue);margin-top:4px}
   .stu-tabs{display:grid;grid-template-columns:1fr 1fr;gap:8px}
   .stu-tabs button{width:100%;padding:11px 8px}
@@ -524,7 +527,7 @@ footer a:hover{color:#fff}
             <li>Nền tảng vững vàng trước khi vào lớp 1</li>
           </ul>
           <div class="path">Lộ trình: 2 giai đoạn khám phá, sẵn sàng vào lớp 1</div>
-          <a class="cta" href="#dang-ky"><span class="lbl">Nhận tư vấn</span><span class="tail"></span></a>
+          <a class="cta" href="#dang-ky" data-prog="Tiếng Anh cho bé Mầm non (4–5 tuổi)"><span class="lbl">Nhận tư vấn</span><span class="tail"></span></a>
         </div>
       </div>
 
@@ -539,7 +542,7 @@ footer a:hover{color:#fff}
             <li>Mô hình O2O: học tại lớp + luyện tập online có hướng dẫn</li>
           </ul>
           <div class="path">Lộ trình: 4 cấp độ theo chuẩn Cambridge Starters – Movers – Flyers</div>
-          <a class="cta" href="#dang-ky"><span class="lbl">Nhận tư vấn</span><span class="tail"></span></a>
+          <a class="cta" href="#dang-ky" data-prog="Tiếng Anh Thiếu nhi (6–11 tuổi)"><span class="lbl">Nhận tư vấn</span><span class="tail"></span></a>
         </div>
       </div>
 
@@ -554,7 +557,7 @@ footer a:hover{color:#fff}
             <li>Rèn tư duy phản biện và kỹ năng thuyết trình</li>
           </ul>
           <div class="path">Lộ trình: 4 cấp độ, hướng chuẩn KET/PET &amp; nền tảng IELTS</div>
-          <a class="cta" href="#dang-ky"><span class="lbl">Nhận tư vấn</span><span class="tail"></span></a>
+          <a class="cta" href="#dang-ky" data-prog="Tiếng Anh Thiếu niên (10–14 tuổi)"><span class="lbl">Nhận tư vấn</span><span class="tail"></span></a>
         </div>
       </div>
 
@@ -569,7 +572,7 @@ footer a:hover{color:#fff}
             <li>Đầu ra tương đương B1 — khoảng IELTS 4.5</li>
           </ul>
           <div class="path">Lộ trình: A1 → A2 → B1 Lower → B1 Upper</div>
-          <a class="cta" href="#dang-ky"><span class="lbl">Nhận tư vấn</span><span class="tail"></span></a>
+          <a class="cta" href="#dang-ky" data-prog="Tiếng Anh nền tảng — Pre-IELTS (từ 14 tuổi)"><span class="lbl">Nhận tư vấn</span><span class="tail"></span></a>
         </div>
       </div>
 
@@ -584,7 +587,7 @@ footer a:hover{color:#fff}
             <li>Bổ trợ Crash Course Writing/Speaking sát kỳ thi</li>
           </ul>
           <div class="path">Lộ trình: IELTS 5.0 → 5.5 → 6.0 → 6.5 → 7.0+</div>
-          <a class="cta" href="#dang-ky"><span class="lbl">Nhận tư vấn</span><span class="tail"></span></a>
+          <a class="cta" href="#dang-ky" data-prog="Luyện thi IELTS (từ 14 tuổi)"><span class="lbl">Nhận tư vấn</span><span class="tail"></span></a>
         </div>
       </div>
 
@@ -599,7 +602,7 @@ footer a:hover{color:#fff}
             <li>Dịch vụ sửa bài Writing &amp; luyện Speaking 1-1 kèm theo</li>
           </ul>
           <div class="path">Lộ trình: 4 cấp độ, đầu ra hướng đến IELTS 6.5 – 7.0</div>
-          <a class="cta" href="#dang-ky"><span class="lbl">Nhận tư vấn</span><span class="tail"></span></a>
+          <a class="cta" href="#dang-ky" data-prog="Luyện thi IELTS Online (từ 14 tuổi)"><span class="lbl">Nhận tư vấn</span><span class="tail"></span></a>
         </div>
       </div>
 
@@ -616,7 +619,7 @@ footer a:hover{color:#fff}
             </ul>
             <div>
               <div class="path">Lộ trình: khóa cấp tốc hoặc chuyên sâu, có lớp kèm 1-1</div>
-              <a class="cta" href="#dang-ky"><span class="lbl">Nhận tư vấn</span><span class="tail"></span></a>
+              <a class="cta" href="#dang-ky" data-prog="Luyện thi Digital SAT"><span class="lbl">Nhận tư vấn</span><span class="tail"></span></a>
             </div>
           </div>
         </div>
@@ -1096,6 +1099,19 @@ function toast(msg){
   t.textContent=msg; t.classList.add('show');
   clearTimeout(t._tm); t._tm=setTimeout(function(){t.classList.remove('show')},3200);
 }
+
+/* CTA từng card: điền sẵn chương trình vào form giữa trang */
+document.querySelectorAll('.prog .cta[data-prog]').forEach(function(a){
+  a.addEventListener('click',function(){
+    var f=FORMS['mid']; if(!f) return;
+    f.modeBtns[1].classList.remove('on'); f.modeBtns[0].classList.add('on');
+    f.applyMode(false);
+    var sel=document.getElementById('f-prog-mid');
+    var want=a.dataset.prog;
+    for(var i=0;i<sel.options.length;i++){ if(sel.options[i].value===want){ sel.selectedIndex=i; break; } }
+    toast('✓ Đã chọn: '+want+' — điền thông tin để nhận tư vấn nhé!');
+  });
+});
 
 /* ===== Centers list + map ===== */
 var mapframe=document.getElementById('mapframe');
