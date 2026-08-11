@@ -143,7 +143,7 @@ header{position:sticky;top:0;z-index:120;background:#fff;box-shadow:0 1px 0 rgba
 .prog-wide .visual img{width:82%}
 .prog-wide .body{flex:1}
 .prog-wide .wide-cols{display:grid;grid-template-columns:1.2fr .8fr;gap:22px;align-items:start}
-.prog-wide .wide-cols .cta{margin-top:14px}
+.prog-wide .wide-cols .cta{margin-top:14px;display:flex;width:100%}
 /* ===== Achievements ===== */
 .ach{background:var(--navy);color:#fff;position:relative;overflow:hidden}
 .ach .sec-title{color:#fff}
@@ -301,7 +301,7 @@ header{position:sticky;top:0;z-index:120;background:#fff;box-shadow:0 1px 0 rgba
 .citem span{font-size:13.5px;color:#42527a;font-weight:500}
 .map-panel{position:relative;border-radius:20px;overflow:hidden;border:1.6px solid #E4ECFA;min-height:520px;background:#EAF2FC}
 .map-panel iframe{position:absolute;top:0;bottom:0;left:-340px;width:calc(100% + 340px);height:100%;border:0}
-@media(max-width:560px){.map-panel iframe{left:-280px;width:calc(100% + 280px)}}
+@media(max-width:560px){.map-panel iframe{left:0;width:100%;top:-170px;height:calc(100% + 170px)}}
 .map-cover{position:absolute;top:0;left:0;width:320px;height:200px;pointer-events:auto;z-index:2}
 .map-cover .mcv{position:absolute;top:10px;left:10px;right:10px;bottom:10px;background:#fff;border-radius:14px;box-shadow:0 6px 20px rgba(0,36,103,.10);padding:18px 20px;display:flex;flex-direction:column;gap:4px;justify-content:center}
 .map-cover .mcv i{font-style:normal;font-size:11px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--blue)}
@@ -592,7 +592,7 @@ footer a:hover{color:#fff}
         <div class="visual photo"><span class="age">Lớp 8+</span><img src="assets/img_p_ieltson.jpg" alt="Lớp luyện thi IELTS Online tại YOLA"></div>
         <div class="body">
           <h3>Luyện thi IELTS Online</h3>
-          <div class="tag" style="color:#4f9e0e">Tăng +0.5 band mỗi khóa, học mọi nơi</div>
+          <div class="tag" style="color:#4f9e0e">Tiết kiệm 1/2 chi phí so với học Offline</div>
           <ul>
             <li>Lớp trực tuyến tương tác cùng giáo viên chuẩn quốc tế</li>
             <li>Có lộ trình Pre IELTS Online cho người mất gốc (13+)</li>
@@ -847,7 +847,7 @@ footer a:hover{color:#fff}
       <div class="cbot-msg">Phụ huynh cho em xin thông tin để YOLA tư vấn lộ trình và ưu đãi phù hợp cho mình ạ 💙</div>
       <form class="cbot-form" id="cbot-form">
         <div class="cfield"><label>Tên đầy đủ *</label><input id="cb-name" type="text" placeholder="Nhập tên đầy đủ" required></div>
-        <div class="cfield"><label>Số điện thoại *</label><input id="cb-phone" type="tel" placeholder="Nhập số điện thoại" required pattern="[0-9\s+.-]{9,14}"></div>
+        <div class="cfield"><label>Số điện thoại *</label><input id="cb-phone" type="tel" inputmode="numeric" maxlength="10" placeholder="Nhập số điện thoại" required pattern="0[0-9]{9}" title="Số điện thoại gồm đúng 10 số, bắt đầu bằng số 0"></div>
         <div class="cfield"><label>Chương trình quan tâm</label><select id="cb-prog"></select></div>
         <div class="cfield"><label>Trung tâm gần bạn</label><select id="cb-center"></select></div>
         <div class="cbot-btns">
@@ -1048,7 +1048,7 @@ function renderLeadForm(mount){
       '<div class="field" style="grid-column:1/-1"><label>Hình thức học</label>'+
         '<div class="mode" id="mode-'+sfx+'"><button type="button" class="on">Tại trung tâm</button><button type="button">Online</button></div></div>'+
       '<div class="field"><label for="f-name-'+sfx+'">Họ tên phụ huynh / học viên *</label><input id="f-name-'+sfx+'" type="text" placeholder="Nguyễn Văn A" required></div>'+
-      '<div class="field"><label for="f-phone-'+sfx+'">Số điện thoại *</label><input id="f-phone-'+sfx+'" type="tel" placeholder="09xx xxx xxx" required pattern="[0-9\\s+.-]{9,14}"></div>'+
+      '<div class="field"><label for="f-phone-'+sfx+'">Số điện thoại *</label><input id="f-phone-'+sfx+'" type="tel" inputmode="numeric" maxlength="10" placeholder="09xx xxx xxx" required pattern="0[0-9]{9}" title="Số điện thoại gồm đúng 10 số, bắt đầu bằng số 0"></div>'+
       '<div class="field"><label for="f-prog-'+sfx+'">Chương trình quan tâm</label><select id="f-prog-'+sfx+'"></select></div>'+
       '<div class="field"><label for="f-center-'+sfx+'">Trung tâm gần bạn</label><select id="f-center-'+sfx+'"></select></div>'+
     '</div>'+
@@ -1220,7 +1220,7 @@ document.addEventListener('keydown',function(e){if(e.key==='Escape'&&!tmodal.hid
 /* ===== YouTube video: tự phát khi cuộn tới ===== */
 (function(){
   var frame=document.getElementById('video-frame');
-  if(!YT_VIDEO_ID){frame.style.display='none';return}
+  if(!YT_VIDEO_ID){return}
   document.getElementById('video-ph').style.display='none';
   var ifr=document.createElement('iframe');
   ifr.src='https://www.youtube.com/embed/'+YT_VIDEO_ID+'?enablejsapi=1&mute=1&playsinline=1&rel=0';
