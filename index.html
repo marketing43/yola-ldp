@@ -128,8 +128,8 @@ header{position:sticky;top:0;z-index:120;background:#fff;box-shadow:0 1px 0 rgba
 .prog .age{position:absolute;top:14px;left:14px;background:#fff;color:var(--navy);font-weight:800;font-size:12.5px;border-radius:999px;padding:6px 13px;z-index:2;box-shadow:0 2px 8px rgba(0,36,103,.15)}
 .prog .visual.photo{padding:0;min-height:0;display:block}
 .prog .visual.photo img{width:100%;max-width:none;height:185px;object-fit:cover;display:block}
-.prog-wide .visual.photo{display:flex}
-.prog-wide .visual.photo img{height:100%;min-height:230px;max-height:none;object-fit:cover}
+.prog-wide .visual.photo{display:flex;background:#fff}
+.prog-wide .visual.photo img{height:100%;min-height:230px;max-height:none;object-fit:cover;object-position:center 45%}
 .prog .body{padding:22px;display:flex;flex-direction:column;flex:1}
 .prog h3{font-size:19px;color:var(--navy);font-weight:800;margin-bottom:4px}
 .prog .tag{font-size:13px;font-weight:700;margin-bottom:10px}
@@ -428,7 +428,7 @@ footer a:hover{color:#fff}
   .prog li{font-size:13.5px}
   .prog-wide{grid-column:auto;flex-direction:column}
   .prog-wide .visual{width:100%;min-height:0}
-  .prog-wide .visual.photo img{height:150px;min-height:0}
+  .prog-wide .visual.photo img{height:165px;min-height:0;object-position:center 40%}
   .prog-wide .wide-cols{grid-template-columns:1fr;gap:10px}
   .prog-wide .wide-cols>div{display:flex;flex-direction:column}
   .prog-wide .wide-cols .cta{margin-top:auto}
