@@ -1361,8 +1361,35 @@ function centerCRM(display){
   }
   return display; /* fallback: giữ nguyên nếu không khớp */
 }
-function utmParam(k){
-  try{ return new URLSearchParams(location.search).get(k) || ''; }catch(e){ return ''; }
+/* ===== Bắt & GIỮ UTM/click-id xuyên suốt phiên (kể cả khi mất query) ===== */
+var TRACK_KEYS=['utm_source','utm_medium','utm_campaign','utm_content','utm_term','gclid','gbraid','wbraid','fbclid','ttclid','msclkid'];
+var TRACK={};
+(function(){
+  var q={}; try{ new URLSearchParams(location.search).forEach(function(v,k){ q[k.toLowerCase()]=v; }); }catch(e){}
+  var saved={}; try{ saved=JSON.parse(sessionStorage.getItem('yola_track')||'{}'); }catch(e){}
+  var hasNew=TRACK_KEYS.some(function(k){return q[k]});
+  TRACK_KEYS.forEach(function(k){ TRACK[k]= hasNew ? (q[k]||'') : (saved[k]||''); });
+  /* Google Ads auto-tagging: chỉ có gclid/gbraid/wbraid -> tự suy ra nguồn */
+  if(!TRACK.utm_source && (TRACK.gclid||TRACK.gbraid||TRACK.wbraid)){ TRACK.utm_source='google'; TRACK.utm_medium=TRACK.utm_medium||'cpc'; }
+  if(!TRACK.utm_source && TRACK.fbclid){ TRACK.utm_source='facebook'; TRACK.utm_medium=TRACK.utm_medium||'paid_social'; }
+  if(!TRACK.utm_source && TRACK.ttclid){ TRACK.utm_source='tiktok'; TRACK.utm_medium=TRACK.utm_medium||'paid_social'; }
+  /* Không có tham số nào -> ghi nhận nguồn giới thiệu để không bị trống hoàn toàn */
+  if(!TRACK.utm_source && !saved.utm_source && document.referrer){
+    try{ var h=new URL(document.referrer).hostname.replace('www.',''); if(h && h!==location.hostname){ TRACK.utm_source=h; TRACK.utm_medium='referral'; } }catch(e){}
+  }
+  /* Lưu landing page đầu tiên (URL gốc có UTM) để gửi kèm lead */
+  if(hasNew || !saved.first_url) TRACK.first_url = (saved.first_url && !hasNew) ? saved.first_url : location.href;
+  else TRACK.first_url = saved.first_url;
+  try{ sessionStorage.setItem('yola_track', JSON.stringify(TRACK)); }catch(e){}
+  /* Đẩy vào dataLayer cho GTM/GA4 dùng lại */
+  window.dataLayer=window.dataLayer||[];
+  window.dataLayer.push({event:'yola_track_ready', yola_utm_source:TRACK.utm_source, yola_utm_medium:TRACK.utm_medium,
+    yola_utm_campaign:TRACK.utm_campaign, yola_gclid:TRACK.gclid, yola_fbclid:TRACK.fbclid});
+})();
+function utmParam(k){ return TRACK[k] || ''; }
+function trackQuery(){
+  var p=[]; TRACK_KEYS.forEach(function(k){ if(TRACK[k]) p.push(encodeURIComponent(k)+'='+encodeURIComponent(TRACK[k])); });
+  return p.length ? ('?'+p.join('&')) : '';
 }
 function sendLead(progDisplay, centerDisplay, name, phone, descNote){
   var payload={
@@ -1371,7 +1398,7 @@ function sendLead(progDisplay, centerDisplay, name, phone, descNote){
     program: PROGRAM_CRM[progDisplay] || '',
     center: centerCRM(centerDisplay),
     description: descNote + (PROGRAM_CRM[progDisplay] ? '' : ' — Quan tâm: ' + progDisplay),
-    landing_page_url: location.href,
+    landing_page_url: TRACK.first_url || location.href,
     submitted_at: new Date().toISOString(),
     utm_source: utmParam('utm_source'),
     utm_medium: utmParam('utm_medium'),
@@ -1387,7 +1414,7 @@ function sendLead(progDisplay, centerDisplay, name, phone, descNote){
     fetch(LEAD_WEBHOOK_URL,{method:'POST',mode:'no-cors',keepalive:true,headers:{'Content-Type':'text/plain;charset=utf-8'},body:JSON.stringify(payload)})
       .catch(function(){});
     /* chuyển đến trang cảm ơn (GTM bắt event theo URL chứa 'cam-on') */
-    setTimeout(function(){ location.href='cam-on-ban-da-de-lai-thong-tin/'; }, 200);
+    setTimeout(function(){ location.href='cam-on-ban-da-de-lai-thong-tin/'+trackQuery(); }, 250);
     return true;
   }
   toast('Demo — chưa kết nối Google Sheet. Dán URL Apps Script vào LEAD_WEBHOOK_URL để kích hoạt.');
