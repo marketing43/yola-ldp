@@ -1391,6 +1391,24 @@ function trackQuery(){
   var p=[]; TRACK_KEYS.forEach(function(k){ if(TRACK[k]) p.push(encodeURIComponent(k)+'='+encodeURIComponent(TRACK[k])); });
   return p.length ? ('?'+p.join('&')) : '';
 }
+/* ===== Lấy IP khách ngay khi vào trang (dự phòng 2 nguồn) ===== */
+var CLIENT_IP='';
+(function(){
+  try{ CLIENT_IP = sessionStorage.getItem('yola_ip') || ''; }catch(e){}
+  if(CLIENT_IP) return;
+  var save=function(ip){ if(!ip) return; CLIENT_IP=ip; try{ sessionStorage.setItem('yola_ip',ip); }catch(e){} };
+  fetch('https://api.ipify.org?format=json',{cache:'no-store'})
+    .then(function(r){ return r.json(); })
+    .then(function(d){ save(d && d.ip); })
+    .catch(function(){
+      /* nguồn dự phòng nếu nguồn chính bị chặn */
+      fetch('https://www.cloudflare.com/cdn-cgi/trace',{cache:'no-store'})
+        .then(function(r){ return r.text(); })
+        .then(function(t){ var m=/(^|\n)ip=([^\n]+)/.exec(t); save(m && m[2]); })
+        .catch(function(){});
+    });
+})();
+
 /* Thời gian gửi lead theo giờ Việt Nam (UTC+7), dạng YYYY-MM-DD HH:mm:ss */
 function vnTime(){
   try{
@@ -1417,7 +1435,8 @@ function sendLead(progDisplay, centerDisplay, name, phone, descNote){
     gclid: utmParam('gclid'),
     referrer: document.referrer || '',
     device: (window.innerWidth<=820 ? 'mobile' : 'desktop'),
-    page_path: location.pathname
+    page_path: location.pathname,
+    ip: CLIENT_IP
   };
   if(LEAD_WEBHOOK_URL){
     var body=JSON.stringify(payload), sent=false;
