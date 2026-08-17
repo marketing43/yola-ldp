@@ -1391,6 +1391,15 @@ function trackQuery(){
   var p=[]; TRACK_KEYS.forEach(function(k){ if(TRACK[k]) p.push(encodeURIComponent(k)+'='+encodeURIComponent(TRACK[k])); });
   return p.length ? ('?'+p.join('&')) : '';
 }
+/* Thời gian gửi lead theo giờ Việt Nam (UTC+7), dạng YYYY-MM-DD HH:mm:ss */
+function vnTime(){
+  try{
+    var d=new Date(Date.now()+7*3600*1000);  /* quy về giờ VN */
+    var p=function(n){return (n<10?'0':'')+n};
+    return d.getUTCFullYear()+'-'+p(d.getUTCMonth()+1)+'-'+p(d.getUTCDate())+' '+
+           p(d.getUTCHours())+':'+p(d.getUTCMinutes())+':'+p(d.getUTCSeconds());
+  }catch(e){ return ''; }
+}
 function sendLead(progDisplay, centerDisplay, name, phone, descNote){
   var payload={
     full_name: name,
@@ -1399,7 +1408,7 @@ function sendLead(progDisplay, centerDisplay, name, phone, descNote){
     center: centerCRM(centerDisplay),
     description: descNote + (PROGRAM_CRM[progDisplay] ? '' : ' — Quan tâm: ' + progDisplay),
     landing_page_url: TRACK.first_url || location.href,
-    submitted_at: new Date().toISOString(),
+    submitted_at: vnTime(),
     utm_source: utmParam('utm_source'),
     utm_medium: utmParam('utm_medium'),
     utm_campaign: utmParam('utm_campaign'),
@@ -1411,10 +1420,23 @@ function sendLead(progDisplay, centerDisplay, name, phone, descNote){
     page_path: location.pathname
   };
   if(LEAD_WEBHOOK_URL){
-    fetch(LEAD_WEBHOOK_URL,{method:'POST',mode:'no-cors',keepalive:true,headers:{'Content-Type':'text/plain;charset=utf-8'},body:JSON.stringify(payload)})
-      .catch(function(){});
-    /* chuyển đến trang cảm ơn (GTM bắt event theo URL chứa 'cam-on') */
-    setTimeout(function(){ location.href='cam-on-ban-da-de-lai-thong-tin/'+trackQuery(); }, 250);
+    var body=JSON.stringify(payload), sent=false;
+    /* sendBeacon: trình duyệt cam kết gửi xong kể cả khi trang đã chuyển */
+    try{
+      if(navigator.sendBeacon){
+        sent = navigator.sendBeacon(LEAD_WEBHOOK_URL, new Blob([body],{type:'text/plain;charset=utf-8'}));
+      }
+    }catch(e){}
+    if(!sent){
+      try{ fetch(LEAD_WEBHOOK_URL,{method:'POST',mode:'no-cors',keepalive:true,headers:{'Content-Type':'text/plain;charset=utf-8'},body:body}).catch(function(){}); }catch(e){}
+    }
+    /* chống gửi trùng khi khách bấm nút 2 lần */
+    if(window.__yolaLeadSent){ return true; }
+    window.__yolaLeadSent=true;
+    /* chuyển sang trang cảm ơn, kèm cờ lead=1 để GTM chỉ tính chuyển đổi thật */
+    var q=trackQuery();
+    q = q ? (q+'&lead=1') : '?lead=1';
+    setTimeout(function(){ location.href='cam-on-ban-da-de-lai-thong-tin/'+q; }, 400);
     return true;
   }
   toast('Demo — chưa kết nối Google Sheet. Dán URL Apps Script vào LEAD_WEBHOOK_URL để kích hoạt.');

@@ -45,5 +45,25 @@ p b{color:#002467}
   <a class="btn" href="../">← Về trang chính</a>
   <div class="sub">YOLA — Khai phóng tiềm năng · Đồng hành cùng con từ 4 tuổi đến cánh cổng đại học quốc tế</div>
 </div>
+<script>
+/* Chống đếm trùng: sau khi GTM bắn tag (~2s), xóa cờ lead=1 khỏi URL.
+   Khách reload / bấm back-forward sẽ không còn cờ -> tag không fire lần 2. */
+(function(){
+  try{
+    var u=new URL(location.href);
+    if(u.searchParams.get('lead')==='1'){
+      /* Đẩy sự kiện chuẩn vào dataLayer — dùng cho trigger Custom Event nếu muốn */
+      window.dataLayer=window.dataLayer||[];
+      window.dataLayer.push({event:'lead_success',
+        lead_source: u.searchParams.get('utm_source')||'',
+        lead_campaign: u.searchParams.get('utm_campaign')||''});
+      setTimeout(function(){
+        u.searchParams.delete('lead');
+        history.replaceState(null,'',u.pathname+(u.search||'')+u.hash);
+      }, 2500);
+    }
+  }catch(e){}
+})();
+</script>
 </body>
 </html>
