@@ -13,6 +13,8 @@
 <meta property="og:image" content="https://yola.vn/wp-content/uploads/2025/10/Brand-Guideline-Logo-1.png">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://uudai.yola.vn/tieng-anh-hoc-thuat-nen-tang">
+<link rel="icon" type="image/png" href="assets/favicon.png">
+<link rel="apple-touch-icon" href="assets/favicon.png">
 <link rel="canonical" href="https://uudai.yola.vn/tieng-anh-hoc-thuat-nen-tang">
 
 
@@ -440,7 +442,7 @@ footer{background:#0c2647;color:#c3d0e0;padding:44px 0 24px}
   .mobile-cta{display:block}
   body{padding-bottom:74px}
   .cbot-bubble{bottom:78px;right:14px;width:58px;height:58px;font-size:25px}
-  .cbot-panel{bottom:78px;right:8px;height:calc(100vh - 96px)}
+  .cbot-panel{bottom:78px;right:8px;left:8px;width:auto;height:calc(100vh - 170px);height:calc(100dvh - 150px);max-height:calc(100dvh - 150px)}
   .offer-box{padding:34px 22px}
   .tes-card{grid-template-columns:1fr;text-align:center;padding:30px 24px}
   .tes-card .ava{margin:0 auto}
@@ -708,6 +710,10 @@ footer{background:#0c2647;color:#c3d0e0;padding:44px 0 24px}
   .stu-track:not(.show-all) .stu-card:nth-child(n+7){display:none}
 }
 
+/* === select lỗi + quick buttons chatbot cuộn được === */
+.field select.err{border-color:#ef4444;box-shadow:0 0 0 3px rgba(239,68,68,.12)}
+#cbotQuick{flex-wrap:wrap;max-height:138px;overflow-y:auto}
+
 </style>
 </head>
 <body>
@@ -778,10 +784,11 @@ footer{background:#0c2647;color:#c3d0e0;padding:44px 0 24px}
           <div class="msg">Vui lòng chọn ít nhất 1 nhu cầu</div>
         </div>
         <div class="field">
-          <label>Cơ sở gần bạn (không bắt buộc)</label>
+          <label>Cơ sở gần bạn <span class="req">*</span></label>
           <select name="branch" id="branchSelect">
             <option value="">-- Chọn cơ sở --</option>
           </select>
+          <div class="msg">Vui lòng chọn cơ sở</div>
         </div>
         <label class="form-consent">
           <input type="checkbox" name="consent" checked>
@@ -1125,6 +1132,9 @@ footer{background:#0c2647;color:#c3d0e0;padding:44px 0 24px}
             <label class="need-chip"><input type="checkbox" name="need" value="Học thử miễn phí"><span>🎓 Học thử miễn phí</span></label>
             <label class="need-chip"><input type="checkbox" name="need" value="Ưu đãi học phí"><span>🎁 Ưu đãi học phí</span></label>
           </div><div class="msg">Vui lòng chọn ít nhất 1 nhu cầu</div></div>
+        <div class="field"><label>Cơ sở gần bạn <span class="req">*</span></label>
+          <select name="branch"><option value="">-- Chọn cơ sở --</option></select>
+          <div class="msg">Vui lòng chọn cơ sở</div></div>
         <label class="form-consent"><input type="checkbox" name="consent" checked>
           <span>Tôi đồng ý để YOLA liên hệ tư vấn qua điện thoại/Zalo về khóa học.</span></label>
         <div class="hp-field" aria-hidden="true"><label>Để trống ô này</label><input type="text" name="website" tabindex="-1" autocomplete="off"></div>
@@ -1250,6 +1260,9 @@ function deviceType(){ const ua=navigator.userAgent, w=innerWidth;
 
 /* Gửi lead về Google Sheet bằng sendBeacon (không mất dữ liệu khi chuyển trang).
    core = {full_name, phone_number, center(mã SG), description}. Không đẩy dataLayer (GTM lo tracking). */
+let CLIENT_IP='';
+try{ fetch('https://api.ipify.org?format=json').then(r=>r.json()).then(d=>{CLIENT_IP=(d&&d.ip)||'';}).catch(()=>{}); }catch(e){}
+
 function submitLead(core, source){
   const payload={
     full_name: (core.full_name||'').trim(),
@@ -1269,6 +1282,7 @@ function submitLead(core, source){
     referrer: document.referrer||'',
     device: deviceType(),
     page_path: location.pathname,
+    ip: CLIENT_IP,
     channel: source
   };
   if(!GOOGLE_SCRIPT_URL){ console.log('[DEMO] Lead:',payload); return; }
@@ -1296,6 +1310,9 @@ document.querySelectorAll('.leadForm').forEach(form=>{
     fail(name,!name.value.trim()); fail(phone,!isPhone(phone.value));
     const needMsg=form.querySelector('.needs-grid').closest('.field').querySelector('.msg');
     if(needs.length===0){needMsg.classList.add('show');ok=false;}else needMsg.classList.remove('show');
+    if(branchEl){ const bf=branchEl.closest('.field'), bm=bf?bf.querySelector('.msg'):null;
+      if(!branch){ branchEl.classList.add('err'); if(bm)bm.classList.add('show'); ok=false; }
+      else { branchEl.classList.remove('err'); if(bm)bm.classList.remove('show'); } }
     if(!ok) return;
     // Chống bot: honeypot có giá trị HOẶC điền nhanh bất thường (<0.8s) -> bỏ qua, không gửi
     const hp=form.querySelector('[name=website]');
@@ -1397,12 +1414,13 @@ const BRANCHES=[
 const ONLINE={n:'YOLA Online',code:'SG00',a:'Học trực tuyến toàn quốc'};
 let curBranch=BRANCHES[0];
 
-/* Đồng bộ dropdown "Cơ sở" trong form với danh sách thật */
-const branchSelect=document.getElementById('branchSelect');
-if(branchSelect){
-  BRANCHES.forEach(b=>{const o=document.createElement('option');o.value=b.code;o.textContent=b.n;branchSelect.appendChild(o);});
-  const o=document.createElement('option');o.value=ONLINE.code;o.textContent=ONLINE.n;branchSelect.appendChild(o);
-}
+/* Đồng bộ dropdown "Cơ sở" trong MỌI form với danh sách thật */
+const branchSelects=[...document.querySelectorAll('select[name=branch]')];
+branchSelects.forEach(sel=>{
+  BRANCHES.forEach(b=>{const o=document.createElement('option');o.value=b.code;o.textContent=b.n;sel.appendChild(o);});
+  const o=document.createElement('option');o.value=ONLINE.code;o.textContent=ONLINE.n;sel.appendChild(o);
+});
+const branchSelect=branchSelects[0]||null;
 
 const msName=document.getElementById('msName'), msAddr=document.getElementById('msAddr');
 const branchList=document.getElementById('branchList');
@@ -1430,7 +1448,7 @@ onEl.addEventListener('click',()=>selectOnline(onEl)); branchList.appendChild(on
 
 /* Nút "Chọn cơ sở này" -> điền vào form & cuộn lên form (không rời trang) */
 document.getElementById('msPick').addEventListener('click',()=>{
-  if(branchSelect) branchSelect.value = curBranch.code;
+  branchSelects.forEach(s=>{ s.value=curBranch.code; s.classList.remove('err'); const f=s.closest('.field'); if(f){const m=f.querySelector('.msg'); if(m)m.classList.remove('show');} });
   document.getElementById('dangky').scrollIntoView({behavior:'smooth',block:'center'});
   if(branchSelect){ branchSelect.style.boxShadow='0 0 0 4px rgba(0,154,218,.35)'; setTimeout(()=>branchSelect.style.boxShadow='',1700); }
 });
@@ -1482,17 +1500,25 @@ selectBranch(0);
     if(step===3){
       if(val.startsWith('✅')){
         if(lead.needs.length===0) lead.needs.push('Tư vấn lộ trình');
-        userSay('Gửi thông tin'); setQuick([]);
-        await botSay('Cảm ơn bạn đã tin tưởng YOLA! ⏳ Mình đang gửi thông tin...');
-        submitLead({full_name:lead.name, phone_number:lead.phone, center:'', description:lead.needs.join(', ')}, 'chatbot');
-        await botSay(`🎉 <b>Hoàn tất!</b> Đang chuyển bạn tới trang xác nhận...`);
-        if(THANKYOU_URL) setTimeout(()=>{ window.location.href=THANKYOU_URL+(location.search||''); },1300);
-        step=4; return;
+        userSay('Gửi thông tin');
+        await botSay('Gần xong rồi! Bạn muốn học tại <b>cơ sở nào gần bạn nhất</b>? 📍');
+        step=35; setQuick(BRANCHES.map(b=>'📍 '+b.n.replace('YOLA ','')).concat(['💻 YOLA Online'])); return;
       }
       const clean=val.replace(/^[^\wÀ-ỹ]+/,'').trim();
       if(!lead.needs.includes(clean)){ lead.needs.push(clean); userSay(val);
         await botSay('Đã ghi nhận ✅ Bạn chọn thêm mục khác hoặc bấm <b>"✅ Xong, gửi thông tin"</b> nhé.'); }
       return;
+    }
+    if(step===35){
+      userSay(val); setQuick([]);
+      const nm=val.replace(/^[^\wÀ-ỹ]+/,'').trim();
+      const b=BRANCHES.find(x=>x.n.replace('YOLA ','')===nm || x.n===nm);
+      lead.center=b?b.code:'SG00';
+      await botSay('Cảm ơn bạn đã tin tưởng YOLA! ⏳ Mình đang gửi thông tin...');
+      submitLead({full_name:lead.name, phone_number:lead.phone, center:lead.center, description:lead.needs.join(', ')}, 'chatbot');
+      await botSay(`🎉 <b>Hoàn tất!</b> Đang chuyển bạn tới trang xác nhận...`);
+      if(THANKYOU_URL) setTimeout(()=>{ window.location.href=THANKYOU_URL+(location.search||''); },1300);
+      step=4; return;
     }
   }
   send.addEventListener('click',()=>{const v=input.value; if(input.dataset.mode&&v.trim()) handle(v);});
