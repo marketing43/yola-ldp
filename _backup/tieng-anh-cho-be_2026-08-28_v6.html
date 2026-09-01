@@ -658,74 +658,15 @@ p,li,.sec-sub,.path,.pout,.tag{text-wrap:pretty}
 }
 @media(max-width:820px){
   .jpath,.jmascot{display:none}
-  .jpath-m{display:block}
-  .jgrid{grid-template-columns:1fr;gap:30px}
+  .jgrid{grid-template-columns:1fr;gap:26px;padding-left:26px}
+  .jgrid:before{content:'';position:absolute;left:8px;top:10px;bottom:10px;width:3px;border-radius:99px;background:linear-gradient(180deg,var(--pink),var(--sky) 38%,var(--yellow) 72%,var(--lime))}
   .jstop.low{margin-top:0}
-  .jstop{width:72%;align-items:flex-start;text-align:left}
-  .jstop:nth-child(even){margin-left:auto;align-items:flex-end;text-align:right}
-  .jstop:nth-child(even) .jage{left:auto;right:0;transform:none}
-  .jstop:nth-child(odd) .jage{left:0;transform:none}
-  .jphoto img{width:112px;height:112px;border-width:4px}
+  .jstop{align-items:flex-start;text-align:left}
+  .jage{left:0;transform:none}
 }
 @media(max-width:560px){
   .week-grid{grid-template-columns:1fr}
   .wframe:nth-child(odd),.wframe:nth-child(even){transform:none}
-}
-/* ===== v7: title phụ, chip, popup card, spacing ===== */
-.h1-sub{font-size:clamp(17px,2.1vw,23px);font-weight:700;color:#fff;margin:10px 0 14px;letter-spacing:.01em}
-.h1-sub .hl{color:var(--yellow)}
-.jage{font-weight:700;line-height:1.5;padding:4px 13px}
-.jpath-m{display:none;position:absolute;inset:0;width:100%;height:100%;pointer-events:none}
-.cm-intro{font-size:14.5px;font-weight:500;color:#42527a;line-height:1.6;margin-bottom:16px}
-.cm-secs{display:grid;grid-template-columns:1fr 1fr;gap:14px}
-.cm-sec{background:var(--grey);border:1.6px solid var(--border);border-radius:14px;padding:16px 18px}
-.cm-sec.cm-wide{grid-column:1/-1}
-.cm-sec h4{margin:0 0 8px;font-size:13px}
-.cm-sec li,.cm-sec p{font-size:13.5px}
-.cm-sec li:last-child{margin-bottom:0}
-.cm-body h3{margin-bottom:8px}
-.cm-body b{color:var(--navy)}
-/* ===== spacing: gọn toàn trang ===== */
-section{padding:60px 0}
-.jmap{margin-top:34px}
-.jhint{margin-top:26px}
-.week-grid{margin-top:32px}
-.week-more{margin-top:26px}
-#trung-tam{padding-bottom:60px}
-@media(max-width:820px){
-  .cm-secs{grid-template-columns:1fr}
-  .h1-sub{margin:8px 0 12px}
-  .jpath-m{display:block}
-}
-@media(max-width:640px){
-  section{padding:40px 0}
-  .form-sec{padding:44px 0}
-  footer{padding:44px 0 26px}
-  .stat-strip{padding:16px 0}
-  .map-layout{margin-top:24px}
-  .clist{max-height:300px}
-  .map-panel{min-height:300px}
-  .jmap{margin-top:24px}
-  .week-grid{margin-top:24px;gap:16px}
-  .ostrip{padding:22px 20px}
-  .faq-list{margin-top:22px}
-  .sec-title{margin-bottom:10px}
-}
-/* ===== v8: countdown ô vuông + banner form cuối + map mobile ===== */
-.cd-label{font-size:13px;font-weight:800;color:var(--navy);text-transform:uppercase;letter-spacing:.05em;margin:14px 0 8px}
-.cd-boxes{display:flex;gap:10px}
-.cdt{display:flex;flex-direction:column;align-items:center;gap:5px}
-.cdt b{min-width:56px;height:56px;padding:0 8px;border-radius:12px;background:var(--navy);color:var(--yellow);font-size:23px;font-weight:800;display:flex;align-items:center;justify-content:center;box-shadow:0 6px 16px rgba(0,36,103,.18);font-variant-numeric:tabular-nums}
-.cdt span{font-size:10.5px;font-weight:800;color:#6b7a9c;text-transform:uppercase;letter-spacing:.06em}
-.last-offer{background:linear-gradient(180deg,#FFFBE6,#FFF3B8);border:1.6px solid #F0E3A0;border-radius:16px;padding:18px 20px;margin-bottom:24px}
-.last-offer p{font-size:15px;font-weight:600;color:var(--navy);margin-bottom:4px}
-.last-offer .cd-boxes{margin-top:12px}
-@media(max-width:640px){
-  .cdt b{min-width:48px;height:48px;font-size:19px;border-radius:10px}
-  .cd-boxes{gap:8px}
-  .map-panel{min-height:0;border:none;background:none;overflow:visible;order:1}
-  .map-panel iframe{position:static;display:block;width:100%;height:240px;border-radius:16px;border:1.6px solid var(--border)}
-  .map-card{position:static;margin-top:12px;box-shadow:0 8px 20px rgba(0,36,103,.10);border:1.6px solid var(--border)}
 }
 </style>
 </head>
@@ -753,8 +694,7 @@ section{padding:60px 0}
     <div>
       <span class="promo-tag" id="promo-tag"><span class="offer-copy" data-evergreen="🎁 Ưu đãi đến 22% học phí cho học viên mới">🎒 Học bổng Back to School — tiết kiệm đến 18 triệu</span></span>
       <div class="bts-count" id="bts-count" hidden>Ưu đãi kết thúc sau <b id="bts-timer"></b></div>
-      <h1>Tiếng Anh cho bé <span style="white-space:nowrap">4–14 tuổi</span></h1>
-      <p class="h1-sub">Một lộ trình liền mạch <span class="hl">từ Mầm non đến Thiếu niên</span></p>
+      <h1>Tiếng Anh cho bé <span style="white-space:nowrap">4–14 tuổi</span> — <span class="hl">một lộ trình liền mạch</span> từ Mầm non đến Thiếu niên</h1>
       <p class="sub">Con bắt đầu đúng điểm xuất phát và đi trọn lộ trình chuẩn Cambridge Starters – Movers – Flyers đến KET/PET trong một môi trường duy nhất. Sĩ số nhỏ, có trợ giảng riêng, học thử miễn phí.</p>
       <div class="kid-row">
         <figure><img src="../assets/img_kid_yip.webp" width="480" height="480" alt="Bé mầm non học tiếng Anh tại YOLA" fetchpriority="high"><figcaption style="background:var(--pink);color:#8f2c4e">4–5 tuổi</figcaption></figure>
@@ -810,13 +750,7 @@ section{padding:60px 0}
         <span class="eyebrow" style="background:rgba(0,36,103,.08);color:var(--navy)">Ưu đãi đang áp dụng</span>
         <div class="onum"><b class="offer-copy" data-evergreen="đến 22%">đến 18 triệu</b><span class="offer-copy" data-evergreen="ưu đãi học phí cho học viên mới">tiết kiệm học phí với Học bổng Back to School</span></div>
         <p class="onote"><span class="offer-copy" data-evergreen="Đăng ký lộ trình dài, ưu đãi càng lớn — để lại thông tin để YOLA báo mức ưu đãi chính xác cho khóa của bé.">Ưu đãi đến 28% học phí cho học viên mới, đến hết 31/08/2026 — đăng ký lộ trình dài, tiết kiệm càng lớn.</span></p>
-        <p class="cd-label b2s-only">Ưu đãi kết thúc sau:</p>
-        <div class="cd-boxes b2s-only">
-          <div class="cdt"><b class="cdb" data-u="d">0</b><span>ngày</span></div>
-          <div class="cdt"><b class="cdb" data-u="h">0</b><span>giờ</span></div>
-          <div class="cdt"><b class="cdb" data-u="m">0</b><span>phút</span></div>
-          <div class="cdt"><b class="cdb" data-u="s">0</b><span>giây</span></div>
-        </div>
+        <div class="bts-count b2s-only">Ưu đãi kết thúc sau <b class="bts-timer"></b></div>
         <div class="ochips">
           <span class="ochip">🎓 Học thử miễn phí</span>
           <span class="ochip">💳 Trả góp 0% học phí</span>
@@ -845,15 +779,6 @@ section{padding:60px 0}
           </linearGradient>
         </defs>
         <path d="M12,14 C24,14 26,44 38,44 C50,44 50,14 62,14 C74,14 76,44 88,44" fill="none" stroke="url(#jgrad)" stroke-width="1.4" stroke-dasharray="2.6 2" stroke-linecap="round" vector-effect="non-scaling-stroke"/>
-      </svg>
-      <svg class="jpath-m" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
-        <defs>
-          <linearGradient id="jgradm" x1="0" y1="0" x2="0" y2="1">
-            <stop offset="0" stop-color="#FDB0C9"/><stop offset=".38" stop-color="#76D9F6"/>
-            <stop offset=".72" stop-color="#FEE454"/><stop offset="1" stop-color="#90EB36"/>
-          </linearGradient>
-        </defs>
-        <path d="M24,9 C72,13 84,22 70,34 C58,44 36,48 26,59 C16,70 40,82 66,86" fill="none" stroke="url(#jgradm)" stroke-width="1.4" stroke-dasharray="2.6 2" stroke-linecap="round" vector-effect="non-scaling-stroke"/>
       </svg>
       <img class="jmascot" src="../assets/img_mascot_wave.webp" width="420" height="366" alt="Mascot voi YOLA trên hành trình" loading="lazy">
       <div class="jgrid">
@@ -906,114 +831,90 @@ section{padding:60px 0}
     <button class="tmodal-x" id="cmodal-x" aria-label="Đóng">✕</button>
     <div class="cm-content" id="cm-mam-non" hidden>
       <div class="cm-photo"><img src="../assets/img_p_yip.jpg" alt="Lớp tiếng Anh mầm non tại YOLA"><span class="cm-age" style="background:var(--pink);color:#8f2c4e">4–5 tuổi</span></div>
-            <div class="cm-body">
+      <div class="cm-body">
         <h3>Tiếng Anh cho bé Mầm non</h3>
-        <p class="cm-intro">Bé <b>4–5 tuổi</b>, chưa biết hoặc biết rất ít tiếng Anh. Trước khi vào lớp, bé được <b>kiểm tra trình độ miễn phí</b> để xếp đúng giai đoạn.</p>
-        <div class="cm-secs">
-          <div class="cm-sec">
-            <h4>📚 Con học gì</h4>
-            <ul>
-              <li>Tiếng Anh + <b>3 môn kỹ năng thế kỷ 21</b> (Công nghệ số, Thiết kế Sáng tạo, Tư duy Lãnh đạo) — dạy bằng tiếng Anh</li>
-              <li>Giáo trình chuẩn học thuật Hoa Kỳ, app <b>Navio</b> luyện tập tại nhà</li>
-            </ul>
-          </div>
-          <div class="cm-sec">
-            <h4>🏫 Lớp học &amp; lịch học</h4>
-            <ul>
-              <li><b>Giáo viên nước ngoài</b> dạy tiếng Anh, giáo viên Việt Nam dạy môn kỹ năng, <b>trợ giảng riêng</b> mỗi lớp</li>
-              <li><b>13 tuần/khóa</b> · 2 buổi/tuần · 1,5 giờ/buổi</li>
-            </ul>
-          </div>
-          <div class="cm-sec">
-            <h4>🧭 Lộ trình</h4>
-            <p>2 giai đoạn theo độ tuổi (4 tuổi và 5 tuổi) — mục tiêu: <b>nền tảng vững vàng trước khi con vào lớp 1</b>.</p>
-          </div>
-          <div class="cm-sec">
-            <h4>💬 Ba mẹ nhận được gì</h4>
-            <ul>
-              <li>Nhận xét <b>hằng ngày qua Zalo OA</b> + <b>4 video lớp học</b> mỗi khóa</li>
-              <li>Báo cáo học tập cuối khóa, họp phụ huynh, học bù khi vắng có phép</li>
-            </ul>
-          </div>
-        </div>
+        <h4>Khóa này dành cho ai</h4>
+        <p>Bé 4–5 tuổi, chưa biết hoặc biết rất ít tiếng Anh. Trước khi vào lớp, bé được kiểm tra trình độ miễn phí để xếp đúng giai đoạn.</p>
+        <h4>Con học gì</h4>
+        <ul>
+          <li>Tiếng Anh + 3 môn kỹ năng thế kỷ 21 (Công nghệ số, Thiết kế Sáng tạo, Tư duy Lãnh đạo) — dạy bằng tiếng Anh</li>
+          <li>Giáo trình chuẩn học thuật Hoa Kỳ, kèm app Navio luyện tập tại nhà</li>
+        </ul>
+        <h4>Lớp học &amp; lịch học</h4>
+        <ul>
+          <li>Giáo viên nước ngoài dạy tiếng Anh, giáo viên Việt Nam dạy môn kỹ năng, mỗi lớp có trợ giảng riêng</li>
+          <li>13 tuần/khóa · 2 buổi/tuần · 1,5 giờ/buổi</li>
+        </ul>
+        <h4>Lộ trình</h4>
+        <p>2 giai đoạn theo độ tuổi (4 tuổi và 5 tuổi) — mục tiêu: nền tảng vững vàng và sự dạn dĩ trước khi con vào lớp 1.</p>
+        <h4>Ba mẹ nhận được gì</h4>
+        <ul>
+          <li>Thông báo nội dung bài học và nhận xét hằng ngày qua Zalo OA</li>
+          <li>4 video và hình ảnh con học trong lớp mỗi khóa</li>
+          <li>Báo cáo học tập cuối khóa, họp phụ huynh giữa và cuối khóa</li>
+          <li>Học bù khi con vắng có phép</li>
+        </ul>
         <div class="cm-cta"><a class="cta" href="#dang-ky" data-prog="Tiếng Anh cho bé Mầm non (4–5 tuổi)"><span class="lbl">Đăng ký học thử miễn phí</span><span class="tail"></span></a></div>
       </div>
     </div>
     <div class="cm-content" id="cm-thieu-nhi" hidden>
       <div class="cm-photo"><img src="../assets/img_p_jp.jpg" alt="Lớp tiếng Anh thiếu nhi tại YOLA"><span class="cm-age" style="background:var(--sky);color:#0b5b80">6–11 tuổi</span></div>
-            <div class="cm-body">
+      <div class="cm-body">
         <h3>Tiếng Anh Thiếu nhi</h3>
-        <p class="cm-intro">Bé <b>6–11 tuổi</b> — từ chưa biết tiếng Anh đến đã có vốn từ nhưng còn ngại giao tiếp. Xếp lớp theo bài <b>kiểm tra trình độ miễn phí</b>.</p>
-        <div class="cm-secs">
-          <div class="cm-sec">
-            <h4>📚 Con học gì</h4>
-            <ul>
-              <li>Toàn diện <b>4 kỹ năng + bộ kỹ năng 6Cs</b> trong môi trường <b>100% tiếng Anh</b></li>
-              <li>Học qua câu chuyện, dự án và trò chơi (Story-based, Project-based, CLIL)</li>
-              <li>Giáo trình Mỹ + app <b>Bigbox, Mee2, The Ink</b> luyện tại nhà</li>
-            </ul>
-          </div>
-          <div class="cm-sec">
-            <h4>🏫 Lớp học &amp; lịch học</h4>
-            <ul>
-              <li><b>100% giáo viên nước ngoài</b> + 1 trợ giảng mỗi lớp · tối đa <b>15 bé</b></li>
-              <li><b>52 giờ · 13 tuần/khóa</b> — có lớp cuối tuần và lớp trong tuần 17:30–19:30</li>
-            </ul>
-          </div>
-          <div class="cm-sec cm-wide">
-            <h4>🏆 Lộ trình &amp; cam kết</h4>
-            <ul>
-              <li>4 cấp độ theo chuẩn Cambridge <b>Starters – Movers – Flyers</b>; hỗ trợ đăng ký thi thật và <b>4 buổi luyện thi miễn phí</b></li>
-              <li>Học viên được cam kết đầu ra bằng điểm thi thật Starters / Movers hoặc Flyers <b>từ 14 khiên trở lên</b> khi thỏa các điều kiện của chương trình — <a href="#cam-ket" class="cm-link">xem điều kiện chi tiết</a></li>
-            </ul>
-          </div>
-          <div class="cm-sec cm-wide">
-            <h4>💬 Ba mẹ nhận được gì</h4>
-            <ul>
-              <li>Tin nhắn nhận xét <b>sau mỗi buổi học</b> (nội dung bài, bài tập, thái độ của con)</li>
-              <li>Báo cáo cuối khóa, họp phụ huynh; học bù khi vắng có phép, học kèm trợ giảng khi giáo viên đề nghị</li>
-            </ul>
-          </div>
-        </div>
+        <h4>Khóa này dành cho ai</h4>
+        <p>Bé 6–11 tuổi — từ chưa biết tiếng Anh đến đã có vốn từ nhưng còn ngại giao tiếp. Xếp lớp theo bài kiểm tra trình độ miễn phí.</p>
+        <h4>Con học gì</h4>
+        <ul>
+          <li>Phát triển toàn diện 4 kỹ năng và bộ kỹ năng 6Cs trong môi trường 100% tiếng Anh</li>
+          <li>Phương pháp Story-based, Project-based và CLIL — học qua câu chuyện, dự án và trò chơi</li>
+          <li>Giáo trình Mỹ (NXB Compass, MacMillan) kèm app Bigbox, Mee2, The Ink luyện tại nhà</li>
+        </ul>
+        <h4>Lớp học &amp; lịch học</h4>
+        <ul>
+          <li>100% giáo viên nước ngoài + 1 trợ giảng mỗi lớp · tối đa 15 bé</li>
+          <li>52 giờ · 13 tuần/khóa · 2 buổi/tuần × 2 giờ — có lớp cuối tuần và lớp trong tuần 17:30–19:30</li>
+        </ul>
+        <h4>Lộ trình &amp; cam kết</h4>
+        <ul>
+          <li>4 cấp độ theo chuẩn Cambridge Starters – Movers – Flyers; hỗ trợ đăng ký thi thật và 4 buổi luyện thi miễn phí</li>
+          <li>Học viên được cam kết đầu ra bằng điểm thi thật Starters / Movers hoặc Flyers từ 14 khiên trở lên khi thỏa các điều kiện của chương trình — <a href="#cam-ket" class="cm-link">xem điều kiện chi tiết</a></li>
+        </ul>
+        <h4>Ba mẹ nhận được gì</h4>
+        <ul>
+          <li>Tin nhắn nhận xét sau mỗi buổi học (nội dung bài, bài tập, thái độ của con)</li>
+          <li>Báo cáo học tập cuối khóa và họp phụ huynh với trợ giảng phụ trách lớp</li>
+          <li>Học bù khi vắng có phép; học kèm riêng với trợ giảng khi giáo viên đề nghị</li>
+        </ul>
         <div class="cm-cta"><a class="cta" href="#dang-ky" data-prog="Tiếng Anh Thiếu nhi (6–11 tuổi)"><span class="lbl">Đăng ký học thử miễn phí</span><span class="tail"></span></a></div>
       </div>
     </div>
     <div class="cm-content" id="cm-thieu-nien" hidden>
       <div class="cm-photo"><img src="../assets/img_p_js.jpg" alt="Lớp tiếng Anh thiếu niên tại YOLA"><span class="cm-age" style="background:var(--yellow);color:#7a6800">10–14 tuổi</span></div>
-            <div class="cm-body">
+      <div class="cm-body">
         <h3>Tiếng Anh Thiếu niên</h3>
-        <p class="cm-intro">Học sinh <b>10–14 tuổi</b> đã từng học tiếng Anh — định hướng chứng chỉ học thuật, thi vào trường chuyên hoặc chuẩn bị du học.</p>
-        <div class="cm-secs">
-          <div class="cm-sec">
-            <h4>📚 Con học gì</h4>
-            <ul>
-              <li>Học tiếng Anh qua <b>nội dung môn học</b> — rèn tư duy phản biện và thuyết trình</li>
-              <li>Chú trọng <b>Reading học thuật và Writing</b> — hai kỹ năng quyết định khi lên IELTS</li>
-              <li>Giáo trình gốc Mỹ <b>Inside, Keystone</b> — dùng tại trường công lập Mỹ</li>
-            </ul>
-          </div>
-          <div class="cm-sec">
-            <h4>🏫 Lớp học &amp; lịch học</h4>
-            <ul>
-              <li>Tối đa <b>15 học viên/lớp</b> · giáo viên nước ngoài + giáo viên Việt Nam, trợ giảng ở các cấp độ đầu</li>
-              <li><b>52 giờ · 13 tuần/khóa</b> — có lớp cuối tuần và lớp trong tuần 17:30–19:30</li>
-            </ul>
-          </div>
-          <div class="cm-sec cm-wide">
-            <h4>🏆 Lộ trình &amp; chuẩn đầu ra</h4>
-            <ul>
-              <li>4 cấp độ, đầu ra cấp cao nhất <b>tương đương B2</b>; hướng chứng chỉ <b>KET/PET</b>, hỗ trợ đăng ký thi thật Cambridge</li>
-              <li><b>90%</b> học viên sau khi học xong tại YOLA đều đạt chuẩn đầu ra. Trong trường hợp không đủ điểm để học khóa tiếp theo, học viên được hỗ trợ xếp học lại theo quy định của YOLA.</li>
-            </ul>
-          </div>
-          <div class="cm-sec cm-wide">
-            <h4>💬 Ba mẹ nhận được gì</h4>
-            <ul>
-              <li>Tin nhắn nhận xét <b>sau mỗi buổi học</b> và báo cáo học tập cuối khóa</li>
-              <li>Học bù khi vắng có phép; lớp bổ trợ luyện thi Cambridge tại trung tâm</li>
-            </ul>
-          </div>
-        </div>
+        <h4>Khóa này dành cho ai</h4>
+        <p>Học sinh 10–14 tuổi đã từng học tiếng Anh, định hướng chứng chỉ học thuật, thi vào trường chuyên hoặc chuẩn bị du học.</p>
+        <h4>Con học gì</h4>
+        <ul>
+          <li>Học tiếng Anh qua nội dung môn học — đậm chất học thuật, rèn tư duy phản biện và thuyết trình</li>
+          <li>Chú trọng Reading học thuật và Writing — hai kỹ năng quyết định khi lên IELTS</li>
+          <li>Giáo trình gốc Mỹ: Inside (National Geographic Learning), Keystone (Longman) — dùng tại trường công lập Mỹ</li>
+        </ul>
+        <h4>Lớp học &amp; lịch học</h4>
+        <ul>
+          <li>Tối đa 15 học viên/lớp · kết hợp giáo viên nước ngoài và giáo viên Việt Nam, trợ giảng đồng hành ở các cấp độ đầu</li>
+          <li>52 giờ · 13 tuần/khóa · 2 buổi/tuần × 2 giờ — có lớp cuối tuần và lớp trong tuần 17:30–19:30</li>
+        </ul>
+        <h4>Lộ trình &amp; chuẩn đầu ra</h4>
+        <ul>
+          <li>4 cấp độ, đầu ra cấp cao nhất tương đương B2; hướng chứng chỉ KET/PET, nền tảng tiến lên IELTS; hỗ trợ đăng ký thi thật Cambridge KET, PET</li>
+          <li>90% học viên sau khi học xong tại YOLA đều đạt chuẩn đầu ra. Trong trường hợp không đủ điểm để học khóa tiếp theo, học viên được hỗ trợ xếp học lại theo quy định của YOLA.</li>
+        </ul>
+        <h4>Ba mẹ nhận được gì</h4>
+        <ul>
+          <li>Tin nhắn nhận xét sau mỗi buổi học và báo cáo học tập cuối khóa</li>
+          <li>Học bù khi vắng có phép; lớp bổ trợ luyện thi Cambridge tại trung tâm</li>
+        </ul>
         <div class="cm-cta"><a class="cta" href="#dang-ky" data-prog="Tiếng Anh Thiếu niên (10–14 tuổi)"><span class="lbl">Đăng ký học thử miễn phí</span><span class="tail"></span></a></div>
       </div>
     </div>
@@ -1090,7 +991,7 @@ section{padding:60px 0}
       <span>Học viên đạt kết quả Cambridge như kỳ vọng</span>
     </div>
     <div class="ach-cards">
-      <div class="ac"><b>5.878</b><span>học viên chinh phục IELTS 7.0 trở lên</span></div>
+      <div class="ac"><b>20</b><span>học viên đạt trọn 15/15 khiên Starters, Movers, Flyers</span></div>
       <div class="ac"><b>68.000+</b><span>học viên đạt điểm thi đại học</span></div>
       <div class="ac"><b>2.000 tỷ+</b><span>đồng giá trị học bổng từ các đại học danh tiếng</span></div>
       <div class="ac"><b>17 năm</b><span>bền bỉ với tiếng Anh học thuật cho trẻ em Việt Nam</span></div>
@@ -1120,7 +1021,7 @@ section{padding:60px 0}
 </section>
 
 <!-- ============ CENTERS ============ -->
-<section class="prog-sec" id="trung-tam">
+<section class="prog-sec" id="trung-tam" style="padding-bottom:88px">
   <div class="wrap">
     <span class="eyebrow">Hệ thống trung tâm</span>
     <h2 class="sec-title">13 trung tâm dạy tiếng Anh cho bé tại TP.HCM</h2>
@@ -1192,15 +1093,6 @@ section{padding:60px 0}
 <div class="form-sec" id="dang-ky-2" style="background:#fff">
   <div class="wrap">
     <div class="form-card" style="border:1.6px solid #E4ECFA">
-      <div class="last-offer">
-        <p>🎒 <b class="offer-copy" data-evergreen="Ưu đãi đến 22% học phí cho học viên mới — đăng ký ngay hôm nay">Học bổng Back to School — tiết kiệm đến 18 triệu học phí, kết thúc sau:</b></p>
-        <div class="cd-boxes b2s-only">
-          <div class="cdt"><b class="cdb" data-u="d">0</b><span>ngày</span></div>
-          <div class="cdt"><b class="cdb" data-u="h">0</b><span>giờ</span></div>
-          <div class="cdt"><b class="cdb" data-u="m">0</b><span>phút</span></div>
-          <div class="cdt"><b class="cdb" data-u="s">0</b><span>giây</span></div>
-        </div>
-      </div>
       <h2>Bắt đầu lộ trình tiếng Anh của con ngay hôm nay</h2>
       <p class="lead">Đã chọn được trung tâm gần nhà? Để lại thông tin để YOLA xếp lịch học thử và kiểm tra trình độ miễn phí cho bé.</p>
       <div class="fmount" data-suffix="bot"></div>
@@ -1342,18 +1234,18 @@ var STUDENT_TABS = {
   'IELTS': [
     {n:'Khánh Vy', s:'THPT Nguyễn Thượng Hiền', sc:'IELTS 8.5', img:'https://yola.vn/wp-content/uploads/2025/10/Mai-Nguyen-Khanh-Vy-IELTS-8.5-Hinh-cam-bang-2-e1761012166231-768x1147.jpg'},
     {n:'Tú Uyên', s:'THPT Đinh Thiện Lý', sc:'IELTS 8.5', img:'https://yola.vn/wp-content/uploads/2025/10/Nguyen-Tu-Uyen-IEL-8.5-CB.jpg'},
-    {n:'Như Dũng', s:'THPT Mạc Đĩnh Chi', sc:'IELTS 8.0', img:'https://yola.vn/wp-content/uploads/2025/10/Nguyễn-Như-Dũng-IELTS-8.0-Hình-cầm-bằng-768x1024.jpeg'},
+    {n:'Như Dũng', s:'THPT Mạc Đĩnh Chi', sc:'IELTS 8.0', img:'https://yola.vn/wp-content/uploads/2025/10/Nguyễn-Như-Dũng-IELTS-8.0-Hình-cầm-bằng-768x1024.jpeg'},
     {n:'Nhã Uyên', s:'THPT Chuyên Lê Hồng Phong', sc:'IELTS 8.0', img:'https://yola.vn/wp-content/uploads/2025/10/Screenshot-2025-10-29-at-10.46.15.png'},
     {n:'Gia Khang', s:'Quốc tế Á châu', sc:'IELTS 8.0', img:'https://yola.vn/wp-content/uploads/2025/10/IMG_8830-768x1024.jpg'},
-    {n:'Kiến Bách', s:'THCS Chuyên Trần Đại Nghĩa', sc:'IELTS 8.0', img:'https://yola.vn/wp-content/uploads/2025/10/Hình-cầm-bằng-e1761709446506-768x1070.jpg'},
-    {n:'Minh Nhân', s:'THPT Trần Khai Nguyên', sc:'IELTS 8.0', img:'https://yola.vn/wp-content/uploads/2025/10/Minh-nhân-e1761709355213.jpg'},
+    {n:'Kiến Bách', s:'THCS Chuyên Trần Đại Nghĩa', sc:'IELTS 8.0', img:'https://yola.vn/wp-content/uploads/2025/10/Hình-cầm-bằng-e1761709446506-768x1070.jpg'},
+    {n:'Minh Nhân', s:'THPT Trần Khai Nguyên', sc:'IELTS 8.0', img:'https://yola.vn/wp-content/uploads/2025/10/Minh-nhân-e1761709355213.jpg'},
     {n:'Quốc Đạt', s:'VGU', sc:'IELTS 8.0', img:'https://yola.vn/wp-content/uploads/2025/10/IMG_4869-768x1024.jpeg'},
-    {n:'Ý Nguyên', s:'THPT Nguyễn Thị Minh Khai', sc:'IELTS 8.0', img:'https://yola.vn/wp-content/uploads/2025/10/Dương-Ý-Nguyên-IELTS-8.0-Hình-cầm-bằng-e1761709069687-768x983.jpeg'},
-    {n:'Quang Khánh', s:'Phổ thông Năng khiếu', sc:'IELTS 8.0', img:'https://yola.vn/wp-content/uploads/2025/10/Dương-Quang-Khánh-Hình-cầm-bằng-IELTS-8.0-768x1025.jpg'},
+    {n:'Ý Nguyên', s:'THPT Nguyễn Thị Minh Khai', sc:'IELTS 8.0', img:'https://yola.vn/wp-content/uploads/2025/10/Dương-Ý-Nguyên-IELTS-8.0-Hình-cầm-bằng-e1761709069687-768x983.jpeg'},
+    {n:'Quang Khánh', s:'Phổ thông Năng khiếu', sc:'IELTS 8.0', img:'https://yola.vn/wp-content/uploads/2025/10/Dương-Quang-Khánh-Hình-cầm-bằng-IELTS-8.0-768x1025.jpg'},
     {n:'Quang Đăng', s:'PTTH Gia Định', sc:'IELTS 8.0', img:'https://yola.vn/wp-content/uploads/2025/10/Screenshot-2025-10-29-at-10.33.14-1-768x1159.jpg'},
-    {n:'Mỹ Mỹ', s:'THPT Bùi Thị Xuân', sc:'IELTS 8.0', img:'https://yola.vn/wp-content/uploads/2025/10/Lâm-Mỹ-Mỹ-IELTS-8.0-Hình-cầm-bằng-e1761708783822-768x1034.jpg'},
-    {n:'Minh Vũ', s:'THPT Chuyên Lê Hồng Phong', sc:'IELTS 8.0', img:'https://yola.vn/wp-content/uploads/2025/10/Nguyễn-Minh-Vũ-IELTS-8.0-Hình-cầm-bằng-768x1024.jpg'},
-    {n:'Nguyên Khang', s:'THCS Trần Hưng Đạo', sc:'IELTS 8.0', img:'https://yola.vn/wp-content/uploads/2025/10/Thân-Nguyên-Khang-IELTS-8.0-Hình-cầm-bằng-768x1164.jpg'},
+    {n:'Mỹ Mỹ', s:'THPT Bùi Thị Xuân', sc:'IELTS 8.0', img:'https://yola.vn/wp-content/uploads/2025/10/Lâm-Mỹ-Mỹ-IELTS-8.0-Hình-cầm-bằng-e1761708783822-768x1034.jpg'},
+    {n:'Minh Vũ', s:'THPT Chuyên Lê Hồng Phong', sc:'IELTS 8.0', img:'https://yola.vn/wp-content/uploads/2025/10/Nguyễn-Minh-Vũ-IELTS-8.0-Hình-cầm-bằng-768x1024.jpg'},
+    {n:'Nguyên Khang', s:'THCS Trần Hưng Đạo', sc:'IELTS 8.0', img:'https://yola.vn/wp-content/uploads/2025/10/Thân-Nguyên-Khang-IELTS-8.0-Hình-cầm-bằng-768x1164.jpg'},
     {n:'Bạch Vân', s:'THPT Phước Kiển', sc:'IELTS 8.0', img:'https://yola.vn/wp-content/uploads/2025/10/Screenshot-2025-10-21-at-22.07.28-1-768x1028.jpg'},
     {n:'Nguyên Huy', s:'THPT Đức Trọng', sc:'IELTS 8.0', img:'https://yola.vn/wp-content/uploads/2025/10/Screenshot-2025-10-21-at-22.05.31-1-768x1058.jpg'},
     {n:'Khải Ca', s:'THCS Hà Huy Tập', sc:'IELTS 8.0', img:'https://yola.vn/wp-content/uploads/2025/10/Ngo-Khai-Ca-IELTS-8.0-Hinh-cam-bang-e1761059016405-768x1402.jpg'},
@@ -1779,17 +1671,13 @@ document.querySelectorAll('a[href="#cam-ket"]').forEach(function(a){
     if(left <= 0){ expire(); clearInterval(tm); return; }
     var d = Math.floor(left/86400000),
         h = Math.floor(left%86400000/3600000),
-        m = Math.floor(left%3600000/60000),
-        sec = Math.floor(left%60000/1000);
-    var txt = (d>0 ? d+' ngày ' : '') + h + ' giờ ' + m + ' phút ' + sec + ' giây';
+        m = Math.floor(left%3600000/60000);
+    var txt = (d>0 ? d+' ngày ' : '') + h + ' giờ ' + m + ' phút';
     document.querySelectorAll('.bts-timer, #bts-timer').forEach(function(el){ el.textContent = txt; });
-    var p2=function(n){return (n<10?'0':'')+n};
-    var vals={d:p2(d),h:p2(h),m:p2(m),s:p2(sec)};
-    document.querySelectorAll('.cdb').forEach(function(el){ el.textContent = vals[el.dataset.u]; });
     var w=document.getElementById('bts-count'); if(w) w.hidden=false;
   }
   tick();
-  var tm = setInterval(tick, 1000);
+  var tm = setInterval(tick, 30000);
 })();
 
 /* Close mobile nav on click */

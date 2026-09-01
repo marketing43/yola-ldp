@@ -30,7 +30,13 @@ Không để 1–2 từ lẻ rơi xuống thành dòng cuối của heading/đo�
 `h1,h2,h3,h4,.sec-title{text-wrap:balance}` và `p,li{text-wrap:pretty}`.
 Sau khi dựng, soát screenshot 1440px + 390px; còn rớt chữ thì rút gọn câu hoặc nối 2 từ cuối bằng `&nbsp;`.
 
-## Cấu trúc LP tieng-anh-cho-be (v5 — chốt 26/08/2026)
+## Cấu trúc LP tieng-anh-cho-be (v6 — chốt 28/08/2026, layout hiện hành)
+
+Nguyên tắc đã chốt với user: mỗi section trả lời một câu hỏi của phụ huynh, một hình ảnh chủ đạo để nhớ; không thêm section "làm cho có".
+Flow: hero (3 ảnh bé tròn + mascot) → dải trust 4 số → Vì sao chọn YOLA (user giữ tạm, sẽ yêu cầu xóa khi hoàn thiện) → Ưu đãi dạng băng ngang compact (#uu-dai, offer-copy tự chuyển sau 31/08) → **Bản đồ hành trình** (#chuong-trinh: đường sóng SVG 4 trạm ảnh tròn + mascot, trạm = #mam-non/#thieu-nhi/#thieu-nien, click mở popup #cmodal; mobile chuyển rail dọc) → Form giữa → **"Một tuần của con"** (#hoat-dong: 4 khung polaroid Trong lớp → Workshop → App → Tin nhắn ba mẹ, kèm carousel 6 workshop + modal ảnh) → Thành tích/Bằng chứng → Video phụ huynh (ẩn chờ PARENT_VIDEOS) → Trung tâm → FAQ (chứa cam kết #cam-ket) → Form cuối.
+Đã gỡ ở v6: biểu đồ bậc thang + timeline (thay bằng bản đồ hành trình), section công nghệ riêng (gộp vào Một tuần của con), video YouTube Yola Learning, section giáo viên (khôi phục từ _backup v5 khi có ảnh + hồ sơ GV thiếu nhi).
+
+## Cấu trúc cũ (v5, tham khảo — backup _backup/tieng-anh-cho-be_2026-08-26_v5.html)
 
 Flow đã chốt với user, không tự đổi:
 hero → Vì sao chọn YOLA → Ưu đãi B2S (#uu-dai) → Chương trình & Lộ trình hợp nhất (#chuong-trinh: biểu đồ bậc thang + timeline 3 mốc #mam-non/#thieu-nhi/#thieu-nien + mốc tiếp nối 14+; mỗi mốc có nút và click bậc thang mở popup #cmodal chi tiết khóa) → Form giữa (#dang-ky) → Lợi ích kèm theo (Hoạt động ngoại khóa → Đồng hành sau giờ học) → Thành tích (#thanh-tich) → Video phụ huynh (#phu-huynh) → Giáo viên (#giao-vien) → Trung tâm → FAQ → Form cuối (#dang-ky-2).

@@ -711,22 +711,6 @@ section{padding:60px 0}
   .faq-list{margin-top:22px}
   .sec-title{margin-bottom:10px}
 }
-/* ===== v8: countdown ô vuông + banner form cuối + map mobile ===== */
-.cd-label{font-size:13px;font-weight:800;color:var(--navy);text-transform:uppercase;letter-spacing:.05em;margin:14px 0 8px}
-.cd-boxes{display:flex;gap:10px}
-.cdt{display:flex;flex-direction:column;align-items:center;gap:5px}
-.cdt b{min-width:56px;height:56px;padding:0 8px;border-radius:12px;background:var(--navy);color:var(--yellow);font-size:23px;font-weight:800;display:flex;align-items:center;justify-content:center;box-shadow:0 6px 16px rgba(0,36,103,.18);font-variant-numeric:tabular-nums}
-.cdt span{font-size:10.5px;font-weight:800;color:#6b7a9c;text-transform:uppercase;letter-spacing:.06em}
-.last-offer{background:linear-gradient(180deg,#FFFBE6,#FFF3B8);border:1.6px solid #F0E3A0;border-radius:16px;padding:18px 20px;margin-bottom:24px}
-.last-offer p{font-size:15px;font-weight:600;color:var(--navy);margin-bottom:4px}
-.last-offer .cd-boxes{margin-top:12px}
-@media(max-width:640px){
-  .cdt b{min-width:48px;height:48px;font-size:19px;border-radius:10px}
-  .cd-boxes{gap:8px}
-  .map-panel{min-height:0;border:none;background:none;overflow:visible;order:1}
-  .map-panel iframe{position:static;display:block;width:100%;height:240px;border-radius:16px;border:1.6px solid var(--border)}
-  .map-card{position:static;margin-top:12px;box-shadow:0 8px 20px rgba(0,36,103,.10);border:1.6px solid var(--border)}
-}
 </style>
 </head>
 <body>
@@ -810,13 +794,7 @@ section{padding:60px 0}
         <span class="eyebrow" style="background:rgba(0,36,103,.08);color:var(--navy)">Ưu đãi đang áp dụng</span>
         <div class="onum"><b class="offer-copy" data-evergreen="đến 22%">đến 18 triệu</b><span class="offer-copy" data-evergreen="ưu đãi học phí cho học viên mới">tiết kiệm học phí với Học bổng Back to School</span></div>
         <p class="onote"><span class="offer-copy" data-evergreen="Đăng ký lộ trình dài, ưu đãi càng lớn — để lại thông tin để YOLA báo mức ưu đãi chính xác cho khóa của bé.">Ưu đãi đến 28% học phí cho học viên mới, đến hết 31/08/2026 — đăng ký lộ trình dài, tiết kiệm càng lớn.</span></p>
-        <p class="cd-label b2s-only">Ưu đãi kết thúc sau:</p>
-        <div class="cd-boxes b2s-only">
-          <div class="cdt"><b class="cdb" data-u="d">0</b><span>ngày</span></div>
-          <div class="cdt"><b class="cdb" data-u="h">0</b><span>giờ</span></div>
-          <div class="cdt"><b class="cdb" data-u="m">0</b><span>phút</span></div>
-          <div class="cdt"><b class="cdb" data-u="s">0</b><span>giây</span></div>
-        </div>
+        <div class="bts-count b2s-only">Ưu đãi kết thúc sau <b class="bts-timer"></b></div>
         <div class="ochips">
           <span class="ochip">🎓 Học thử miễn phí</span>
           <span class="ochip">💳 Trả góp 0% học phí</span>
@@ -1192,15 +1170,6 @@ section{padding:60px 0}
 <div class="form-sec" id="dang-ky-2" style="background:#fff">
   <div class="wrap">
     <div class="form-card" style="border:1.6px solid #E4ECFA">
-      <div class="last-offer">
-        <p>🎒 <b class="offer-copy" data-evergreen="Ưu đãi đến 22% học phí cho học viên mới — đăng ký ngay hôm nay">Học bổng Back to School — tiết kiệm đến 18 triệu học phí, kết thúc sau:</b></p>
-        <div class="cd-boxes b2s-only">
-          <div class="cdt"><b class="cdb" data-u="d">0</b><span>ngày</span></div>
-          <div class="cdt"><b class="cdb" data-u="h">0</b><span>giờ</span></div>
-          <div class="cdt"><b class="cdb" data-u="m">0</b><span>phút</span></div>
-          <div class="cdt"><b class="cdb" data-u="s">0</b><span>giây</span></div>
-        </div>
-      </div>
       <h2>Bắt đầu lộ trình tiếng Anh của con ngay hôm nay</h2>
       <p class="lead">Đã chọn được trung tâm gần nhà? Để lại thông tin để YOLA xếp lịch học thử và kiểm tra trình độ miễn phí cho bé.</p>
       <div class="fmount" data-suffix="bot"></div>
@@ -1783,9 +1752,6 @@ document.querySelectorAll('a[href="#cam-ket"]').forEach(function(a){
         sec = Math.floor(left%60000/1000);
     var txt = (d>0 ? d+' ngày ' : '') + h + ' giờ ' + m + ' phút ' + sec + ' giây';
     document.querySelectorAll('.bts-timer, #bts-timer').forEach(function(el){ el.textContent = txt; });
-    var p2=function(n){return (n<10?'0':'')+n};
-    var vals={d:p2(d),h:p2(h),m:p2(m),s:p2(sec)};
-    document.querySelectorAll('.cdb').forEach(function(el){ el.textContent = vals[el.dataset.u]; });
     var w=document.getElementById('bts-count'); if(w) w.hidden=false;
   }
   tick();
