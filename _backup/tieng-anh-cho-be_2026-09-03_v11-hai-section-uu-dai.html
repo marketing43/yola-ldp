@@ -763,7 +763,7 @@ section{padding:60px 0}
 .promo2{background:#fff}
 .p2-title{font-size:clamp(24px,3.2vw,38px);font-weight:800;color:var(--navy);text-align:center;line-height:1.3;margin-bottom:14px}
 .p2-sub{font-size:clamp(15px,1.6vw,17px);font-weight:600;color:#42527a;text-align:center;max-width:720px;margin:0 auto}
-.p2-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:22px;margin-top:40px}
+.p2-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:22px;margin-top:40px}
 .p2-card{background:#fff;border:1.6px solid var(--border);border-radius:20px;padding:16px 16px 20px;box-shadow:0 8px 24px rgba(0,36,103,.06);display:flex;flex-direction:column}
 .p2-tile{aspect-ratio:1/1;border-radius:22px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;text-align:center;padding:18px;position:relative;overflow:hidden;box-shadow:inset 0 0 0 3px rgba(255,255,255,.55)}
 .p2-tile span{font-size:14px;font-weight:800;color:var(--navy);text-transform:uppercase;letter-spacing:.04em;position:relative;z-index:1}
@@ -799,7 +799,7 @@ section{padding:60px 0}
 <div class="hero" id="top">
   <div class="wrap">
     <div>
-      <span class="promo-tag" id="promo-tag"><span class="offer-copy" data-evergreen="🎁 Tiết kiệm đến 14 triệu học phí cho học viên mới">🎒 Học bổng Back to School — tiết kiệm đến 18 triệu</span></span>
+      <span class="promo-tag" id="promo-tag"><span class="offer-copy" data-evergreen="🎁 Ưu đãi đến 22% học phí cho học viên mới">🎒 Học bổng Back to School — tiết kiệm đến 18 triệu</span></span>
       <div class="bts-count" id="bts-count" hidden>Ưu đãi kết thúc sau <b id="bts-timer"></b></div>
       <h1>Tiếng Anh cho bé <span style="white-space:nowrap">4–14 tuổi</span></h1>
       <p class="h1-sub">Một lộ trình liền mạch <span class="hl">từ Mầm non đến Thiếu niên</span></p>
@@ -851,14 +851,47 @@ section{padding:60px 0}
 </section>
 
 <!-- ============ UU DAI ============ -->
-<section id="uu-dai" class="promo2">
+<section id="uu-dai" class="offer-sec">
   <div class="wrap">
-    <h2 class="p2-title"><span class="offer-copy" data-evergreen="Ưu đãi YOLA dành riêng cho bé">Vào năm học mới thật vững vàng<br>Trọn bộ học bổng và quà tặng tháng 9<br>YOLA dành riêng cho bé</span></h2>
-    <p class="p2-sub"><span class="offer-copy" data-evergreen="Tiết kiệm đến 14 triệu học phí cho học viên mới, cùng học thử miễn phí và trả góp 0% — để lại thông tin để YOLA báo mức ưu đãi chính xác cho khóa của bé.">Đăng ký đến hết 20/09/2026 — bé nhận đủ học bổng và quà tặng dưới đây từ YOLA.</span></p>
+    <div class="ostrip">
+      <div class="ostrip-main">
+        <span class="eyebrow" style="background:rgba(0,36,103,.08);color:var(--navy)">Ưu đãi đang áp dụng</span>
+        <div class="onum"><b class="offer-copy" data-evergreen="đến 22%">đến 18 triệu</b><span class="offer-copy" data-evergreen="ưu đãi học phí cho học viên mới">tiết kiệm học phí với Học bổng Back to School</span></div>
+        <p class="onote"><span class="offer-copy" data-evergreen="Đăng ký lộ trình dài, ưu đãi càng lớn — để lại thông tin để YOLA báo mức ưu đãi chính xác cho khóa của bé.">Tiết kiệm đến 18 triệu học phí cho học viên mới, đến hết 20/09/2026 — đăng ký lộ trình dài, tiết kiệm càng lớn.</span></p>
+        <p class="cd-label b2s-only">Ưu đãi kết thúc sau:</p>
+        <div class="cd-boxes b2s-only">
+          <div class="cdt"><b class="cdb" data-u="d">0</b><span>ngày</span></div>
+          <div class="cdt"><b class="cdb" data-u="h">0</b><span>giờ</span></div>
+          <div class="cdt"><b class="cdb" data-u="m">0</b><span>phút</span></div>
+          <div class="cdt"><b class="cdb" data-u="s">0</b><span>giây</span></div>
+        </div>
+        <div class="ochips">
+          <span class="ochip">🎓 Học thử miễn phí</span>
+          <span class="ochip">💳 Trả góp 0% học phí</span>
+        </div>
+        <div style="margin-top:20px"><a class="cta" href="#dang-ky"><span class="lbl">Đăng ký nhận ưu đãi</span><span class="tail"></span></a></div>
+      </div>
+      <div class="ogift-hero b2s-only">
+        <img class="gmascot" src="../assets/img_mascot_gift.webp" width="420" height="367" alt="Mascot voi YOLA tặng quà" loading="lazy">
+        <span class="gift-bubble">🎁 Miễn phí quà tặng độc quyền</span>
+        <div class="gift-cluster">
+          <img class="g1" src="../assets/img_gift_helmet.webp" width="520" height="350" alt="Quà tặng nón bảo hiểm YOLA" loading="lazy">
+          <img class="g2" src="../assets/img_gift_coat.webp" width="520" height="515" alt="Quà tặng áo mưa YOLA" loading="lazy">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ UU DAI 2 (template so sanh) ============ -->
+<section id="uu-dai-2" class="promo2 b2s-only">
+  <div class="wrap">
+    <h2 class="p2-title">Vào năm học mới thật vững vàng<br>Trọn bộ học bổng và quà tặng tháng 9<br>YOLA dành riêng cho bé</h2>
+    <p class="p2-sub">Đăng ký đến hết 20/09/2026 — bé nhận đủ học bổng và quà tặng dưới đây từ YOLA.</p>
     <div class="p2-grid">
       <div class="p2-card">
-        <div class="p2-tile" style="background:linear-gradient(160deg,#FDB0C9,#f791b3)"><span>Tiết kiệm</span><b class="offer-copy" data-evergreen="đến 14 triệu">đến<br>18 triệu</b><span>học phí</span></div>
-        <p class="offer-copy" data-evergreen="Ưu đãi học phí cho học viên mới — đăng ký lộ trình dài, ưu đãi càng lớn.">Học bổng Back to School cho học viên mới — đăng ký lộ trình dài, tiết kiệm càng lớn. Đến hết 20/09/2026.</p>
+        <div class="p2-tile" style="background:linear-gradient(160deg,#FDB0C9,#f791b3)"><span>Tiết kiệm</span><b>đến<br>18 triệu</b><span>học phí</span></div>
+        <p>Học bổng Back to School cho học viên mới — đăng ký lộ trình dài, tiết kiệm càng lớn. Đến hết 20/09/2026.</p>
       </div>
       <div class="p2-card">
         <div class="p2-tile" style="background:linear-gradient(160deg,#76D9F6,#3fc2ee)"><span>Bé học</span><b>Học thử<br>miễn phí</b><span>trước khi đăng ký</span></div>
@@ -868,7 +901,7 @@ section{padding:60px 0}
         <div class="p2-tile" style="background:linear-gradient(160deg,#FEE454,#f5d321)"><span>Trả góp</span><b>0%<br>lãi suất</b><span>học phí</span></div>
         <p>Chia nhỏ học phí thành từng đợt, không phát sinh lãi — ba mẹ nhẹ gánh đầu năm học.</p>
       </div>
-      <div class="p2-card b2s-only">
+      <div class="p2-card">
         <div class="p2-tile p2-gift" style="background:linear-gradient(160deg,#FEE454,#f5d321)">
           <span>Tặng bộ quà YOLA</span>
           <img class="pg1" src="../assets/img_gift_helmet.webp" width="520" height="350" alt="Quà tặng nón bảo hiểm YOLA" loading="lazy">
@@ -1076,7 +1109,7 @@ section{padding:60px 0}
   <div class="wrap">
     <div class="form-card">
       <h2>Nhận tư vấn lộ trình &amp; học phí cho bé</h2>
-      <p class="lead">Đã thấy chặng phù hợp với con? Để lại thông tin, YOLA gọi lại tư vấn điểm bắt đầu chính xác và xếp lịch học thử miễn phí. <b class="offer-copy" data-evergreen="Tiết kiệm đến 14 triệu học phí cho học viên mới.">Học bổng Back to School — tiết kiệm đến 18 triệu, đến hết 20/09.</b></p>
+      <p class="lead">Đã thấy chặng phù hợp với con? Để lại thông tin, YOLA gọi lại tư vấn điểm bắt đầu chính xác và xếp lịch học thử miễn phí. <b class="offer-copy" data-evergreen="Ưu đãi đến 22% học phí cho học viên mới.">Học bổng Back to School — tiết kiệm đến 18 triệu, đến hết 20/09.</b></p>
       <div class="fmount" data-suffix="mid"></div>
     </div>
   </div>
@@ -1244,7 +1277,7 @@ section{padding:60px 0}
   <div class="wrap">
     <div class="form-card" style="border:1.6px solid #E4ECFA">
       <div class="last-offer">
-        <p>🎒 <b class="offer-copy" data-evergreen="Tiết kiệm đến 14 triệu học phí cho học viên mới — đăng ký ngay hôm nay">Học bổng Back to School — tiết kiệm đến 18 triệu học phí, kết thúc sau:</b></p>
+        <p>🎒 <b class="offer-copy" data-evergreen="Ưu đãi đến 22% học phí cho học viên mới — đăng ký ngay hôm nay">Học bổng Back to School — tiết kiệm đến 18 triệu học phí, kết thúc sau:</b></p>
         <div class="cd-boxes b2s-only">
           <div class="cdt"><b class="cdb" data-u="d">0</b><span>ngày</span></div>
           <div class="cdt"><b class="cdb" data-u="h">0</b><span>giờ</span></div>

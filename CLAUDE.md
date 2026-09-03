@@ -58,3 +58,10 @@ Chất trẻ em đến từ ảnh + màu + mascot, không đổi font (brand ch�
 - Section Ưu đãi nền vàng nhạt, section Hoạt động nền hồng nhạt (màu phụ vẫn ≤20% theo brand)
 - Section Hoạt động ngoại khóa đặt ngay sau "Vì sao chọn YOLA", trước Chương trình
 - Backup các bản cũ nằm ở _backup/ (tieng-anh-cho-be_2026-08-26_v3.html)
+
+## Truyền thông ưu đãi bằng TIỀN, không dùng % (user chốt 03/09/2026)
+
+Mọi copy ưu đãi trên LP tieng-anh-cho-be chỉ dùng số tiền, luôn kèm "đến", làm tròn XUỐNG:
+- Trong đợt B2S 09/2026 (đến 20/09): "tiết kiệm đến 18 triệu" (từ 18.071.200 combo 4 YIP/JP/JS)
+- Fallback tự động sau 20/09: "tiết kiệm đến 14 triệu" (base 22% combo 4 = 14.071.200) — KHÔNG ghi 18 triệu ngoài đợt B2S vì mức đó gồm học bổng B2S
+- Khi có promotion tháng mới: tính lại số tiền từ bảng gốc rồi thay cả hai mức
