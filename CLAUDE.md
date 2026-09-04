@@ -65,3 +65,10 @@ Mọi copy ưu đãi trên LP tieng-anh-cho-be chỉ dùng số tiền, luôn k�
 - Trong đợt B2S 09/2026 (đến 20/09): "tiết kiệm đến 18 triệu" (từ 18.071.200 combo 4 YIP/JP/JS)
 - Fallback tự động sau 20/09: "tiết kiệm đến 14 triệu" (base 22% combo 4 = 14.071.200) — KHÔNG ghi 18 triệu ngoài đợt B2S vì mức đó gồm học bổng B2S
 - Khi có promotion tháng mới: tính lại số tiền từ bảng gốc rồi thay cả hai mức
+
+## CẢNH BÁO — Unicode và URL ảnh yola.vn (bài học 04/09/2026)
+
+File ảnh học viên trên yola.vn (wp-content) có tên tiếng Việt lưu dạng NFD (dấu tách rời).
+KHÔNG BAO GIỜ normalize Unicode (NFC) cho cả file HTML — sẽ đổi byte của URL và làm 404 ảnh.
+Nếu cần sửa lỗi font dấu tiếng Việt: chỉ normalize phần TEXT, giữ nguyên mọi chuỗi https://yola.vn/...
+(hoặc normalize xong thì đối chiếu lại URL với bản gốc như đã làm ở vụ này).
