@@ -1767,7 +1767,7 @@ function sendLead(progDisplay, centerDisplay, name, phone, descNote){
     program: PROGRAM_CRM[progDisplay] || '',
     center: centerCRM(centerDisplay),
     description: descNote + (PROGRAM_CRM[progDisplay] ? '' : ' — Quan tâm: ' + progDisplay),
-    landing_page_url: TRACK.first_url || location.href,
+    landing_page_url: location.href,
     submitted_at: vnTime(),
     utm_source: utmParam('utm_source'),
     utm_medium: utmParam('utm_medium'),
