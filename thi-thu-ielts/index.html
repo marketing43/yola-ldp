@@ -820,8 +820,8 @@ section{padding:60px 0}
 .why-grid.four{grid-template-columns:repeat(4,1fr)}
 @media(max-width:980px){.why-grid.four{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:560px){.why-grid.four{grid-template-columns:1fr}}
-.why .gift-thumbs{display:flex;gap:8px;margin-top:12px;flex-basis:100%;width:100%}
-.why .gift-thumbs img{width:64px;height:48px;object-fit:cover;border-radius:8px;border:1.6px solid var(--border)}
+.why .gift-thumbs{display:flex;gap:10px;align-items:flex-end;justify-content:center;margin-top:14px;flex-basis:100%;width:100%;background:linear-gradient(160deg,#FFF9D6,#FEE454);border-radius:14px;padding:14px 10px 10px}
+.why .gift-thumbs img{width:auto;height:96px;object-fit:contain;filter:drop-shadow(0 6px 10px rgba(0,36,103,.18))}
 /* Quy trình 5 bước */
 .path-grid.five{grid-template-columns:repeat(5,1fr)}
 @media(max-width:980px){.path-grid.five{grid-template-columns:repeat(3,1fr)}}
@@ -834,7 +834,7 @@ section{padding:60px 0}
 h1,h2,h3,h4,.sec-title{text-wrap:balance}
 p,li{text-wrap:pretty}
 .hero-pts li span{flex:1}
-@media(max-width:640px){.why .gift-thumbs{display:none}}
+@media(max-width:640px){.why .gift-thumbs{margin-top:10px}.why .gift-thumbs img{height:76px}}
 .otp-note{display:block;font-size:11.5px;color:#6b7a9c;font-weight:500;margin-top:5px;line-height:1.4}
 </style>
 </head>
@@ -897,7 +897,7 @@ p,li{text-wrap:pretty}
   <div class="wrap">
     <span class="eyebrow">Vì sao thi thử tại YOLA</span>
     <h2 class="sec-title">Kết quả đúng với sức mình,<br class="dtb"> không phải một con số ước lượng</h2>
-    <p class="sec-sub">Làm test online 10 câu chỉ cho một khoảng điểm rất rộng. Thi tại trung tâm, có giáo viên chấm Speaking trực tiếp, bạn biết mình đang ở band nào và thiếu gì ở từng kỹ năng.</p>
+    <p class="sec-sub">Thi đủ 4 kỹ năng tại trung tâm, có giáo viên chấm Speaking trực tiếp. Bạn biết mình đang ở band nào, mạnh yếu ở kỹ năng nào, và cần bao lâu để đến band mục tiêu.</p>
     <div class="why-grid four">
       <div class="why"><div class="ic" style="background:rgba(23,158,241,.12)"><svg width="26" height="26" viewBox="0 0 24 24" fill="#179EF1"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-9 14H7v-7h3v7zm4 0h-3V7h3v10zm4 0h-3v-4h3v4z"/></svg></div><h3>Đề thi đúng format thi thật</h3><p>Đủ 4 kỹ năng, dạng câu hỏi và thang chấm theo chuẩn IELTS. Bạn được trải nghiệm áp lực thời gian như trong phòng thi.</p></div>
       <div class="why"><div class="ic" style="background:rgba(144,235,54,.25)"><svg width="26" height="26" viewBox="0 0 24 24" fill="#4f9e0e"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg></div><h3>Speaking 1:1 với giáo viên</h3><p>Không chấm Speaking bằng máy. Giáo viên IELTS của YOLA hỏi trực tiếp, chấm theo 4 tiêu chí và chỉ ra điểm bạn đang mất.</p></div>
@@ -1001,10 +1001,10 @@ p,li{text-wrap:pretty}
   <div class="wrap teach">
     <div>
       <span class="eyebrow">Đội ngũ giáo viên IELTS</span>
-      <h2 class="sec-title">Người chấm Speaking của bạn dạy IELTS mỗi ngày</h2>
-      <p class="sec-sub">Phần Speaking trong bài thi thử do giáo viên IELTS của YOLA chấm trực tiếp. 9/9 giáo viên trong đội ngũ đạt IELTS 8.0 trở lên, 8/9 có bằng thạc sĩ từ đại học nước ngoài.</p>
+      <h2 class="sec-title">Giáo viên chấm Speaking cho bạn là người dạy IELTS mỗi ngày</h2>
+      <p class="sec-sub">Phần Speaking do giáo viên IELTS của YOLA chấm trực tiếp. Nhiều thầy cô từng du học và có bằng thạc sĩ từ đại học Úc, Anh — nên ngoài điểm số, bạn được tư vấn cả lộ trình học và hướng du học.</p>
       <div class="teach-facts">
-        <div class="tf"><div class="dot" style="background:rgba(254,228,84,.4)">8.0+</div><div><b>9/9 giáo viên IELTS 8.0 trở lên</b><span>Trong đó 3 giáo viên đạt 8.5.</span></div></div>
+        <div class="tf"><div class="dot" style="background:rgba(254,228,84,.4)">8.0+</div><div><b>Giáo viên luyện thi IELTS 8.0–9.0</b><span>Tốt nghiệp đại học, thạc sĩ ở nước ngoài; có kinh nghiệm học tập và làm việc ở nước ngoài.</span></div></div>
         <div class="tf"><div class="dot" style="background:rgba(23,158,241,.15)">3%</div><div><b>Top 3% ứng viên được chọn</b><span>Quy trình tuyển chọn và huấn luyện chuẩn học thuật.</span></div></div>
         <div class="tf"><div class="dot" style="background:rgba(144,235,54,.3)">✓</div><div><b>100% chứng chỉ giảng dạy quốc tế</b><span>TESOL, CELTA và các chứng chỉ chuyên môn tương đương.</span></div></div>
       </div>
@@ -1110,12 +1110,13 @@ p,li{text-wrap:pretty}
         <p style="font-weight:500">GCN ĐKDN số 0309139430 do Sở KH&amp;ĐT TP.HCM cấp, đăng ký lần đầu ngày 24/07/2009</p>
       </div>
       <div>
-        <h4>Chương trình</h4>
+        <h4>Trên trang này</h4>
         <ul>
-          <li><a href="https://uudai.yola.vn/">Luyện thi IELTS</a></li>
-          <li><a href="https://uudai.yola.vn/">Luyện thi IELTS Online</a></li>
-          <li><a href="https://uudai.yola.vn/tieng-anh-hoc-thuat-nen-tang/">Tiếng Anh nền tảng — Pre-IELTS</a></li>
-          <li><a href="https://uudai.yola.vn/">Các chương trình khác: Thiếu nhi, Thiếu niên, SAT →</a></li>
+          <li><a href="#vi-sao">Vì sao thi thử tại YOLA</a></li>
+          <li><a href="#quy-trinh">Quy trình 5 bước</a></li>
+          <li><a href="#uu-dai">Ưu đãi khi đăng ký học</a></li>
+          <li><a href="#giao-vien">Giáo viên chấm Speaking</a></li>
+          <li><a href="#faq">Câu hỏi thường gặp</a></li>
         </ul>
       </div>
       <div>
@@ -1156,7 +1157,7 @@ p,li{text-wrap:pretty}
       <div class="cbot-msg">Bạn để lại thông tin, YOLA gọi lại xếp lịch thi thử IELTS miễn phí tại trung tâm gần bạn nhé.</div>
       <form class="cbot-form" id="cbot-form">
         <div class="cfield"><label>Họ tên *</label><input id="cb-name" type="text" placeholder="Nhập họ tên" required></div>
-        <div class="cfield"><label>Số điện thoại (nhận OTP qua Zalo) *</label><input id="cb-phone" type="tel" inputmode="numeric" maxlength="10" placeholder="Nhập số điện thoại" required pattern="0[0-9]{9}" title="Số điện thoại gồm đúng 10 số, bắt đầu bằng số 0"></div>
+        <div class="cfield"><label>Số điện thoại *</label><input id="cb-phone" type="tel" inputmode="numeric" maxlength="10" placeholder="Nhập số điện thoại" required pattern="0[0-9]{9}" title="Số điện thoại gồm đúng 10 số, bắt đầu bằng số 0"></div>
         <div class="cfield"><label>Chương trình quan tâm</label><select id="cb-prog"></select></div>
         <div class="cfield"><label>Trung tâm gần bạn</label><select id="cb-center"></select></div>
         <div class="cfield"><label>Khung giờ muốn thi</label><select id="cb-slot"></select></div>
@@ -1257,18 +1258,18 @@ var STUDENT_TABS = {
   'IELTS': [
     {n:'Khánh Vy', s:'THPT Nguyễn Thượng Hiền', sc:'IELTS 8.5', img:'https://yola.vn/wp-content/uploads/2025/10/Mai-Nguyen-Khanh-Vy-IELTS-8.5-Hinh-cam-bang-2-e1761012166231-768x1147.jpg'},
     {n:'Tú Uyên', s:'THPT Đinh Thiện Lý', sc:'IELTS 8.5', img:'https://yola.vn/wp-content/uploads/2025/10/Nguyen-Tu-Uyen-IEL-8.5-CB.jpg'},
-    {n:'Như Dũng', s:'THPT Mạc Đĩnh Chi', sc:'IELTS 8.0', img:'https://yola.vn/wp-content/uploads/2025/10/Nguyễn-Như-Dũng-IELTS-8.0-Hình-cầm-bằng-768x1024.jpeg'},
+    {n:'Như Dũng', s:'THPT Mạc Đĩnh Chi', sc:'IELTS 8.0', img:'https://yola.vn/wp-content/uploads/2025/10/Nguyễn-Như-Dũng-IELTS-8.0-Hình-cầm-bằng-768x1024.jpeg'},
     {n:'Nhã Uyên', s:'THPT Chuyên Lê Hồng Phong', sc:'IELTS 8.0', img:'https://yola.vn/wp-content/uploads/2025/10/Screenshot-2025-10-29-at-10.46.15.png'},
     {n:'Gia Khang', s:'Quốc tế Á châu', sc:'IELTS 8.0', img:'https://yola.vn/wp-content/uploads/2025/10/IMG_8830-768x1024.jpg'},
-    {n:'Kiến Bách', s:'THCS Chuyên Trần Đại Nghĩa', sc:'IELTS 8.0', img:'https://yola.vn/wp-content/uploads/2025/10/Hình-cầm-bằng-e1761709446506-768x1070.jpg'},
-    {n:'Minh Nhân', s:'THPT Trần Khai Nguyên', sc:'IELTS 8.0', img:'https://yola.vn/wp-content/uploads/2025/10/Minh-nhân-e1761709355213.jpg'},
+    {n:'Kiến Bách', s:'THCS Chuyên Trần Đại Nghĩa', sc:'IELTS 8.0', img:'https://yola.vn/wp-content/uploads/2025/10/Hình-cầm-bằng-e1761709446506-768x1070.jpg'},
+    {n:'Minh Nhân', s:'THPT Trần Khai Nguyên', sc:'IELTS 8.0', img:'https://yola.vn/wp-content/uploads/2025/10/Minh-nhân-e1761709355213.jpg'},
     {n:'Quốc Đạt', s:'VGU', sc:'IELTS 8.0', img:'https://yola.vn/wp-content/uploads/2025/10/IMG_4869-768x1024.jpeg'},
-    {n:'Ý Nguyên', s:'THPT Nguyễn Thị Minh Khai', sc:'IELTS 8.0', img:'https://yola.vn/wp-content/uploads/2025/10/Dương-Ý-Nguyên-IELTS-8.0-Hình-cầm-bằng-e1761709069687-768x983.jpeg'},
-    {n:'Quang Khánh', s:'Phổ thông Năng khiếu', sc:'IELTS 8.0', img:'https://yola.vn/wp-content/uploads/2025/10/Dương-Quang-Khánh-Hình-cầm-bằng-IELTS-8.0-768x1025.jpg'},
+    {n:'Ý Nguyên', s:'THPT Nguyễn Thị Minh Khai', sc:'IELTS 8.0', img:'https://yola.vn/wp-content/uploads/2025/10/Dương-Ý-Nguyên-IELTS-8.0-Hình-cầm-bằng-e1761709069687-768x983.jpeg'},
+    {n:'Quang Khánh', s:'Phổ thông Năng khiếu', sc:'IELTS 8.0', img:'https://yola.vn/wp-content/uploads/2025/10/Dương-Quang-Khánh-Hình-cầm-bằng-IELTS-8.0-768x1025.jpg'},
     {n:'Quang Đăng', s:'PTTH Gia Định', sc:'IELTS 8.0', img:'https://yola.vn/wp-content/uploads/2025/10/Screenshot-2025-10-29-at-10.33.14-1-768x1159.jpg'},
-    {n:'Mỹ Mỹ', s:'THPT Bùi Thị Xuân', sc:'IELTS 8.0', img:'https://yola.vn/wp-content/uploads/2025/10/Lâm-Mỹ-Mỹ-IELTS-8.0-Hình-cầm-bằng-e1761708783822-768x1034.jpg'},
-    {n:'Minh Vũ', s:'THPT Chuyên Lê Hồng Phong', sc:'IELTS 8.0', img:'https://yola.vn/wp-content/uploads/2025/10/Nguyễn-Minh-Vũ-IELTS-8.0-Hình-cầm-bằng-768x1024.jpg'},
-    {n:'Nguyên Khang', s:'THCS Trần Hưng Đạo', sc:'IELTS 8.0', img:'https://yola.vn/wp-content/uploads/2025/10/Thân-Nguyên-Khang-IELTS-8.0-Hình-cầm-bằng-768x1164.jpg'},
+    {n:'Mỹ Mỹ', s:'THPT Bùi Thị Xuân', sc:'IELTS 8.0', img:'https://yola.vn/wp-content/uploads/2025/10/Lâm-Mỹ-Mỹ-IELTS-8.0-Hình-cầm-bằng-e1761708783822-768x1034.jpg'},
+    {n:'Minh Vũ', s:'THPT Chuyên Lê Hồng Phong', sc:'IELTS 8.0', img:'https://yola.vn/wp-content/uploads/2025/10/Nguyễn-Minh-Vũ-IELTS-8.0-Hình-cầm-bằng-768x1024.jpg'},
+    {n:'Nguyên Khang', s:'THCS Trần Hưng Đạo', sc:'IELTS 8.0', img:'https://yola.vn/wp-content/uploads/2025/10/Thân-Nguyên-Khang-IELTS-8.0-Hình-cầm-bằng-768x1164.jpg'},
     {n:'Bạch Vân', s:'THPT Phước Kiển', sc:'IELTS 8.0', img:'https://yola.vn/wp-content/uploads/2025/10/Screenshot-2025-10-21-at-22.07.28-1-768x1028.jpg'},
     {n:'Nguyên Huy', s:'THPT Đức Trọng', sc:'IELTS 8.0', img:'https://yola.vn/wp-content/uploads/2025/10/Screenshot-2025-10-21-at-22.05.31-1-768x1058.jpg'},
     {n:'Khải Ca', s:'THCS Hà Huy Tập', sc:'IELTS 8.0', img:'https://yola.vn/wp-content/uploads/2025/10/Ngo-Khai-Ca-IELTS-8.0-Hinh-cam-bang-e1761059016405-768x1402.jpg'},
@@ -1354,7 +1355,7 @@ function renderLeadForm(mount){
   '<form id="leadform-'+sfx+'" novalidate>'+
     '<div class="form-grid">'+
       '<div class="field"><label for="f-name-'+sfx+'">Họ tên *</label><input id="f-name-'+sfx+'" type="text" placeholder="Nguyễn Văn A" required autocomplete="name"></div>'+
-      '<div class="field"><label for="f-phone-'+sfx+'">Số điện thoại (nhận OTP qua Zalo) *</label><input id="f-phone-'+sfx+'" type="tel" inputmode="numeric" maxlength="10" placeholder="09xx xxx xxx" required pattern="0[0-9]{9}" autocomplete="tel" title="Số điện thoại gồm đúng 10 số, bắt đầu bằng số 0"><span class="otp-note">YOLA gửi mã OTP qua Zalo để chắc chắn liên hệ đúng số của bạn khi xếp lịch thi.</span></div>'+
+      '<div class="field"><label for="f-phone-'+sfx+'">Số điện thoại *</label><input id="f-phone-'+sfx+'" type="tel" inputmode="numeric" maxlength="10" placeholder="09xx xxx xxx" required pattern="0[0-9]{9}" autocomplete="tel" title="Số điện thoại gồm đúng 10 số, bắt đầu bằng số 0"></div>'+
       '<div class="field"><label for="f-prog-'+sfx+'">Chương trình bạn quan tâm</label><select id="f-prog-'+sfx+'"></select></div>'+
       '<div class="field"><label for="f-center-'+sfx+'">Trung tâm muốn thi *</label><select id="f-center-'+sfx+'"></select></div>'+
       '<div class="field'+(sfx==='hero'?'':' full')+'"><label for="f-slot-'+sfx+'">Khung giờ muốn thi *</label><select id="f-slot-'+sfx+'"></select></div>'+
