@@ -841,6 +841,8 @@ p,li{text-wrap:pretty}
 @media(max-width:560px){#uu-dai .bts-count{display:flex;flex-direction:column;gap:2px;border-radius:16px;width:100%}}
 /* Quà tặng trên mobile: nón nhỏ lại, nằm gọn trong tile, không bị áo mưa che */
 @media(max-width:560px){#uu-dai .p2-tile.p2-gift{min-height:240px}#uu-dai .p2-tile.p2-gift .pg1{width:52%;left:3%;top:auto;bottom:8%;transform:rotate(-6deg)}#uu-dai .p2-tile.p2-gift .pg2{width:46%;right:2%;bottom:6%;transform:rotate(6deg)}}
+/* iOS Safari tự zoom khi focus ô nhập có font < 16px và không zoom lại khi cuộn — ép 16px trên mobile */
+@media(max-width:820px){.field input,.field select,.hero-card .field input,.hero-card .field select,.cbot-form input,.cbot-form select,.otp-row input{font-size:16px}}
 </style>
 </head>
 <body>
