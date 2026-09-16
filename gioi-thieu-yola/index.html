@@ -335,8 +335,9 @@ footer li a:hover{color:var(--sky)}
 /* ===== Carousel card (chỉ mobile) cho section 2 & 3 — tự động trượt ===== */
 .v2-s2{padding:40px 0 20px}
 .only-m{display:none}
-.cslide{position:relative;padding:0}
-.cslide-track{grid-auto-columns:94vw;gap:10px;padding:6px 0 12px;align-items:end}
+.cslide{position:relative;padding:0;margin:0 -24px}
+.cslide-track{grid-auto-columns:88vw;gap:10px;padding:6px 16px 12px;scroll-padding-left:16px;align-items:end}
+.cslide-track::after{content:'';display:block;width:6px}
 .cslide-card{border-radius:0;margin:0;width:100%}
 .cslide-card .tb{font-size:3.6cqw;line-height:1.5}
 .cslide-card .tb.navy{color:#0B2467}
