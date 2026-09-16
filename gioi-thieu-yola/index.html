@@ -362,24 +362,11 @@ footer li a:hover{color:var(--sky)}
 .title-m .l-s5a{height:58px} .title-m .l-s5b{height:67px}
 @media(max-width:820px){ .v2-title.t4,.v2-title.t5{display:none} .title-m{display:flex} .s3-rest-m{font-size:30px} .comp-m.s3badge{max-width:250px} }
 
-/* ===== Section 3: 3 card so le trên desktop (thu nhỏ), carousel trên mobile ===== */
-.s3-head{display:flex;align-items:center;justify-content:center;gap:18px;flex-wrap:wrap;margin:0 auto 34px}
-.s3-head img{width:min(330px,60vw);height:auto}
-.s3-head span{color:#fff;font-weight:800;font-size:clamp(24px,3vw,40px);text-transform:uppercase;letter-spacing:.01em;line-height:1}
-#s3slide .cslide-track{display:flex;justify-content:center;align-items:flex-end;gap:28px;overflow:visible;padding:0;grid-auto-columns:auto;scroll-snap-type:none}
-#s3slide .cslide-card{width:min(370px,28vw);flex:0 0 auto}
-#s3slide .cslide-card:nth-child(2){margin-bottom:calc(min(370px,28vw)*.10)}
-#s3slide .cslide-card:nth-child(3){margin-bottom:calc(min(370px,28vw)*.20)}
-#s3slide .cslide-card .tb{font-size:4.5cqw;line-height:1.5}
-#s3slide .cslide-dots{display:none}
-@media(max-width:820px){
-  .s3-head{margin-bottom:24px;gap:10px}
-  .s3-head span{font-size:26px}
-  #s3slide .cslide-track{display:grid;justify-content:start;align-items:end;gap:8px;overflow-x:auto;padding:6px 16px 12px;grid-auto-columns:88vw;scroll-snap-type:x mandatory}
-  #s3slide .cslide-card{width:100%;margin-bottom:0 !important}
-  #s3slide .cslide-card .tb{font-size:4.2cqw}
-  #s3slide .cslide-dots{display:flex}
-}
+/* ===== Section 3: desktop = ảnh ghép design; mobile = carousel 3 card ===== */
+.s3-head{display:flex;align-items:center;justify-content:center;gap:10px;flex-wrap:wrap;margin:0 auto 24px}
+.s3-head img{width:min(250px,60vw);height:auto}
+.s3-head span{color:#fff;font-weight:800;font-size:26px;text-transform:uppercase;letter-spacing:.01em;line-height:1}
+#s3slide .cslide-card .tb{font-size:4.2cqw}
 </style>
 </head>
 <body>
@@ -418,7 +405,8 @@ footer li a:hover{color:var(--sky)}
 
 <!-- ============ SECTION 3 — RÕ TIẾN BỘ ============ -->
 <section class="v2-s3" id="tien-bo">
-  <div class="wrap">
+  <div class="comp comp-d"><img src="../assets/img_rb_s3_comp.webp" alt="Rõ tiến bộ trên từng khoá học" width="2200" height="1982" loading="lazy"><div class="tb dark" style="left:2.00%;top:64.00%;width:28.00%;height:33.50%"><p>Sau mỗi buổi học, ba mẹ được cập nhật chi tiết qua Zalo: hôm nay con học gì, 4 kỹ năng tiến bộ đến đâu, con thể hiện thế nào trong&nbsp;lớp.</p></div><div class="tb dark" style="left:35.50%;top:59.50%;width:29.00%;height:33.50%"><p>Con cần hỗ trợ kỹ năng nào, thầy cô kèm kịp thời kỹ năng đó. Khi phát hiện kỹ năng yếu, học sinh được học miễn phí: lớp kèm riêng, học nhóm, ôn ngữ pháp hay luyện Cambridge trước kỳ&nbsp;thi.</p><p>Phát hiện sớm, hỗ trợ sát sao kịp thời để đảm bảo sự tiến bộ cho&nbsp;con.</p></div><div class="tb dark" style="left:69.00%;top:55.00%;width:29.50%;height:33.50%"><p>Lớp trung bình 11–12 học sinh để buổi nào con cũng được nói, được&nbsp;sửa.</p><p>Giáo viên sâu sát, biết điểm mạnh và điểm yếu của từng học&nbsp;sinh.</p></div></div>
+  <div class="only-m">
     <div class="s3-head"><img src="../assets/img_rb_s3_title_m.webp" alt="Rõ tiến bộ" width="900" height="286" loading="lazy"><span>Trên từng khoá học</span></div>
     <div class="cslide" id="s3slide" data-autoplay="4200">
       <div class="cslide-track car-scroll" id="s3slide-track"><div class="comp cslide-card"><img src="../assets/img_rb_s3_card1_m.webp" alt="" loading="lazy" width="900" height="1640"><div class="tb dark" style="left:14.14%;top:55.95%;width:71.96%;height:41.10%"><p>Sau mỗi buổi học, ba mẹ được cập nhật chi tiết qua Zalo: hôm nay con học gì, 4 kỹ năng tiến bộ đến đâu, con thể hiện thế nào trong&nbsp;lớp.</p></div></div><div class="comp cslide-card"><img src="../assets/img_rb_s3_card2_m.webp" alt="" loading="lazy" width="900" height="1640"><div class="tb dark" style="left:14.14%;top:55.83%;width:71.96%;height:41.10%"><p>Con cần hỗ trợ kỹ năng nào, thầy cô kèm kịp thời kỹ năng đó. Khi phát hiện kỹ năng yếu, học sinh được học miễn phí: lớp kèm riêng, học nhóm, ôn ngữ pháp hay luyện Cambridge trước kỳ&nbsp;thi.</p><p>Phát hiện sớm, hỗ trợ sát sao kịp thời để đảm bảo sự tiến bộ cho&nbsp;con.</p></div></div><div class="comp cslide-card"><img src="../assets/img_rb_s3_card3_m.webp" alt="" loading="lazy" width="900" height="1640"><div class="tb dark" style="left:14.02%;top:55.58%;width:72.21%;height:41.10%"><p>Lớp trung bình 11–12 học sinh để buổi nào con cũng được nói, được&nbsp;sửa.</p><p>Giáo viên sâu sát, biết điểm mạnh và điểm yếu của từng học&nbsp;sinh.</p></div></div></div>
@@ -596,14 +584,14 @@ var STUDENT_TABS = {
   'IELTS': [
     {n:'Khánh Vy', s:'THPT Nguyễn Thượng Hiền', sc:'IELTS 8.5', img:'https://yola.vn/wp-content/uploads/2025/10/Mai-Nguyen-Khanh-Vy-IELTS-8.5-Hinh-cam-bang-2-e1761012166231-768x1147.jpg', cut:'../assets/hof/img_hof_00.webp'},
     {n:'Như Dũng', s:'THPT Mạc Đĩnh Chi', sc:'IELTS 8.0', img:'https://yola.vn/wp-content/uploads/2025/10/Nguyễn-Như-Dũng-IELTS-8.0-Hình-cầm-bằng-768x1024.jpeg', cut:'../assets/hof/img_hof_02.webp'},
-    {n:'Nhã Uyên', s:'THPT Chuyên Lê Hồng Phong', sc:'IELTS 8.0', img:'https://yola.vn/wp-content/uploads/2025/10/Screenshot-2025-10-29-at-10.46.15.png', cut:'../assets/hof/img_hof_03.webp', ph:82},
+    {n:'Nhã Uyên', s:'THPT Chuyên Lê Hồng Phong', sc:'IELTS 8.0', img:'https://yola.vn/wp-content/uploads/2025/10/Screenshot-2025-10-29-at-10.46.15.png', cut:'../assets/hof/img_hof_03_nha-uyen.webp', ph:82},
     {n:'Gia Khang', s:'Quốc tế Á châu', sc:'IELTS 8.0', img:'https://yola.vn/wp-content/uploads/2025/10/IMG_8830-768x1024.jpg', cut:'../assets/hof/img_hof_04.webp'},
     {n:'Kiến Bách', s:'THCS Chuyên Trần Đại Nghĩa', sc:'IELTS 8.0', img:'https://yola.vn/wp-content/uploads/2025/10/Hình-cầm-bằng-e1761709446506-768x1070.jpg', cut:'../assets/hof/img_hof_05.webp'},
-    {n:'Minh Nhân', s:'THPT Trần Khai Nguyên', sc:'IELTS 8.0', img:'https://yola.vn/wp-content/uploads/2025/10/Minh-nhân-e1761709355213.jpg', cut:'../assets/hof/img_hof_06.webp'},
+    {n:'Minh Nhân', s:'THPT Trần Khai Nguyên', sc:'IELTS 8.0', img:'https://yola.vn/wp-content/uploads/2025/10/Minh-nhân-e1761709355213.jpg', cut:'../assets/hof/img_hof_06_minh-nhan.webp'},
     {n:'Quốc Đạt', s:'VGU', sc:'IELTS 8.0', img:'https://yola.vn/wp-content/uploads/2025/10/IMG_4869-768x1024.jpeg', cut:'../assets/hof/img_hof_07.webp'},
     {n:'Ý Nguyên', s:'THPT Nguyễn Thị Minh Khai', sc:'IELTS 8.0', img:'https://yola.vn/wp-content/uploads/2025/10/Dương-Ý-Nguyên-IELTS-8.0-Hình-cầm-bằng-e1761709069687-768x983.jpeg', cut:'../assets/hof/img_hof_08.webp'},
     {n:'Quang Khánh', s:'Phổ thông Năng khiếu', sc:'IELTS 8.0', img:'https://yola.vn/wp-content/uploads/2025/10/Dương-Quang-Khánh-Hình-cầm-bằng-IELTS-8.0-768x1025.jpg', cut:'../assets/hof/img_hof_09.webp'},
-    {n:'Mỹ Mỹ', s:'THPT Bùi Thị Xuân', sc:'IELTS 8.0', img:'https://yola.vn/wp-content/uploads/2025/10/Lâm-Mỹ-Mỹ-IELTS-8.0-Hình-cầm-bằng-e1761708783822-768x1034.jpg', cut:'../assets/hof/img_hof_11.webp'},
+    {n:'Mỹ Mỹ', s:'THPT Bùi Thị Xuân', sc:'IELTS 8.0', img:'https://yola.vn/wp-content/uploads/2025/10/Lâm-Mỹ-Mỹ-IELTS-8.0-Hình-cầm-bằng-e1761708783822-768x1034.jpg', cut:'../assets/hof/img_hof_11_my-my.webp'},
     {n:'Minh Vũ', s:'THPT Chuyên Lê Hồng Phong', sc:'IELTS 8.0', img:'https://yola.vn/wp-content/uploads/2025/10/Nguyễn-Minh-Vũ-IELTS-8.0-Hình-cầm-bằng-768x1024.jpg', cut:'../assets/hof/img_hof_12.webp'},
     {n:'Nguyên Khang', s:'THCS Trần Hưng Đạo', sc:'IELTS 8.0', img:'https://yola.vn/wp-content/uploads/2025/10/Thân-Nguyên-Khang-IELTS-8.0-Hình-cầm-bằng-768x1164.jpg', cut:'../assets/hof/img_hof_13.webp'},
     {n:'Bạch Vân', s:'THPT Phước Kiển', sc:'IELTS 8.0', img:'https://yola.vn/wp-content/uploads/2025/10/Screenshot-2025-10-21-at-22.07.28-1-768x1028.jpg', cut:'../assets/hof/img_hof_14.webp', ph:82},
@@ -619,21 +607,21 @@ var STUDENT_TABS = {
     {n:'Vĩ Huê', s:'THPT Mạc Đĩnh Chi', sc:'IELTS 8.0', img:'https://yola.vn/wp-content/uploads/2025/10/stu-img-4.jpg', cut:'../assets/hof/img_hof_26.webp'},
     {n:'Thiên Hương', s:'THPT Đinh Thiện Lý', sc:'IELTS 8.0', img:'https://yola.vn/wp-content/uploads/2025/10/stu-img-7.jpg', cut:'../assets/hof/img_hof_27.webp'},
     {n:'An Nhiên', s:'THPT Chuyên Lê Hồng Phong', sc:'IELTS 8.0', img:'https://yola.vn/wp-content/uploads/2025/10/Screenshot-2025-10-14-at-23.10.13-1-768x961.jpg', cut:'../assets/hof/img_hof_28.webp'},
-    {n:'Gia Long', s:'THPT Linh Trung', sc:'IELTS 7.5', img:'https://yola.vn/wp-content/uploads/2025/10/stu-img-6.jpg', cut:'../assets/hof/img_hof_29.webp'}
+    {n:'Gia Long', s:'THPT Linh Trung', sc:'IELTS 7.5', img:'https://yola.vn/wp-content/uploads/2025/10/stu-img-6.jpg', cut:'../assets/hof/img_hof_29_gia-long.webp'}
   ],
   'CAMBRIDGE': [
-    {n:'Mai Chi', s:'TH Nguyễn Thượng Hiền', sc:'FLYERS 15 KHIÊN', img:'https://yola.vn/wp-content/uploads/2025/10/Copy-of-Nguyen-Mai-Chi-Flyers-15-khien-Hinh-cam-bang-scaled.jpg', cut:'../assets/hof/img_hof_30.webp'},
+    {n:'Mai Chi', s:'TH Nguyễn Thượng Hiền', sc:'FLYERS 15 KHIÊN', img:'https://yola.vn/wp-content/uploads/2025/10/Copy-of-Nguyen-Mai-Chi-Flyers-15-khien-Hinh-cam-bang-scaled.jpg', cut:'../assets/hof/img_hof_30_mai-chi.webp'},
     {n:'Lưu Quang', s:'TH Phước Bình', sc:'MOVERS 15 KHIÊN', img:'https://yola.vn/wp-content/uploads/2025/10/Copy-of-Tran-Duc-Luu-Quang-Movers-15-khien-Hinh-cam-bang-scaled.jpg', cut:'../assets/hof/img_hof_31.webp'},
     {n:'Minh Trí', s:'TH Đống Đa', sc:'MOVERS 15 KHIÊN', img:'https://yola.vn/wp-content/uploads/2025/10/Copy-of-Nguyen-Tan-Minh-Tri-Movers-15-khien-Hinh-cam-bang.jpg', cut:'../assets/hof/img_hof_32.webp'},
     {n:'Minh Bảo', s:'THCS Trần Đại Nghĩa', sc:'FLYERS 15 KHIÊN', img:'https://yola.vn/wp-content/uploads/2025/10/Copy-of-Nguyen-Minh-Bao-Hinh-cam-bang-FLYERS-15-KHIEN-scaled.jpg', cut:'../assets/hof/img_hof_33.webp'},
-    {n:'Khánh Thy', s:'TH An Bình', sc:'STARTERS 15 KHIÊN', img:'https://yola.vn/wp-content/uploads/2025/10/Copy-of-Nguyen-Le-Khanh-Thy-STARTERS-15-KHIEN-Hinh-cam-bang-scaled.jpeg', cut:'../assets/hof/img_hof_34.webp'},
+    {n:'Khánh Thy', s:'TH An Bình', sc:'STARTERS 15 KHIÊN', img:'https://yola.vn/wp-content/uploads/2025/10/Copy-of-Nguyen-Le-Khanh-Thy-STARTERS-15-KHIEN-Hinh-cam-bang-scaled.jpeg', cut:'../assets/hof/img_hof_34_khanh-thy.webp'},
     {n:'Chi Mai', s:'Trường Quốc Tế Mỹ (AISVN)', sc:'PET 162', img:'https://yola.vn/wp-content/uploads/2025/10/Copy-of-Nguyen-Le-Chi-Mai-PET-162-CB.jpg', cut:'../assets/hof/img_hof_35.webp'},
     {n:'Minh Quân', s:'THCS Hoàng Hoa Thám', sc:'KET 146', img:'https://yola.vn/wp-content/uploads/2025/10/Copy-of-Nguyen-Ho-Minh-Quan-KET-146-Hinh-cam-bang.png', cut:'../assets/hof/img_hof_36.webp'},
     {n:'Nhật Nguyên', s:'TH Trần Danh Lâm', sc:'KET 146', img:'https://yola.vn/wp-content/uploads/2025/10/Copy-of-Nguyen-Hoang-Nhat-Nguyen-KET-146-Hinh-cam-bang-scaled.jpg', cut:'../assets/hof/img_hof_37.webp', ph:82},
     {n:'Ân Phúc', s:'Sao Việt (Vstar School)', sc:'FLYERS 15 KHIÊN', img:'https://yola.vn/wp-content/uploads/2025/10/Copy-of-Nguyen-An-Phuc-Flyers-15-khien-Hinh-cam-bang-scaled.jpg', cut:'../assets/hof/img_hof_38.webp'},
-    {n:'Nam Khánh', s:'THCS Trần Quốc Toản 1', sc:'PET 164', img:'https://yola.vn/wp-content/uploads/2025/10/Le-Quang-Nam-Khanh-PET-164-Hinh-cam-bang-scaled.jpg', cut:'../assets/hof/img_hof_39.webp'},
+    {n:'Nam Khánh', s:'THCS Trần Quốc Toản 1', sc:'PET 164', img:'https://yola.vn/wp-content/uploads/2025/10/Le-Quang-Nam-Khanh-PET-164-Hinh-cam-bang-scaled.jpg', cut:'../assets/hof/img_hof_39_nam-khanh.webp'},
     {n:'Anh Minh', s:'TH Nguyễn Hiền', sc:'FLYERS 15 KHIÊN', img:'https://yola.vn/wp-content/uploads/2025/10/Copy-of-Le-Thai-Anh-Minh-FLYERS-15-KHIEN-Hinh-cam-bang-scaled.jpeg', cut:'../assets/hof/img_hof_40.webp', ph:82},
-    {n:'Tương Lam', s:'TH Lê Đức Thọ', sc:'STARTERS 15 KHIÊN', img:'https://yola.vn/wp-content/uploads/2025/10/Copy-of-Huynh-Ngoc-Tuong-Lam-STARTERS-15-khien-Hinh-cam-bang-scaled.jpg', cut:'../assets/hof/img_hof_41.webp'},
+    {n:'Tương Lam', s:'TH Lê Đức Thọ', sc:'STARTERS 15 KHIÊN', img:'https://yola.vn/wp-content/uploads/2025/10/Copy-of-Huynh-Ngoc-Tuong-Lam-STARTERS-15-khien-Hinh-cam-bang-scaled.jpg', cut:'../assets/hof/img_hof_41_tuong-lam.webp'},
     {n:'Đan Anh', s:'TH Lê Ngọc Hân', sc:'FLYERS 15 KHIÊN', img:'https://yola.vn/wp-content/uploads/2025/10/Copy-of-Le-Nguyen-Dan-Anh-Flyers-15-cam-bang.jpg', cut:'../assets/hof/img_hof_42.webp'},
     {n:'Bảo Hân', s:'TH Thực hành – ĐH Sài Gòn', sc:'MOVERS 15 KHIÊN', img:'https://yola.vn/wp-content/uploads/2025/10/Copy-of-Tran-Nguyen-Bao-Han-Movers-15k-CB.jpeg', cut:'../assets/hof/img_hof_43.webp'},
     {n:'Hồng Quang', s:'Song ngữ Quốc tế Hoàng Gia', sc:'KET 144', img:'https://yola.vn/wp-content/uploads/2025/10/Copy-of-Pham-Hong-Quang-Hinh-cam-bang-KET-144-scaled.jpeg', cut:'../assets/hof/img_hof_44.webp'},
@@ -641,13 +629,13 @@ var STUDENT_TABS = {
     {n:'Thanh Phong', s:'TH, THCS & THPT Trương Vĩnh Ký', sc:'KET 141', img:'https://yola.vn/wp-content/uploads/2025/10/Nguyen-Thanh-Phong-KET-141-CB.jpg', cut:'../assets/hof/img_hof_46.webp'},
     {n:'Minh Thư', s:'TH Lương Thế Vinh', sc:'FLYERS 15 KHIÊN', img:'https://yola.vn/wp-content/uploads/2025/10/Copy-of-Nguyen-Thai-Minh-Thu-Flyers-15-khien-Hinh-cam-bang.jpg', cut:'../assets/hof/img_hof_47.webp'},
     {n:'Phúc An', s:'TH Bình Triệu', sc:'FLYERS 15 KHIÊN', img:'https://yola.vn/wp-content/uploads/2025/10/Copy-of-Nguyen-Phuc-An-Flyers-15-khien-Hinh-cam-bang.jpg', cut:'../assets/hof/img_hof_48.webp'},
-    {n:'Hà My', s:'THCS Võ Văn Tần', sc:'KET 143', img:'https://yola.vn/wp-content/uploads/2025/10/Copy-of-Nguyen-Ngoc-Ha-My-KET-143-Hinh-cam-bang-scaled.jpg', cut:'../assets/hof/img_hof_49.webp'},
+    {n:'Hà My', s:'THCS Võ Văn Tần', sc:'KET 143', img:'https://yola.vn/wp-content/uploads/2025/10/Copy-of-Nguyen-Ngoc-Ha-My-KET-143-Hinh-cam-bang-scaled.jpg', cut:'../assets/hof/img_hof_49_ha-my.webp'},
     {n:'Minh Tâm', s:'TH Võ Thị Sáu', sc:'KET 141', img:'https://yola.vn/wp-content/uploads/2025/10/Copy-of-Nguyen-Minh-Tam-KET-141-Hinh-cam-bang.jpg', cut:'../assets/hof/img_hof_50.webp'},
     {n:'Nguyễn Kim', s:'TH Cổ Loa', sc:'FLYERS 15 KHIÊN', img:'https://yola.vn/wp-content/uploads/2025/10/Copy-of-Nguyen-Kim-Flyers-15-khien-CB-scaled.jpg', cut:'../assets/hof/img_hof_51.webp'},
     {n:'Uyên Thư', s:'TH Nguyễn Văn Trỗi', sc:'FLYERS 15 KHIÊN', img:'https://yola.vn/wp-content/uploads/2025/10/Copy-of-Le-Uyen-Thu-Flyers-15-khien-CB-scaled.jpg', cut:'../assets/hof/img_hof_52.webp'},
     {n:'Thảo Nhi', s:'THCS Nguyễn Thị Định', sc:'FLYERS 15 KHIÊN', img:'https://yola.vn/wp-content/uploads/2025/10/Copy-of-Le-Phuong-Thao-Nhi-Flyers-15-khien-Hinh-cam-bang-scaled.jpg', cut:'../assets/hof/img_hof_53.webp'},
     {n:'Minh Trí', s:'TH Nguyễn Văn Trỗi', sc:'FLYERS 15 KHIÊN', img:'https://yola.vn/wp-content/uploads/2025/10/Copy-of-Le-Hoang-Minh-Tri-Flyers-15-khien-Hinh-cam-bang.jpeg', cut:'../assets/hof/img_hof_54.webp'},
-    {n:'Phương Nghi', s:'THCS Lê Văn Việt', sc:'FLYERS 15 KHIÊN', img:'https://yola.vn/wp-content/uploads/2025/10/Copy-of-Ha-Phuong-Nghi-Hinh-cam-bang-Flyers-15-khien.jpg', cut:'../assets/hof/img_hof_55.webp'},
+    {n:'Phương Nghi', s:'THCS Lê Văn Việt', sc:'FLYERS 15 KHIÊN', img:'https://yola.vn/wp-content/uploads/2025/10/Copy-of-Ha-Phuong-Nghi-Hinh-cam-bang-Flyers-15-khien.jpg', cut:'../assets/hof/img_hof_55_phuong-nghi.webp'},
     {n:'Việt Duy', s:'TH Phước Bình', sc:'MOVERS 15 KHIÊN', img:'https://yola.vn/wp-content/uploads/2025/10/Vo-Viet-Duy-Movers-15-khien-Hinh-cam-bang-e1760457039817.jpg', cut:'../assets/hof/img_hof_57.webp'},
     {n:'Sơn Quân', s:'TH Đặng Văn Ngữ', sc:'FLYERS 15 KHIÊN', img:'https://yola.vn/wp-content/uploads/2025/10/Vu-Huynh-Son-Quan-Flyers-15-khien-CB-scaled.jpg', cut:'../assets/hof/img_hof_58.webp'}
   ],
