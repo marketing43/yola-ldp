@@ -741,7 +741,7 @@ function buildStudents(scrollId,tabsId,bgFn){
   });
   if(stuTabs.firstChild){ stuTabs.firstChild.classList.add('on'); stuTabs.firstChild.style.color='#fff'; render(STUDENT_TABS[stuTabs.firstChild.textContent],stuTabs.firstChild.textContent); }
 }
-function hofBgV3(tab,sc){ if(tab==='IELTS') return HOF_BG.blue; return hofBg(tab,sc); }
+function hofBgV3(tab,sc){ if(tab==='IELTS'||tab==='SAT') return HOF_BG.blue; return hofBg(tab,sc); }
 buildStudents('stu-scroll2','stu-tabs2',hofBgV3);
 ['tch-scroll2'].forEach(function(sid){ var tchScroll2=document.getElementById(sid); if(!tchScroll2) return;
 TEACHERS.forEach(function(t,i){
