@@ -8,7 +8,12 @@
 <meta property="og:title" content="Con bạn thuộc kiểu học nào? Test 5 phút cùng YOLA">
 <meta property="og:description" content="12 tình huống quen thuộc, 4 nhóm tính cách, 1 cách học tiếng Anh hợp với con.">
 <meta property="og:type" content="website">
-<!-- TODO: og:image — chờ creative giao result card mẫu (xem brief). Dùng file local ../assets/, không hotlink. -->
+<!-- OG IMAGE: creative giao file 1200×630 → lưu ../assets/img_disc_og.jpg (tên này, không đổi) là chạy. Không hotlink. -->
+<meta property="og:image" content="https://uudai.yola.vn/assets/img_disc_og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:url" content="https://uudai.yola.vn/phong-cach-hoc-cua-con/">
+<meta name="twitter:card" content="summary_large_image">
 <link rel="canonical" href="https://uudai.yola.vn/phong-cach-hoc-cua-con/">
 <link rel="icon" href="../assets/img_favicon.png">
 <link rel="preload" href="../assets/font_regular.woff2" as="font" type="font/woff2" crossorigin>
@@ -82,6 +87,8 @@ img{max-width:100%;display:block}
 .deck{position:relative;display:flex;justify-content:center;align-items:flex-start;margin:24px auto 0;padding-bottom:70px;max-width:420px}
 .mini{flex:none;width:31%;max-width:124px;aspect-ratio:3/4;margin:0 -1.5%;border-radius:18px;background:#fff;box-shadow:0 10px 26px rgba(0,36,103,.13);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;padding:10px 8px}
 .mini .q{width:48%;aspect-ratio:1;border-radius:50%;display:grid;place-items:center;font-weight:800;font-size:24px;color:#fff}
+.mini img{width:78%;aspect-ratio:1;object-fit:contain}
+.char img{width:112px;height:112px;object-fit:contain}
 .mini span{font-size:12px;font-weight:700;color:var(--navy);text-align:center;line-height:1.25}
 .mini:nth-child(1){transform:rotate(-12deg) translateY(18px);z-index:1}
 .mini:nth-child(2){transform:rotate(-4deg);z-index:2}
@@ -281,7 +288,7 @@ select.field:invalid,select.field.empty{color:#8A97B1}
   .card{padding:34px 30px 28px}
   .gate{padding:28px}
   .gate form{grid-template-columns:1fr 1fr;column-gap:14px}
-  .gate form>div:nth-child(3),.gate form>div:nth-child(4),.gate .consent,.gate .emsg[data-for=consent],.gate .cta,.gate .fine{grid-column:1/-1}
+  .gate form>.full,.gate .consent,.gate .emsg[data-for=consent],.gate .cta,.gate .fine{grid-column:1/-1}
   .intent{grid-template-columns:repeat(4,1fr)}
   .after{grid-template-columns:1fr 1fr}
   .after .cta{grid-column:1/-1}
@@ -433,10 +440,10 @@ select.field:invalid,select.field.empty{color:#8A97B1}
         <input type="text" name="website" id="hpWebsite" tabindex="-1" autocomplete="off" style="position:absolute;left:-9999px;opacity:0;height:0" aria-hidden="true">
         <div><label class="l" for="pName">Tên ba/mẹ</label><input class="field" id="pName" autocomplete="name" placeholder="VD: Chị Lan"><div class="emsg" data-for="pName">Ba mẹ nhập tên giúp YOLA nhé.</div></div>
         <div><label class="l" for="pPhone">Số điện thoại</label><input class="field" id="pPhone" type="tel" inputmode="numeric" autocomplete="tel" placeholder="VD: 0901 234 567"><div class="emsg" data-for="pPhone">Số điện thoại chưa đúng, ba mẹ kiểm tra lại nhé.</div></div>
-        <div><label class="l" for="pArea">Khu vực nhà mình</label>
+        <div class="full"><label class="l" for="pArea">Khu vực nhà mình</label>
           <select class="field empty" id="pArea" onchange="this.classList.toggle('empty',!this.value)"><option value="">Chọn khu vực</option></select>
           <div class="emsg" data-for="pArea">Ba mẹ chọn khu vực giúp YOLA nhé.</div></div>
-        <div><span class="l" style="font-size:13px;font-weight:600;opacity:.85;display:block;margin-bottom:6px">Ba mẹ đang tìm lớp tiếng Anh cho bé?</span>
+        <div class="full"><span class="l" style="font-size:13px;font-weight:600;opacity:.85;display:block;margin-bottom:6px">Ba mẹ đang tìm lớp tiếng Anh cho bé?</span>
           <div class="intent" id="intent">
             <label><input type="radio" name="intent" value="hot"><span>Đang tìm, muốn bắt đầu trong 1 tháng tới</span></label>
             <label><input type="radio" name="intent" value="warm"><span>Đang tìm hiểu, chưa gấp</span></label>
@@ -475,6 +482,13 @@ var LEAD_SOURCE = 'phong-cach-hoc-cua-con';
 var SHARE_URL_TEXT = 'uudai.yola.vn/phong-cach-hoc-cua-con';
 var ZALO_OA_URL = '';        // VD: https://zalo.me/xxxxxxxxxx — có thì hiện nút 'Nhắn YOLA qua Zalo' sau khi mở khóa.
 var PRIVACY_URL = '';        // link chính sách bảo mật; có thì chữ trong consent thành link.
+
+/* NHÂN VẬT 4 NHÓM — khi creative giao file, đặt vào ../assets/ đúng tên rồi đổi USE_CHAR_IMG = true.
+   Cần 8 file: img_disc_D_main.webp, img_disc_D_wave.webp (tương tự I/S/C). Nền trong suốt.
+   main = tư thế chính (thẻ intro, thẻ share); wave = tư thế chào (màn kết quả).
+   Chưa bật thì trang dùng icon SVG tạm. */
+var USE_CHAR_IMG = false;
+function charImg(k,pose){return '../assets/img_disc_'+k+'_'+(pose||'main')+'.webp'}
 
 /* Khu vực: TP.HCM gọi theo tên quận cũ cho PH dễ chọn. Sửa theo danh sách chi nhánh nếu cần. */
 var AREAS = ['Quận 1','Quận 3','Quận 4','Quận 5','Quận 6','Quận 7','Quận 8','Quận 10','Quận 11','Quận 12',
@@ -621,7 +635,7 @@ $('back').onclick=function(){
    INTRO
    ========================================================= */
 (function(){
-  var h='';ORDER.forEach(function(k){var t=TYPES[k];h+='<div class="mini"><div class="q" style="background:'+t.color+'">?</div><span>'+t.short+'</span></div>'});
+  var h='';ORDER.forEach(function(k){var t=TYPES[k];h+='<div class="mini">'+(USE_CHAR_IMG?'<img src="'+charImg(k)+'" alt="">':'<div class="q" style="background:'+t.color+'">?</div>')+'<span>'+t.short+'</span></div>'});
   h+='<img class="mascot" src="../assets/img_mascot_wave.webp" alt="">';
   $('deck').innerHTML=h;
 })();
@@ -762,7 +776,7 @@ function renderResult(){
   var bars='';ORDER.forEach(function(k){var v=r.scores[k];bars+='<div class="bar"><span>'+TYPES[k].short+'</span><span class="track"><b data-w="'+Math.round(v/QUESTIONS.length*100)+'" style="background:'+TYPES[k].color+'"></b></span><em>'+v+'</em></div>'});
   var blend = r.secondary ? '<p class="blend">Pha thêm chút '+TYPES[r.secondary].name+'</p>' : '';
   $('card').innerHTML='<span class="badge">Nhóm '+r.primary+'</span>'
-    +'<div class="char">'+ICONS[r.primary]+'<span class="letter">'+r.primary+'</span></div>'
+    +'<div class="char">'+(USE_CHAR_IMG?'<img src="'+charImg(r.primary,'wave')+'" alt="">':ICONS[r.primary])+'<span class="letter">'+r.primary+'</span></div>'
     +'<p class="who-line">'+esc(S.child)+' là</p><h2>'+t.name+'</h2><p class="tagline">'+t.tagline+'</p>'+blend
     +'<div class="bars">'+bars+'</div><i class="shine"></i>';
   $('rDesc').innerHTML=t.desc.replace('{ten}',esc(S.child));
@@ -879,16 +893,16 @@ function buildCard(){
   var r=S.result,t=TYPES[r.primary],W=1080,H=1350;
   var c=document.createElement('canvas');c.width=W;c.height=H;var x=c.getContext('2d');
   var F="'SVN-Gilroy',system-ui,sans-serif";
-  return Promise.all([document.fonts?document.fonts.ready:null,loadImg('../assets/img_logo_blue.png'),loadImg('data:image/svg+xml;charset=utf-8,'+encodeURIComponent(ICONS[r.primary].replace('<svg ','<svg width="140" height="140" ').replace(/currentColor/g,t.color)))]).then(function(res){
-    var logo=res[1],ico=res[2];
+  return Promise.all([document.fonts?document.fonts.ready:null,loadImg('../assets/img_logo_blue.png'),USE_CHAR_IMG?loadImg(charImg(r.primary)):null,loadImg('data:image/svg+xml;charset=utf-8,'+encodeURIComponent(ICONS[r.primary].replace('<svg ','<svg width="140" height="140" ').replace(/currentColor/g,t.color)))]).then(function(res){
+    var logo=res[1],chr=res[2];
     x.fillStyle=t.bg;x.fillRect(0,0,W,H);
     x.fillStyle=t.color;x.globalAlpha=.18;x.beginPath();x.arc(W-60,40,420,0,Math.PI*2);x.fill();x.globalAlpha=1;
     x.fillStyle='#fff';rr(x,70,90,W-140,H-180,48);x.fill();
     if(logo){var lh=64,lw=logo.width*lh/logo.height;x.drawImage(logo,120,140,lw,lh)}
     x.fillStyle=t.color;rr(x,W-120-230,145,230,56,28);x.fill();
     x.fillStyle='#fff';x.font='800 28px '+F;x.textAlign='center';x.fillText('NHÓM '+r.primary,W-120-115,183);
-    x.fillStyle=t.bg;x.beginPath();x.arc(W/2,400,120,0,Math.PI*2);x.fill();
-    drawIcon(x,r.primary,t.color,W/2-70,330,140);
+    x.fillStyle=t.bg;x.beginPath();x.arc(W/2,400,chr?170:120,0,Math.PI*2);x.fill();
+    if(chr){var ch=300,cw=chr.width*ch/chr.height;if(cw>420){cw=420;ch=chr.height*cw/chr.width}x.drawImage(chr,W/2-cw/2,400-ch/2,cw,ch)}else{drawIcon(x,r.primary,t.color,W/2-70,330,140)}
     x.fillStyle='#5A6B8C';x.font='600 40px '+F;x.fillText(S.child+' là',W/2,600);
     x.fillStyle='#002467';x.font='800 84px '+F;x.fillText(t.name,W/2,700);
     x.fillStyle='#0B1B3B';x.font='500 36px '+F;wrap(x,t.tagline,W/2,770,760,50);
