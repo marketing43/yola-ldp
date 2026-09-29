@@ -445,63 +445,6 @@ footer a:hover{color:#fff}
   .why h3{font-size:15px;margin-bottom:2px}
   .why p{font-size:12.5px;line-height:1.45}
 }
-
-/* ================= [THÊM 29/09/2026] SECTION GIÁO VIÊN — BẢN 2 =================
-   Copy nguyên từ section giáo viên của /gioi-thieu-yola/.
-   Mọi class mang tiền tố g2- để KHÔNG đè lên section giáo viên cũ và popup cũ.
-   Muốn gỡ: xóa khối CSS này + khối HTML #giao-vien-v2 + khối script cuối trang. */
-.g2-sec{background:#fff}
-@media(min-width:821px){.g2-sec{padding-top:46px}}
-.g2-title{display:block;margin:0 auto 28px;width:min(1170px,92%);height:auto}
-.g2-title-m{display:none;flex-direction:column;align-items:center;gap:6px;margin:0 auto 22px}
-.g2-title-m img{width:auto;max-width:92vw;display:block}
-.g2-title-m .l1{height:58px}
-.g2-title-m .l2{height:67px}
-@media(max-width:820px){.g2-title{display:none}.g2-title-m{display:flex}}
-.g2-car-wrap{position:relative}
-.g2-car-scroll{display:grid;grid-auto-flow:column;gap:18px;overflow-x:auto;scroll-behavior:smooth;padding:64px 2px 14px;scrollbar-width:none;align-items:stretch;scroll-snap-type:x mandatory;grid-auto-columns:290px}
-.g2-car-scroll::-webkit-scrollbar{display:none}
-.g2-car-scroll > *{scroll-snap-align:start}
-.g2-car-arrow{position:absolute;top:50%;transform:translateY(-50%);z-index:5;width:46px;height:46px;border-radius:50%;border:none;background:#fff;color:var(--navy);font-size:26px;line-height:1;cursor:pointer;box-shadow:0 6px 20px rgba(0,0,0,.25);transition:transform .15s;font-family:inherit}
-.g2-car-arrow:hover{transform:translateY(-50%) scale(1.08)}
-.g2-car-arrow.left{left:-58px}
-.g2-car-arrow.right{right:-58px}
-@media(max-width:1320px){.g2-car-arrow.left{left:-10px}.g2-car-arrow.right{right:-10px}}
-.g2-hint{display:none;text-align:center;font-size:13px;font-weight:600;color:var(--navy);opacity:.7;margin:2px 0 0;letter-spacing:.01em}
-.g2-hint b{display:inline-block;animation:g2-nudge 1.4s ease-in-out infinite;font-weight:800}
-@keyframes g2-nudge{0%,100%{transform:translateX(0)}50%{transform:translateX(5px)}}
-@media(max-width:820px){.g2-hint{display:block}}
-.g2-tch{cursor:pointer;text-align:center;align-self:start}
-.g2-tch .card{position:relative;border-radius:0;overflow:visible;background-size:cover;container-type:inline-size;box-shadow:none;display:block}
-.g2-tch .card::before{content:'';display:block;padding-top:101.7%}
-.g2-tch .pic{position:absolute;left:5%;right:5%;bottom:28.5%;height:91%;display:flex;align-items:flex-end;justify-content:center;z-index:1}
-.g2-tch .pic img{height:100%;width:auto;max-width:100%;object-fit:contain;object-position:bottom center;filter:drop-shadow(0 8px 14px rgba(0,0,0,.22))}
-.g2-tch .band{position:absolute;left:0;right:0;bottom:0;height:28.5%;display:flex;align-items:center;justify-content:space-between;gap:4%;padding:0 6%;z-index:2}
-.g2-tch .band .logo{height:74%;max-width:50%;display:flex;align-items:center}
-.g2-tch .band .logo img{max-height:100%;max-width:100%;width:auto;object-fit:contain}
-.g2-tch .band .score{color:#fff;font-weight:800;font-size:8.5cqw;white-space:nowrap;line-height:1}
-.g2-tch .meta{padding:14px 6px 0}
-.g2-tch .meta .role{display:block;font-size:13px;font-weight:600;color:#42527a}
-.g2-tch .meta b{display:block;font-size:17px;font-weight:800;color:var(--navy);text-transform:uppercase;line-height:1.2;margin-top:3px}
-.g2-tch .meta span.edu{display:block;font-size:13px;font-weight:500;color:#42527a;margin-top:3px}
-@media(max-width:820px){
-  .g2-car-scroll{grid-auto-columns:76vw;padding:16vw 16px 14px;scroll-padding-left:16px}
-  .g2-car-arrow{width:36px;height:36px;font-size:22px;box-shadow:0 4px 12px rgba(0,36,103,.22);opacity:.95}
-  .g2-car-arrow.left{left:4px}.g2-car-arrow.right{right:4px}
-}
-.g2-tmodal{position:fixed;inset:0;z-index:400;background:rgba(0,10,40,.72);display:none;align-items:center;justify-content:center;padding:20px}
-.g2-tmodal.open{display:flex}
-.g2-tmodal .box{background:#fff;border-radius:18px;width:min(440px,100%);max-height:calc(100vh - 40px);overflow:auto;position:relative;box-shadow:0 30px 80px rgba(0,0,0,.4)}
-.g2-tmodal .close{position:absolute;top:10px;right:10px;width:36px;height:36px;border-radius:50%;border:none;background:rgba(255,255,255,.9);color:var(--navy);font-size:20px;cursor:pointer;z-index:2;font-family:inherit}
-.g2-tmodal .top{background:linear-gradient(180deg,#1c1c1c,#0a0a0a);aspect-ratio:440/400;display:flex;align-items:flex-end;justify-content:center}
-.g2-tmodal .top img{height:100%;width:auto;max-width:100%;object-fit:contain;object-position:bottom}
-.g2-tmodal .panel{padding:22px 24px 26px}
-.g2-tmodal .role{font-size:13px;font-weight:600;color:#42527a}
-.g2-tmodal .name{font-size:22px;font-weight:800;color:var(--navy);text-transform:uppercase;line-height:1.2;margin:4px 0 14px;padding-bottom:12px;border-bottom:1px solid #E6EDF9}
-.g2-tmodal .bio{font-size:14.5px;color:#2b3a5c;font-weight:500;line-height:1.6}
-.g2-tmodal .bio p{margin-bottom:8px}
-.g2-tmodal .bio strong{color:var(--navy);font-weight:700}
-/* ================= hết khối THÊM 29/09/2026 ================= */
 </style>
 </head>
 <body>
@@ -801,28 +744,6 @@ footer a:hover{color:#fff}
     </div>
   </div>
 </section>
-
-<!-- ===== [THÊM 29/09/2026] TEACHERS — BẢN 2 (copy từ /gioi-thieu-yola/) — để so sánh với bản cũ ở trên ===== -->
-<section class="g2-sec" id="giao-vien-v2">
-  <div class="wrap">
-    <img class="g2-title" src="assets/img_rb_s5_title.webp" alt="Giáo viên 100% chứng chỉ giảng dạy" width="1800" height="267" loading="lazy">
-    <div class="g2-title-m"><img class="l1" src="assets/img_rb_s5_title_l1.webp" alt="Giáo viên" loading="lazy"><img class="l2" src="assets/img_rb_s5_title_l2.webp" alt="100% chứng chỉ giảng dạy" loading="lazy"></div>
-    <div class="g2-car-wrap">
-      <button type="button" class="g2-car-arrow left" aria-label="Trước">‹</button>
-      <div class="g2-car-scroll" id="g2-tch-scroll"></div>
-      <button type="button" class="g2-car-arrow right" aria-label="Sau">›</button>
-    </div>
-    <div class="g2-hint" aria-hidden="true">Vuốt hoặc bấm mũi tên để xem thêm <b>›</b></div>
-  </div>
-</section>
-<div class="g2-tmodal" id="g2-tmodal" role="dialog" aria-modal="true">
-  <div class="box">
-    <button type="button" class="close" id="g2-tmodal-close" aria-label="Đóng">✕</button>
-    <div class="top"><img id="g2-tm-img" src="" alt=""></div>
-    <div class="panel"><div class="role" id="g2-tm-role"></div><div class="name" id="g2-tm-name"></div><div class="bio" id="g2-tm-bio"></div></div>
-  </div>
-</div>
-<!-- ===== hết khối THÊM 29/09/2026 ===== -->
 
 <!-- ============ MODAL HỒ SƠ GIÁO VIÊN ============ -->
 <div class="tmodal" id="tmodal" hidden>
@@ -1561,80 +1482,5 @@ cbForm.addEventListener('submit',function(e){
 /* Close mobile nav on click */
 document.querySelectorAll('#mnav a').forEach(function(a){a.addEventListener('click',function(){document.getElementById('mnav').classList.remove('open')})});
 </script>
-<!-- ===== [THÊM 29/09/2026] JS cho section giáo viên bản 2 — thẻ script RIÊNG, bọc try/catch
-     để nếu khối này có lỗi cũng không ảnh hưởng form / tracking của trang ===== -->
-<script>
-(function(){ try{
-var TEACHERS_V2 = [
-  {role:'Quản lý Chương trình', name:'NGUYỄN THẢO ANH', edu:'Thạc sĩ ĐH Birmingham', score:'IELTS 8.5', img:'https://yola.vn/wp-content/uploads/2025/10/smem-img-1.webp', logo:'assets/tlogo/logo_08.webp', bio:'<p>Kinh nghiệm giảng dạy: <strong>10+ năm</strong></p><p>Chương trình quản lý: <strong>IELTS</strong></p><p>Thành tích: Thạc sĩ Giáo dục và Cải tiến Trường học tại Đại học Birmingham (Anh)</p><p>Triết lý giáo dục: “There are no shortcuts to excellence”</p>'},
-  {role:'Quản lý Đào tạo', name:'NGUYỄN THANH LY', edu:'Thạc sĩ ĐH Minnesota - Twin Cities', score:'SAT 1540', img:'https://yola.vn/wp-content/uploads/2025/10/TNH09152-e1759744850932.webp', logo:'assets/tlogo/logo_22.webp', bio:'<p>Kinh nghiệm giảng dạy: <strong>15+ năm</strong></p><p>Chương trình phụ trách: <strong>SAT</strong></p><p>Thành tích: <strong>Học bổng ASEAN (Singapore Ministry of Education, O and A Levels), Học bổng Kofi Annan (Macalester College, Bachelor’s)</strong></p>'},
-  {role:'Quản lý Giáo viên', name:'TRẦN HÀ MAI UYÊN', edu:'Thạc sĩ ĐH Portsmouth', score:'TESOL', img:'https://yola.vn/wp-content/uploads/2025/10/Mai-Uyen-1-768x876.webp', logo:'assets/tlogo/logo_23.webp', bio:'<p>Kinh nghiệm giảng dạy: <strong>9+ năm</strong></p><p>Thành tích:<br><strong>– MA in Applied Linguistics and TESOL</strong><br><strong>– TESOL/TEFL/TEYL Teaching Certificates</strong><br><strong>– Teacher Trainer</strong><br><strong>– National/International TESOL Speaker</strong><br><strong>– Digital and Collaborative Teaching Scholarship (New Zealand Education)</strong><br><strong>– Vietnam Ambassador Scholarship (Edge Hill University, UK)</strong><br><strong>– IELTS 8.0</strong></p><p>Triết lý giáo dục:<br>My instructional approach is centered on student-focused learning, where learners play an active role in constructing their own knowledge. I believe that true learning happens when students are engaged, reflective, and empowered to connect lessons with real-life contexts. Through activity-based learning, I aim to create a dynamic classroom environment that fosters curiosity, collaboration, and critical thinking. Ultimately, my goal is to help students not only improve their English proficiency but also develop the confidence and lifelong learning skills needed to thrive in an ever-changing world.</p>'},
-  {role:'Quản lý Giáo viên', name:'DIỆP THANH HÀO', edu:'Cử nhân ĐH Lahti', score:'IELTS 8.5', img:'https://yola.vn/wp-content/uploads/2025/10/Remove-background-project-scaled-e1759746794299-2-768x876.webp', logo:'assets/tlogo/logo_15.webp', bio:'<p>Kinh nghiệm giảng dạy: <strong>7+ năm</strong></p><p>Chứng chỉ: <strong>TEFL; IELTS 8.5</strong></p><p>Triết lý giáo dục:</p><p>I believe that students learn best when they feel inspired and engaged. Learning should be a joyful process. As a teacher, I see my role as a facilitator who provides students with the tools and encouragement they need to fully develop their potential.</p><p>Student-centered learning lies at the heart of my approach. I want students to explore, take ownership of their growth, and discover the joy of learning for themselves. My lessons are designed to create opportunities for active participation, critical thinking, and self-expression, allowing learners to build confidence as well as competence.</p><p>Beyond academic outcomes, I strive to instill the spirit of lifelong learning. I aim to prepare students for the next chapters of their lives by equipping them with transferable skills, such as resilience and adaptability. My goal is to nurture not only successful learners but also independent thinkers, equipped with the competence and courage to thrive in an ever-changing world.</p>'},
-  {role:'Quản lý Giáo viên', name:'ĐOÀN THỊ TỐ NHƯ', edu:'Thạc sĩ ĐH Victoria', score:'TESOL', img:'https://yola.vn/wp-content/uploads/2025/10/Nhu-Doan-2-768x876.webp', logo:'assets/tlogo/logo_19.webp', bio:'<p>Kinh nghiệm giảng dạy: <strong>7+ năm</strong></p><p>Thành tích: <strong>Master of TESOL; IELTS 8.0</strong></p>'},
-  {role:'Giáo viên', name:'NGUYỄN THÁI BÌNH', edu:'Thạc sĩ ĐH RMIT', score:'IELTS 9.0', img:'https://yola.vn/wp-content/uploads/2025/10/Binh-Nguyen-resize-1-768x876.webp', logo:'assets/tlogo/logo_17.webp', bio:'<p>Chứng chỉ: <strong>TESOL; IELTS 9.0</strong></p>'},
-  {role:'Giáo viên', name:'LÊ TRUNG HẬU', edu:'Thủ Khoa Thạc sĩ ĐH Curtin', score:'IELTS 8.0', img:'https://yola.vn/wp-content/uploads/2025/10/Hau-Le-resize-1-768x876.webp', logo:'assets/tlogo/logo_12.webp', bio:'<p>Chứng chỉ: <strong>IELTS 8.0</strong></p>'},
-  {role:'Giáo viên', name:'LÊ THANH BÌNH', edu:'Cử nhân ĐH Quốc gia Singapore', score:'IELTS 8.5', img:'https://yola.vn/wp-content/uploads/2025/10/LTB-scaled-e1759745982623-1-768x876.webp', logo:'assets/tlogo/logo_13.webp', bio:'<p>Kinh nghiệm giảng dạy: <strong>9+ năm</strong></p><p>Chứng chỉ: <strong>TESOL; IELTS 8.5</strong></p>'},
-  {role:'Giáo viên', name:'NGUYỄN DIỆU MINH', edu:'Thạc sĩ ĐH Melbourne', score:'TESOL', img:'https://yola.vn/wp-content/uploads/2025/10/Dieu-Minh-resize-2-768x876.webp', logo:'assets/tlogo/logo_11.webp', bio:'<p>Thành tích: <strong>Master of TESOL</strong></p>'},
-  {role:'Giáo viên', name:'QUANG KHẢI PHAN', edu:'Thạc sĩ ĐH Macquarie', score:'IELTS 8.5', img:'https://yola.vn/wp-content/uploads/2025/10/Khai-Phan-resize-2-768x876.webp', logo:'assets/tlogo/logo_02.webp', bio:'<p>Chứng chỉ: <strong>CELTA, IELTS 8.5</strong></p>'},
-  {role:'Giáo viên', name:'JESSY TAM WING YEN', edu:'Cử nhân ĐH Simon Fraser', score:'TESOL', img:'https://yola.vn/wp-content/uploads/2025/10/Jessy-scaled-e1759745752799-1-768x876.webp', logo:'assets/tlogo/logo_06.webp', bio:'<p>Chứng chỉ: <strong>TESOL</strong></p>'},
-  {role:'Giáo viên', name:'LIAM ROONEY', edu:'Cử nhân ĐH The Open University', score:'TEFL', img:'https://yola.vn/wp-content/uploads/2025/10/KPI00591-resize-1-2-768x876.webp', logo:'assets/tlogo/logo_18.webp', bio:'<p>Chứng chỉ: <strong>TEFL</strong></p>'},
-  {role:'Giáo viên', name:'DREW DAVIS', edu:'Cử nhân ĐH Walden', score:'TESOL', img:'https://yola.vn/wp-content/uploads/2025/10/KPI00591-resize-1-1-1-768x876.webp', logo:'assets/tlogo/logo_24.webp', bio:'<p>Kinh nghiệm giảng dạy: <strong>4+ năm</strong></p>'},
-  {role:'Giáo viên', name:'FABRIZIO PORRECA', edu:'Cử nhân ĐH Pegaso', score:'CELTA', img:'https://yola.vn/wp-content/uploads/2025/10/KPI0433-resize-1-768x876.webp', logo:'assets/tlogo/logo_05.webp', bio:'<p>Chứng chỉ: <strong>CELTA</strong></p>'},
-  {role:'Giáo viên', name:'DANIEL McALLISTER', edu:'Cử nhân ĐH Ulster', score:'CELTA', img:'https://yola.vn/wp-content/uploads/2025/10/Daniel-McAllister-Thomas-resize-1-768x876.webp', logo:'assets/tlogo/logo_20.webp', bio:'<p>Chứng chỉ: <strong>CELTA</strong></p>'},
-  {role:'Giáo viên', name:'BRENDA BANH', edu:'Cử nhân ĐH DePaul University', score:'TEFL', img:'https://yola.vn/wp-content/uploads/2025/10/Banh-resize-1-1-1-768x876.webp', logo:'assets/tlogo/logo_01.webp', bio:'<p>Chứng chỉ: <strong>TEFL</strong></p>'},
-  {role:'Giáo viên', name:'SAMER ELBEALY', edu:'Cử nhân ĐH Helwan', score:'TESOL', img:'https://yola.vn/wp-content/uploads/2025/10/Samer-Elbealy-resize-1-768x876.webp', logo:'assets/tlogo/logo_14.webp', bio:'<p>Chứng chỉ: <strong>TESOL</strong></p>'},
-  {role:'Giáo viên', name:'ĐÀO MINH KHÔI', edu:'Cử nhân ĐH Sheffield - UK', score:'SAT 1600', img:'https://yola.vn/wp-content/uploads/2025/10/THAY-KHOI-1-1-768x876.webp', logo:'assets/tlogo/logo_10.webp', bio:'<p>Kinh nghiệm giảng dạy: <strong>10+ năm</strong></p><p>Chứng chỉ: <strong>IELTS 8.5; SAT 1600</strong></p>'},
-  {role:'Giáo viên', name:'BOBBY NGUYEN', edu:'Cử nhân ĐH Hawaii', score:'CELTA', img:'https://yola.vn/wp-content/uploads/2025/10/Bobby-1-768x876.webp', logo:'assets/tlogo/logo_21.webp', bio:'<p>Chứng chỉ: <strong>CELTA</strong></p>'},
-  {role:'Giáo viên', name:'LÝ THANH THẢO', edu:'Cử nhân ĐH Queensland', score:'IELTS 8.5', img:'https://yola.vn/wp-content/uploads/2025/10/Thao-Ly-2-768x876.webp', logo:'assets/tlogo/logo_07.webp', bio:'<p>Kinh nghiệm giảng dạy: <strong>7+ năm</strong></p><p>Chứng chỉ: <strong>CELTA; IELTS 8.5</strong></p>'},
-  {role:'Giáo viên', name:'ANAHIT HAYRAPETYAN', edu:'Thạc sĩ ĐH Eurasia International', score:'TESOL', img:'https://yola.vn/wp-content/uploads/2025/10/KPI00750-resize-1-768x876.webp', logo:'assets/tlogo/logo_00.webp', bio:'<p>Chứng chỉ: <strong>TESOL</strong></p>'},
-  {role:'Giáo viên', name:'MELNIKOVA ALENA', edu:'Cử nhân ĐH Ural State Pedagogical', score:'TEFL', img:'https://yola.vn/wp-content/uploads/2025/10/MELNIKOVA-ALENA-resize-1-768x876.webp', logo:'assets/tlogo/logo_03.webp', bio:'<p>Chứng chỉ: <strong>TEFL</strong></p>'},
-  {role:'Giáo viên', name:'LÊ PHÚC HẢI', edu:'Cử nhân ĐH Greenwhich', score:'TESOL', img:'https://yola.vn/wp-content/uploads/2025/10/Hai-Le-resize-1-768x876.webp', logo:'assets/tlogo/logo_09.webp', bio:'<p>Chứng chỉ: <strong>TESOL; IELTS 8.0</strong></p>'},
-  {role:'Giáo viên', name:'NGỌC TRANG PHÙNG', edu:'Cử nhân ĐH Quốc Tế', score:'TESOL', img:'https://yola.vn/wp-content/uploads/2025/10/Trang-Phung-2-768x876.webp', logo:'assets/tlogo/logo_16.webp', bio:'<p>Chứng chỉ: <strong>TESOL</strong></p>'},
-  {role:'Giáo viên', name:'TRẦN MINH QUÂN', edu:'Cử nhân ĐH Tôn Đức Thắng', score:'IELTS 8.0', img:'https://yola.vn/wp-content/uploads/2025/10/Minh-Quan-resize-1-768x876.webp', logo:'assets/tlogo/logo_04.webp', bio:'<p>Chứng chỉ: <strong>TESOL; IELTS 8.0</strong></p>'}
-];
-  var G2_BGS=['assets/img_rb_teacher_bg_1.webp','assets/img_rb_teacher_bg_2.webp','assets/img_rb_teacher_bg_3.webp'];
-  function g2esc(s){ return String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/"/g,'&quot;'); }
-  var box=document.getElementById('g2-tch-scroll'), sec=document.getElementById('giao-vien-v2'), g2m=document.getElementById('g2-tmodal');
-  if(!box||!sec||!g2m) return;
-
-  /* popup hồ sơ giáo viên — hoàn toàn riêng, không đụng tmodal cũ */
-  function g2open(t){
-    var im=document.getElementById('g2-tm-img'); im.src=t.img; im.alt=t.name;
-    document.getElementById('g2-tm-role').textContent=t.role;
-    document.getElementById('g2-tm-name').textContent=t.name;
-    document.getElementById('g2-tm-bio').innerHTML = t.bio || ('<p>'+g2esc(t.edu)+'</p><p>Chứng chỉ / điểm: <strong>'+g2esc(t.score)+'</strong></p>');
-    g2m.classList.add('open'); document.body.style.overflow='hidden';
-  }
-  function g2close(){ g2m.classList.remove('open'); document.body.style.overflow=''; }
-  document.getElementById('g2-tmodal-close').addEventListener('click',g2close);
-  g2m.addEventListener('click',function(e){ if(e.target===g2m) g2close(); });
-  document.addEventListener('keydown',function(e){ if(e.key==='Escape' && g2m.classList.contains('open')) g2close(); });
-
-  /* dựng card */
-  TEACHERS_V2.forEach(function(t,i){
-    var d=document.createElement('div'); d.className='g2-tch';
-    d.innerHTML='<div class="card" style="background-image:url(\''+G2_BGS[i%3]+'\')">'+
-      '<div class="pic"><img src="'+g2esc(t.img)+'" alt="'+g2esc(t.name)+'" loading="lazy" width="392" height="446"></div>'+
-      '<div class="band"><span class="logo"><img src="'+g2esc(t.logo)+'" alt="'+g2esc(t.edu)+'" loading="lazy"></span><span class="score">'+g2esc(t.score)+'</span></div>'+
-      '</div>'+
-      '<div class="meta"><span class="role">'+g2esc(t.role)+'</span><b>'+g2esc(t.name)+'</b><span class="edu">'+g2esc(t.edu)+'</span></div>';
-    d.addEventListener('click',function(){ g2open(t); });
-    box.appendChild(d);
-  });
-
-  /* mũi tên trái/phải — chỉ tác động lên carousel này */
-  function g2step(){ var c=box.firstElementChild; if(!c) return 300;
-    var g=parseFloat(getComputedStyle(box).columnGap)||parseFloat(getComputedStyle(box).gap)||18;
-    return c.getBoundingClientRect().width+g; }
-  [].forEach.call(sec.querySelectorAll('.g2-car-arrow'),function(b){
-    b.addEventListener('click',function(){
-      var s=g2step()*(window.innerWidth<=820?1:2);
-      box.scrollBy({left: b.classList.contains('left')?-s:s, behavior:'smooth'});
-    });
-  });
-}catch(e){}
-})();
-</script>
 </body>
-
 </html>
