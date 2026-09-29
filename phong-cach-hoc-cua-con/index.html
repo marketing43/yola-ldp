@@ -271,7 +271,8 @@ select.field:invalid,select.field.empty{color:#8A97B1}
 .gate form{position:relative}
 .gate form{display:grid;gap:12px;margin-top:18px}
 .gate label.l{font-size:13px;font-weight:600;opacity:.85;display:block;margin-bottom:6px}
-.gate .field{font-size:16px;padding:14px 16px;border-color:transparent}
+.gate .field{font-size:16px;padding:14px 16px;border-color:transparent;color:var(--ink);caret-color:var(--navy);background:#fff}
+.gate .field::placeholder{color:#8A97B1}
 .gate .emsg{font-size:12px;margin-top:4px;display:none}
 .gate .emsg.show{display:block}
 .intent{display:grid;grid-template-columns:1fr 1fr;gap:8px}
