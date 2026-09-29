@@ -487,8 +487,8 @@ select.field:invalid,select.field.empty{color:#8A97B1}
     <!-- GATE -->
     <div class="gate" id="gate">
       <img class="gm" src="../assets/img_mascot_gift.webp" alt="">
-      <h3>Mở khóa cách học hợp với <span class="nm"></span></h3>
-      <p>Còn 4 phần: cách học tiếng Anh hợp với con, điều nên tránh, việc ba mẹ làm ở nhà và lớp học phù hợp.</p>
+      <h3>Mở 4 phần còn lại cho <span class="nm"></span></h3>
+      <p>Ba mẹ để lại thông tin, 4 phần bên dưới mở ngay tại đây: cách học hợp với con, điều nên tránh, việc ba mẹ làm ở nhà và lớp phù hợp. Miễn phí, không cần chờ.</p>
       <form id="leadForm" novalidate>
         <input type="text" name="website" id="hpWebsite" tabindex="-1" autocomplete="off" style="position:absolute;left:-9999px;opacity:0;height:0" aria-hidden="true">
         <div><label class="l" for="pName">Tên ba/mẹ</label><input class="field" id="pName" autocomplete="name" placeholder="VD: Chị Lan"><div class="emsg" data-for="pName">Ba mẹ nhập tên giúp YOLA nhé.</div></div>
@@ -504,10 +504,10 @@ select.field:invalid,select.field.empty{color:#8A97B1}
             <label><input type="radio" name="intent" value="result_only"><span>Chỉ muốn xem kết quả</span></label>
           </div>
           <div class="emsg" data-for="intent">Ba mẹ chọn 1 ý giúp YOLA nhé.</div></div>
-        <label class="consent"><input type="checkbox" id="consent"><span id="consentText">Tôi đồng ý để YOLA dùng thông tin trên để gửi kết quả qua Zalo, tư vấn việc học tiếng Anh cho bé, và đồng ý với chính sách bảo mật thông tin của YOLA.</span></label>
+        <label class="consent"><input type="checkbox" id="consent"><span id="consentText">Tôi đồng ý để YOLA liên hệ tư vấn việc học tiếng Anh cho bé khi cần, theo chính sách bảo mật thông tin của YOLA.</span></label>
         <div class="emsg" data-for="consent" style="margin-top:-6px">Ba mẹ tick đồng ý để xem kết quả nhé.</div>
-        <button class="cta" type="submit" id="unlockBtn">Mở khóa kết quả đầy đủ</button>
-        <p class="fine">YOLA sẽ gửi thêm bản kết quả qua Zalo của số điện thoại này.</p>
+        <button class="cta" type="submit" id="unlockBtn">Mở khóa ngay</button>
+        <p class="fine">Thông tin chỉ dùng để YOLA tư vấn khi ba mẹ cần. Không gửi tin nhắn hàng loạt.</p>
       </form>
     </div>
 
@@ -530,9 +530,11 @@ select.field:invalid,select.field.empty{color:#8A97B1}
 /* =========================================================
    CẤU HÌNH — chỉnh ở đây
    ========================================================= */
-var LEAD_WEBHOOK_URL = '';   // URL Apps Script / webhook nhận lead. Để trống = chỉ log console + dataLayer.
+var LEAD_WEBHOOK_URL = 'https://script.google.com/macros/s/AKfycbyM0bJjUfB1lMvhrQOue_MRT1Wc7N_RrEnoMCLtC14phUYcHxBax2MtBswfzTOKzIWJAQ/exec';   // Apps Script sheet 'YOLA Landing Leads' (dùng chung mọi LDP). Để trống = chỉ log console.
 var LEAD_SOURCE = 'phong-cach-hoc-cua-con';
 var SHARE_URL_TEXT = 'uudai.yola.vn/phong-cach-hoc-cua-con';
+var INTENT_LABEL={hot:'Đang tìm, bắt đầu trong 1 tháng',warm:'Đang tìm hiểu, chưa gấp',other_center:'Bé đang học nơi khác',result_only:'Chỉ muốn xem kết quả'};
+function crmProgram(a){return a<=5?'YOLA International Program (3-6)':a<=11?'JUNIOR PRIMARY':'JUNIOR'}
 var ZALO_OA_URL = '';        // VD: https://zalo.me/xxxxxxxxxx — có thì hiện nút 'Nhắn YOLA qua Zalo' sau khi mở khóa.
 var PRIVACY_URL = '';        // link chính sách bảo mật; có thì chữ trong consent thành link.
 
@@ -905,7 +907,7 @@ function renderLocked(open){
      +'<p style="font-weight:700;color:var(--navy);margin:16px 0 8px">Câu nói giúp '+nm+' tiến bộ</p><div class="quote">'+t.say.map(function(x){return '<p>'+x+'</p>'}).join('')+'</div></div>'
    +'<div class="sec unlocking"><h3><span class="n">6</span><span>Lớp học phù hợp với '+nm+'</span></h3><p>'+t.classFit+'</p>'
      +'<div class="prog-card" style="margin-top:14px"><img src="'+p.img+'" alt=""><div><small>Gợi ý theo tuổi của '+nm+' ('+S.age+' tuổi)</small><b>'+p.name+'</b><small>'+p.note+'</small></div></div>'
-     +'<div class="tell">Khi được tư vấn, ba mẹ nói với giáo viên: <b>“'+nm+' thuộc nhóm '+t.name+', '+t.tell+'.”</b> Giáo viên sẽ xếp lớp và cách kèm hợp với con hơn.</div></div>';
+     +'<div class="tell">Khi đến YOLA, ba mẹ nói với giáo viên: <b>“'+nm+' thuộc nhóm '+t.name+', '+t.tell+'.”</b> Giáo viên sẽ xếp lớp và cách kèm hợp với con hơn.</div></div>';
   $('progLink').href='../tieng-anh-cho-be/'+p.anchor;
 }
 
@@ -945,7 +947,7 @@ $('leadForm').addEventListener('submit',function(e){
   track('disc_lead_submit',{disc_type:r.primary,child_age:S.age,intent:it.value,area:area,
     user_data:{phone_number:'+84'+phone.slice(1)}});
 
-  $('unlockBtn').disabled=true;$('unlockBtn').textContent='Đang mở khóa…';
+  $('unlockBtn').disabled=true;$('unlockBtn').textContent='Đang mở…';
   setTimeout(function(){
     $('gate').hidden=true;renderLocked(true);$('after').hidden=false;
     var f=document.querySelector('#lockedArea .sec');if(f)f.scrollIntoView({behavior:'smooth',block:'start'});
@@ -955,8 +957,19 @@ $('leadForm').addEventListener('submit',function(e){
 
 function sendLead(p){
   window.__lastLead=p;
-  if(!LEAD_WEBHOOK_URL){console.log('[DISC lead — chưa có webhook]',p);return}
-  var body=JSON.stringify(p);
+  var u=p.utm||{};
+  var row={
+    full_name:p.parent_name, phone_number:p.phone,
+    program:crmProgram(p.child_age), center:'',
+    description:'Test tính cách DISC | Bé: '+p.child_name+', '+p.child_age+' tuổi | Nhóm: '+p.disc_type+' – '+p.disc_type_name+' (D'+p.score_d+' I'+p.score_i+' S'+p.score_s+' C'+p.score_c+')'+(p.disc_secondary?' + '+p.disc_secondary:'')+' | Khu vực: '+p.area+' | Ý định: '+(INTENT_LABEL[p.intent]||p.intent)+' | Người trả lời: '+(p.respondent==='child'?'bé tự làm':'ba mẹ')+(p.repeat_child?' | Bé thứ 2 cùng SĐT':''),
+    landing_page_url:location.href.split('#')[0], submitted_at:p.submitted_at,
+    utm_source:u.utm_source||'', utm_medium:u.utm_medium||'', utm_campaign:u.utm_campaign||'', utm_content:u.utm_content||'', utm_term:u.utm_term||'',
+    gclid:u.gclid||'', referrer:p.referrer||'', device:/Mobi|Android/i.test(navigator.userAgent)?'mobile':'desktop', page_path:location.pathname,
+    source:LEAD_SOURCE, disc_type:p.disc_type, child_name:p.child_name, child_age:p.child_age, intent:p.intent, area:p.area, answers:p.answers
+  };
+  window.__lastRow=row;
+  if(!LEAD_WEBHOOK_URL){console.log('[DISC lead — chưa có webhook]',row);return}
+  var body=JSON.stringify(row);
   try{fetch(LEAD_WEBHOOK_URL,{method:'POST',mode:'no-cors',keepalive:true,headers:{'Content-Type':'text/plain;charset=utf-8'},body:body}).catch(function(){})}catch(e){}
 }
 
