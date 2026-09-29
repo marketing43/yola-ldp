@@ -81,7 +81,7 @@ img{max-width:100%;display:block}
 .intro{padding-top:8px;text-align:center}
 .kicker{display:inline-flex;align-items:center;gap:6px;background:#fff;border-radius:99px;padding:6px 14px;font-size:13px;font-weight:600;color:var(--navy);box-shadow:0 2px 10px rgba(0,36,103,.06)}
 .kicker .dot{width:8px;height:8px;border-radius:50%;background:var(--lime)}
-.intro h1{font-size:clamp(30px,8.4vw,40px);font-weight:800;color:var(--navy);margin:16px 0 10px;letter-spacing:-.5px}
+.intro h1{font-size:clamp(28px,7.6vw,36px);font-weight:800;color:var(--navy);margin:16px 0 10px;letter-spacing:-.5px}
 .intro h1 em{font-style:normal;color:var(--blue)}
 .intro .sub{font-size:16px;color:var(--muted);max-width:400px;margin:0 auto}
 .deck{position:relative;display:flex;justify-content:center;align-items:flex-start;margin:24px auto 0;padding-bottom:70px;max-width:420px}
@@ -103,7 +103,13 @@ img{max-width:100%;display:block}
 .cta[disabled]{background:#A9CFEA;box-shadow:0 6px 0 #8DB6D3;cursor:not-allowed}
 .cta svg{width:20px;height:20px}
 .fine{font-size:12px;color:var(--muted);margin-top:12px;text-align:center}
-.intro .how{margin-top:28px;text-align:left;background:rgba(255,255,255,.75);border-radius:var(--r);padding:18px}
+.types4{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:26px;text-align:left}
+.t4{background:#fff;border-radius:18px;padding:14px;display:flex;gap:10px;align-items:flex-start;box-shadow:0 4px 14px rgba(0,36,103,.05)}
+.t4 .ic{flex:none;width:40px;height:40px;border-radius:12px;display:grid;place-items:center;color:var(--tc)}
+.t4 .ic svg{width:24px;height:24px}
+.t4 b{display:block;font-size:14px;color:var(--navy);line-height:1.2}
+.t4 small{display:block;font-size:12px;color:var(--muted);margin-top:3px;line-height:1.35}
+.intro .how{margin-top:16px;text-align:left;background:rgba(255,255,255,.75);border-radius:var(--r);padding:18px}
 .how h3{font-size:15px;color:var(--navy);margin-bottom:10px}
 .how ol{list-style:none;display:grid;gap:10px;counter-reset:s}
 .how li{display:flex;gap:10px;font-size:14px;align-items:flex-start}
@@ -218,6 +224,7 @@ select.field:invalid,select.field.empty{color:#8A97B1}
 .sec h3{font-size:18px;color:var(--navy);margin-bottom:10px;display:flex;align-items:center;gap:10px}
 .sec h3 .n{width:28px;height:28px;border-radius:9px;background:var(--tbg);color:var(--tc);display:grid;place-items:center;font-size:14px;font-weight:800;flex:none}
 .sec p{font-size:15px}
+.agetag{display:inline-block;font-size:12px;font-weight:700;color:var(--navy);background:var(--tbg);padding:4px 10px;border-radius:99px;margin-bottom:12px}
 .chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
 .chips span{font-size:13px;font-weight:700;background:var(--tbg);color:var(--navy);padding:6px 12px;border-radius:99px}
 .list{list-style:none;display:grid;gap:10px}
@@ -230,6 +237,9 @@ select.field:invalid,select.field.empty{color:#8A97B1}
 
 /* phần khóa */
 .locked{position:relative}
+.teaser{font-size:15px;color:var(--ink);margin-bottom:12px;padding-left:26px;position:relative}
+.teaser::before{content:'';position:absolute;left:4px;top:7px;width:10px;height:10px;border-radius:50%;background:var(--tc)}
+.teaser em{font-style:normal;font-weight:700;color:var(--blue)}
 .locked .sk{display:grid;gap:9px}
 .locked .sk i{height:12px;border-radius:99px;background:linear-gradient(90deg,#EEF3FB,#E1E9F6,#EEF3FB);background-size:200% 100%;animation:sk 1.6s linear infinite}
 .locked .sk i:nth-child(2){width:86%}.locked .sk i:nth-child(3){width:92%}.locked .sk i:nth-child(4){width:64%}
@@ -238,27 +248,31 @@ select.field:invalid,select.field.empty{color:#8A97B1}
 .unlocking{animation:unlock .6s ease both}
 @keyframes unlock{from{opacity:.2;filter:blur(6px)}to{opacity:1;filter:none}}
 
-.gate{margin-top:14px;border-radius:26px;padding:22px 18px;background:var(--navy);color:#fff;position:relative;overflow:hidden}
+.gate{margin-top:14px;border-radius:26px;padding:22px 18px;background:var(--blue);color:#fff;position:relative;overflow:hidden}
+.gate::before{content:'';position:absolute;right:-60px;bottom:-80px;width:260px;height:260px;border-radius:50%;background:rgba(255,255,255,.12)}
 .gate .gm{position:absolute;right:-12px;top:-8px;width:104px;opacity:.95}
-.gate h3{font-size:21px;font-weight:800;max-width:74%;margin-bottom:6px}
-.gate>p{font-size:14px;opacity:.85;max-width:78%}
+.gate h3{font-size:21px;font-weight:800;max-width:74%;margin-bottom:6px;position:relative}
+.gate>p{font-size:14px;opacity:.92;max-width:78%;position:relative}
+.gate form{position:relative}
 .gate form{display:grid;gap:12px;margin-top:18px}
 .gate label.l{font-size:13px;font-weight:600;opacity:.85;display:block;margin-bottom:6px}
 .gate .field{font-size:16px;padding:14px 16px;border-color:transparent}
-.gate .field.err{border-color:#FF8A80}
-.gate .emsg{font-size:12px;color:#FFB4AB;margin-top:4px;display:none}
+.gate .emsg{font-size:12px;margin-top:4px;display:none}
 .gate .emsg.show{display:block}
 .intent{display:grid;grid-template-columns:1fr 1fr;gap:8px}
 .intent label{position:relative}
 .intent input{position:absolute;opacity:0}
-.intent span{display:flex;align-items:center;min-height:52px;padding:10px 12px;border-radius:14px;background:rgba(255,255,255,.1);border:2px solid rgba(255,255,255,.15);font-size:13px;font-weight:600;line-height:1.3;cursor:pointer;transition:background .15s,border-color .15s}
-.intent input:checked+span{background:rgba(23,158,241,.3);border-color:var(--sky)}
+.intent span{display:flex;align-items:center;min-height:52px;padding:10px 12px;border-radius:14px;background:rgba(255,255,255,.14);border:2px solid rgba(255,255,255,.25);font-size:13px;font-weight:600;line-height:1.3;cursor:pointer;transition:background .15s,border-color .15s}
+.intent input:checked+span{background:#fff;border-color:#fff;color:var(--navy)}
 .intent input:focus-visible+span{outline:2px solid var(--yellow)}
 .consent{display:flex;gap:10px;align-items:flex-start;font-size:12.5px;opacity:.9;cursor:pointer}
-.consent input{margin-top:2px;width:18px;height:18px;accent-color:var(--lime);flex:none}
-.gate .cta{background:var(--lime);color:var(--navy);box-shadow:0 6px 0 #5FB617,0 12px 24px rgba(0,0,0,.2)}
-.gate .cta:active{box-shadow:0 2px 0 #5FB617}
-.gate .fine{color:rgba(255,255,255,.7)}
+.consent input{margin-top:2px;width:18px;height:18px;accent-color:var(--pink);flex:none}
+.gate .cta{background:var(--pink);color:var(--navy);box-shadow:0 6px 0 #E4849F,0 12px 24px rgba(0,0,0,.18)}
+.gate .cta:active{box-shadow:0 2px 0 #E4849F}
+.gate .cta[disabled]{background:#F5D3DD;box-shadow:0 6px 0 #E4B3C1}
+.gate .fine{color:rgba(255,255,255,.85)}
+.gate .emsg{color:#FFE1E8}
+.gate .field.err{border-color:#FFB4C6}
 
 .after{display:grid;gap:12px;margin-top:18px}
 .btn2{display:flex;align-items:center;justify-content:center;gap:8px;width:100%;padding:15px;border-radius:16px;background:#fff;color:var(--navy);font-weight:700;font-size:15px;border:2px solid var(--line)}
@@ -297,7 +311,7 @@ select.field:invalid,select.field.empty{color:#8A97B1}
   .shell.wide{max-width:1040px}
   .intro.on{display:grid;grid-template-columns:1fr 1fr;column-gap:56px;align-items:center;text-align:left;padding-top:40px}
   .intro>*{grid-column:1}
-  .intro h1{font-size:54px;margin-top:18px}
+  .intro h1{font-size:46px;margin-top:18px}
   .intro .sub{margin:0;font-size:18px}
   .intro .deck{grid-column:2;grid-row:1/span 6;max-width:460px;margin:0;justify-self:center;padding-bottom:90px}
   .mini{max-width:150px;padding:16px}
@@ -305,7 +319,8 @@ select.field:invalid,select.field.empty{color:#8A97B1}
   .deck .mascot{width:150px}
   .facts{justify-content:flex-start;margin-top:22px}
   .intro .cta{max-width:360px}
-  .intro .how{grid-column:1/-1;margin-top:40px;padding:24px 28px}
+  .intro .types4{grid-column:1/-1;grid-template-columns:repeat(4,1fr);margin-top:36px}
+  .intro .how{grid-column:1/-1;margin-top:16px;padding:24px 28px}
   .how h3{font-size:17px;margin-bottom:14px}
   .how ol{grid-template-columns:1fr 1fr 1fr;gap:24px}
   .how li{font-size:15px}
@@ -329,19 +344,20 @@ select.field:invalid,select.field.empty{color:#8A97B1}
 
   <!-- 1. INTRO -->
   <section class="screen on intro" id="s-intro">
-    <div><span class="kicker"><span class="dot"></span>Test phong cách học · Bé 4–14 tuổi</span></div>
-    <h1>Con bạn thuộc <em>kiểu học</em> nào?</h1>
-    <p class="sub">12 tình huống quen thuộc, 5 phút. Biết con thuộc nhóm nào, ba mẹ chọn được cách học tiếng Anh hợp với con.</p>
+    <div><span class="kicker"><span class="dot"></span>Test tính cách cho bé 4–14 tuổi</span></div>
+    <h1>Con là <em>Thủ Lĩnh</em>, <em>Ngôi Sao</em>, <em>Người Bạn</em> hay <em>Nhà Khám Phá</em>?</h1>
+    <p class="sub">Mỗi bé có một kiểu tính cách, và mỗi kiểu học tiếng Anh theo một cách khác nhau. 12 tình huống quen thuộc, 5 phút, ba mẹ nhận ra con thuộc kiểu nào và nên học thế nào.</p>
     <div class="deck" aria-hidden="true" id="deck"></div>
-    <div class="facts"><span>12 câu · 5 phút</span><span>Ba mẹ hoặc bé tự làm</span><span>Miễn phí</span></div>
+    <div class="facts"><span>12 câu · 5 phút</span><span>Ba mẹ hoặc bé tự làm</span><span>Miễn phí</span><span>Gợi ý theo độ tuổi</span></div>
     <button class="btn2" id="resumeBtn" hidden style="margin-bottom:10px">Làm tiếp bài test đang dở</button>
     <button class="cta" id="startBtn">Bắt đầu test <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+    <div class="types4" id="types4"></div>
     <div class="how">
       <h3>Test diễn ra thế nào?</h3>
       <ol>
         <li>Chọn đáp án giống con nhất trong 12 tình huống ở nhà và ở lớp.</li>
-        <li>Xem ngay con thuộc nhóm nào trong 4 nhóm tính cách.</li>
-        <li>Mở khóa cách học tiếng Anh hợp với con và những việc ba mẹ làm được ở nhà.</li>
+        <li>Xem ngay con thuộc kiểu tính cách nào, kèm biểu đồ 4 nhóm.</li>
+        <li>Mở khóa cách học tiếng Anh hợp với kiểu đó và đúng độ tuổi của con.</li>
       </ol>
     </div>
     <p class="fine">Không có đáp án đúng hay sai. Nhóm nào cũng có điểm mạnh riêng.</p>
@@ -553,6 +569,24 @@ var TYPES = {
 };
 var ORDER = ['D','I','S','C'];
 
+/* Gợi ý theo độ tuổi: mn = Mầm non 4–5, c1 = Cấp 1 6–11, c2 = Cấp 2 12–14. Mỗi nhóm × mỗi tuổi: 2 cách học + 2 việc ở nhà, ghép trước nội dung chung. */
+function band(a){return a<=5?'mn':a<=11?'c1':'c2'}
+var BAND_NAME={mn:'Mầm non (4–5 tuổi)',c1:'Tiểu học (6–11 tuổi)',c2:'THCS (12–14 tuổi)'};
+var AGE={
+  D:{mn:{learn:['Cho con “thắng” bằng sticker hoặc dấu sao sau mỗi bài ngắn.','Trò chơi vận động có tiếng Anh: chạy tới màu được gọi, nhảy theo lệnh.'],home:['Để con chọn bài hát hoặc truyện tiếng Anh tối nay.','Thi xem ai nói được nhiều tên con vật bằng tiếng Anh hơn.']},
+     c1:{learn:['Bảng thử thách tuần, con tự tick khi đạt.','Cho con làm nhóm trưởng trong trò chơi từ vựng.'],home:['Con “dạy lại” ba mẹ 3 từ mới mỗi tối.','Đọc xong 1 truyện tiếng Anh mỗi tuần, con tự chọn truyện.']},
+     c2:{learn:['Mục tiêu đo được: điểm bài kiểm tra, cấp độ chứng chỉ Cambridge.','Dự án và thuyết trình để con dẫn dắt nhóm.'],home:['Cho con tự lên lịch học và tự theo dõi tiến độ.','Tranh luận ngắn bằng tiếng Anh về chủ đề con thích.']}},
+  I:{mn:{learn:['Học qua bài hát, múa, đóng vai con vật.','Khen ngay khi con nói, dù chưa đúng.'],home:['Hát tiếng Anh cùng con mỗi sáng.','Đóng vai bán hàng, bác sĩ bằng vài câu tiếng Anh.']},
+     c1:{learn:['Kể chuyện, đóng kịch, trò chơi nhóm.','Đổi hoạt động mỗi 10–15 phút để con không chán.'],home:['Quay video con kể chuyện tiếng Anh gửi ông bà.','Học cùng 1–2 bạn thân thay vì học một mình.']},
+     c2:{learn:['Thuyết trình, vlog, tranh luận nhóm bằng tiếng Anh.','Ghi nhận trước lớp mỗi khi con dám nói.'],home:['Cho con làm video hoặc podcast tiếng Anh về sở thích.','Tham gia câu lạc bộ nói tiếng Anh hoặc nhóm học.']}},
+  S:{mn:{learn:['Cùng một cô, cùng nhóm bạn, cùng khung giờ mỗi tuần.','Con được xem mẫu trước, làm theo sau.'],home:['Đọc lại cùng một cuốn truyện tiếng Anh nhiều lần trước giờ ngủ.','Không đổi app hay giáo trình liên tục.']},
+     c1:{learn:['Báo trước cho con khi lớp sắp có thay đổi.','Cho con thời gian chuẩn bị trước khi phải nói.'],home:['15 phút tiếng Anh vào một giờ cố định mỗi ngày.','Tập nói với ba mẹ trước khi nói ở lớp.']},
+     c2:{learn:['Giáo viên phản hồi riêng thay vì sửa trước lớp.','Làm việc theo cặp trước khi vào nhóm lớn.'],home:['Ghi nhận tiến bộ nhỏ mỗi tuần.','Không so sánh con với anh chị em hay bạn bè.']}},
+  C:{mn:{learn:['Giải thích “vì sao” bằng ví dụ cụ thể, ngắn.','Trò chơi phân loại, ghép cặp, tìm điểm khác biệt.'],home:['Dán nhãn tiếng Anh lên đồ vật trong nhà.','Trả lời câu “tại sao” của con bằng tiếng Anh đơn giản.']},
+     c1:{learn:['Quy tắc rõ ràng, bài tập có đáp án để con tự kiểm tra.','Con chuẩn bị trước khi nói, sửa lỗi sau khi nói xong.'],home:['Làm sổ từ vựng theo chủ đề.','Bảng theo dõi tiến bộ để con thấy mình đi được bao xa.']},
+     c2:{learn:['Lộ trình rõ ràng, tiêu chí chấm minh bạch.','Tài liệu tự học và bài đọc về chủ đề khoa học, công nghệ.'],home:['Xem phim tài liệu tiếng Anh, ghi lại từ mới.','Đặt mục tiêu chứng chỉ có mốc kiểm tra cụ thể.']}}
+};
+
 /* =========================================================
    12 CÂU HỎI — {ten} = tên bé (PH làm) hoặc "con" (bé tự làm)
    ========================================================= */
@@ -638,6 +672,8 @@ $('back').onclick=function(){
   var h='';ORDER.forEach(function(k){var t=TYPES[k];h+='<div class="mini">'+(USE_CHAR_IMG?'<img src="'+charImg(k)+'" alt="">':'<div class="q" style="background:'+t.color+'">?</div>')+'<span>'+t.short+'</span></div>'});
   h+='<img class="mascot" src="../assets/img_mascot_wave.webp" alt="">';
   $('deck').innerHTML=h;
+  var t4='';ORDER.forEach(function(k){var t=TYPES[k];t4+='<div class="t4"><span class="ic" style="--tc:'+t.color+';background:'+t.bg+'">'+ICONS[k]+'</span><span><b>'+t.name+'</b><small>'+t.tagline+'</small></span></div>'});
+  $('types4').innerHTML=t4;
 })();
 (function(){try{var d=JSON.parse(sessionStorage.getItem('disc_s')||'null');if(d&&d.child&&d.age){$('resumeBtn').hidden=false;$('resumeBtn').textContent='Làm tiếp bài test của '+d.child+' ('+(d.answers.filter(Boolean).length)+'/'+QUESTIONS.length+' câu)';
   $('resumeBtn').onclick=function(){S.child=d.child;S.age=d.age;S.who=d.who;S.answers=d.answers||[];S.qi=Math.min(d.qi||0,QUESTIONS.length-1);S.startedAt=d.startedAt||Date.now();setNames();track('disc_resume',{});
@@ -805,18 +841,24 @@ function program(age){
   if(age<=11)return {name:'Thiếu nhi hoặc Thiếu niên',range:'10–11 tuổi',img:'../assets/img_mascot_book.png',anchor:'#chuong-trinh',note:'Ở tuổi này, YOLA xếp lớp theo bài kiểm tra trình độ của bé.'};
   return {name:'Tiếng Anh Thiếu niên',range:'10–14 tuổi',img:'../assets/img_mascot_book.png',anchor:'#thieu-nien',note:'Sĩ số tối đa 15 bé, mỗi lớp có trợ giảng riêng.'};
 }
-function lockedBlock(n,title){return '<div class="sec locked"><h3><span class="n">'+n+'</span><span>'+title+'</span></h3><div class="sk"><i></i><i></i><i></i><i></i></div></div>'}
+function lockedBlock(n,title,teaser){return '<div class="sec locked"><h3><span class="n">'+n+'</span><span>'+title+'</span></h3><p class="teaser">'+teaser+'</p><div class="sk"><i></i><i></i><i></i></div></div>'}
 function renderLocked(open){
   var r=S.result,t=TYPES[r.primary],nm=esc(S.child),p=program(S.age);
+  var ag=AGE[r.primary][band(S.age)],bn=BAND_NAME[band(S.age)];
+  var learn=ag.learn.concat(t.learn.slice(0,2)),home=ag.home.concat(t.home.slice(0,1));
   if(!open){
-    $('lockedArea').innerHTML=lockedBlock(3,'Cách học tiếng Anh hợp với '+nm)+lockedBlock(4,'Điều ba mẹ nên tránh')+lockedBlock(5,'Ba mẹ đồng hành ở nhà')+lockedBlock(6,'Lớp học phù hợp với '+nm);
+    $('lockedArea').innerHTML=
+      lockedBlock(3,'Cách học tiếng Anh hợp với '+nm,learn[0]+' <em>+3 gợi ý nữa</em>')
+     +lockedBlock(4,'Điều ba mẹ nên tránh',t.avoid[0]+' <em>+2 điều nữa</em>')
+     +lockedBlock(5,'Ba mẹ đồng hành ở nhà',home[0]+' <em>+2 việc và 3 câu nói giúp '+nm+' tiến bộ</em>')
+     +lockedBlock(6,'Lớp học phù hợp với '+nm,'Gợi ý lớp YOLA cho bé '+S.age+' tuổi nhóm '+t.short+' <em>+ câu ba mẹ nên nói với giáo viên</em>');
     return;
   }
   var li=function(a){return a.map(function(x){return '<li>'+x+'</li>'}).join('')};
   $('lockedArea').innerHTML=
-    '<div class="sec unlocking"><h3><span class="n">3</span><span>Cách học tiếng Anh hợp với '+nm+'</span></h3><ul class="list">'+li(t.learn)+'</ul></div>'
+    '<div class="sec unlocking"><h3><span class="n">3</span><span>Cách học tiếng Anh hợp với '+nm+'</span></h3><p class="agetag">Gợi ý theo độ tuổi '+bn+'</p><ul class="list">'+li(learn)+'</ul></div>'
    +'<div class="sec unlocking"><h3><span class="n">4</span><span>Điều ba mẹ nên tránh</span></h3><ul class="list x">'+li(t.avoid)+'</ul></div>'
-   +'<div class="sec unlocking"><h3><span class="n">5</span><span>Ba mẹ đồng hành ở nhà</span></h3><ul class="list">'+li(t.home)+'</ul>'
+   +'<div class="sec unlocking"><h3><span class="n">5</span><span>Ba mẹ đồng hành ở nhà</span></h3><p class="agetag">Gợi ý theo độ tuổi '+bn+'</p><ul class="list">'+li(home)+'</ul>'
      +'<p style="font-weight:700;color:var(--navy);margin:16px 0 8px">Câu nói giúp '+nm+' tiến bộ</p><div class="quote">'+t.say.map(function(x){return '<p>'+x+'</p>'}).join('')+'</div></div>'
    +'<div class="sec unlocking"><h3><span class="n">6</span><span>Lớp học phù hợp với '+nm+'</span></h3><p>'+t.classFit+'</p>'
      +'<div class="prog-card" style="margin-top:14px"><img src="'+p.img+'" alt=""><div><small>Gợi ý theo tuổi của '+nm+' ('+S.age+' tuổi)</small><b>'+p.name+'</b><small>'+p.note+'</small></div></div>'
