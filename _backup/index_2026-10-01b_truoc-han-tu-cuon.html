@@ -1636,55 +1636,6 @@ var TEACHERS_V2 = [
 }catch(e){}
 })();
 </script>
-<!-- ===== [THÊM 01/10/2026] HẠN ƯU ĐÃI TỰ CUỘN THEO THÁNG =====
-     Trang tự tính ngày cuối của tháng hiện tại, chặn trần ở 31/12/2026 (ngày kết thúc
-     chương trình Q4). Không ai phải sửa tay hằng tháng, và không bao giờ hiện ngày đã qua.
-     Sau 31/12/2026 tự chuyển sang câu trung tính: bỏ con số, bỏ ngày.
-
-     MUỐN ĐỔI KHI CÓ PROMOTION MỚI: chỉ sửa 3 biến OFFER_MONEY / OFFER_END / (nếu cần)
-     câu trong TXT_* ngay bên dưới. Không cần đụng phần HTML phía trên.
-
-     Khối script RIÊNG, bọc try/catch — lỗi ở đây không ảnh hưởng form và tracking. -->
-<script>
-(function(){ try{
-
-  /* ---- CẤU HÌNH ---- */
-  var OFFER_MONEY = '14.000.000đ';
-  var OFFER_END   = new Date(2026, 11, 31, 23, 59, 59);   /* 31/12/2026 — hết chương trình Q4 */
-
-  var TXT_SUB  = 'Nhận ưu đãi học phí đến {money} (áp dụng có điều kiện) và miễn phí bài kiểm tra năng lực đầu vào chuẩn quốc tế trị giá 200.000đ. Ưu đãi áp dụng đến hết {date}.';
-  var TXT_BADGE= '🎁 Ưu đãi học phí đến {money} · hết\u00A0{short}';   /* \u00A0 = space không ngắt dòng */
-  /* Câu dùng SAU khi chương trình kết thúc — không số, không ngày */
-  var TXT_SUB_HET   = 'Nhận tư vấn lộ trình học phù hợp cùng ưu đãi học phí hiện hành, kèm miễn phí bài kiểm tra năng lực đầu vào chuẩn quốc tế trị giá 200.000đ.';
-  var TXT_BADGE_HET = '🎁 Nhận tư vấn ưu đãi học phí';
-  var TXT_META_HET  = 'Hệ sinh thái chương trình tiếng Anh YOLA cho mọi độ tuổi: mầm non, thiếu nhi, thiếu niên, tiếng Anh nền tảng Pre-IELTS, IELTS, IELTS Online, Digital SAT. Đăng ký nhận tư vấn lộ trình và ưu đãi học phí.';
-
-  /* ---- TÍNH NGÀY ---- */
-  var now = new Date();
-  var het = now > OFFER_END;
-  var han = new Date(now.getFullYear(), now.getMonth() + 1, 0, 23, 59, 59); /* ngày cuối tháng này */
-  if (han > OFFER_END) han = OFFER_END;                                     /* chặn trần 31/12/2026 */
-
-  var p = function(n){ return (n < 10 ? '0' : '') + n; };
-  var dFull  = p(han.getDate()) + '/' + p(han.getMonth() + 1) + '/' + han.getFullYear();
-  var dShort = p(han.getDate()) + '/' + p(han.getMonth() + 1);
-
-  function fill(t){
-    return t.replace('{money}', OFFER_MONEY).replace('{date}', dFull).replace('{short}', dShort);
-  }
-
-  /* ---- ÁP VÀO TRANG ---- */
-  var sub    = document.querySelector('.hero .sub');
-  var badges = document.querySelectorAll('.form-promo');
-  var meta   = document.querySelector('meta[name="description"]');
-
-  if (sub)    sub.textContent = het ? TXT_SUB_HET : fill(TXT_SUB);
-  [].forEach.call(badges, function(b){ b.textContent = het ? TXT_BADGE_HET : fill(TXT_BADGE); });
-  if (het && meta) meta.setAttribute('content', TXT_META_HET);
-
-}catch(e){} })();
-</script>
 </body>
-
 
 </html>
