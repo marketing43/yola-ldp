@@ -759,7 +759,7 @@ footer{background:#0c2647;color:#c3d0e0;padding:44px 0 24px}
     <div class="form-card" id="dangky">
       <form class="leadForm" novalidate>
         <div class="fc-head">
-          <span class="tag">⚡ Ưu đãi học phí đến 5.300.000đ</span>
+          <span class="tag">⚡ Ưu đãi tháng này</span>
           <h3>Đăng ký nhận tư vấn miễn phí</h3>
           <p>Để lại thông tin — YOLA liên hệ trong 24h làm việc</p>
         </div>
@@ -1083,7 +1083,7 @@ footer{background:#0c2647;color:#c3d0e0;padding:44px 0 24px}
 <section class="offer reveal">
   <div class="wrap">
     <div class="offer-box"><div class="oh">
-      <h2>🎁 Ưu đãi học phí đến 5.300.000đ cho học viên đăng ký sớm</h2>
+      <h2>🎁 Ưu đãi đặc biệt cho học viên đăng ký sớm</h2>
       <p>Đăng ký ngay hôm nay để nhận trọn bộ quyền lợi và giữ suất học bổng có hạn của khóa EFL.</p>
       <div class="offer-perks">
         <div class="perk">✓ Test trình độ MIỄN PHÍ</div>
@@ -1104,9 +1104,9 @@ footer{background:#0c2647;color:#c3d0e0;padding:44px 0 24px}
       <h2>Bắt đầu hành trình tiếng Anh của bạn ngay hôm nay</h2>
       <p>Để lại thông tin, đội ngũ YOLA sẽ liên hệ tư vấn lộ trình phù hợp và sắp xếp buổi test trình độ hoàn toàn miễn phí.</p>
       <div class="bday-offer">
-        <span class="bd-badge">🎁 ƯU ĐÃI HỌC VIÊN MỚI</span>
-        <div class="bd-main">Ưu đãi học phí đến <b>5.300.000đ</b></div>
-        <span class="bd-sub">Dành cho học viên mới đăng ký khóa EFL. Ưu đãi áp dụng đến hết 31/10/2026.</span>
+        <span class="bd-badge">🎂 SINH NHẬT YOLA 17 TUỔI</span>
+        <div class="bd-main">Ưu đãi học phí lên đến <b>15.700.000đ</b></div>
+        <span class="bd-sub">Đăng ký khóa EFL trong dịp sinh nhật để nhận trọn bộ ưu đãi &amp; suất học bổng có hạn.</span>
       </div>
       <ul class="ff-points">
         <li><span class="ic">✓</span> Phản hồi trong vòng 24 giờ làm việc</li>
@@ -1678,54 +1678,6 @@ selectBranch(0);
 /* ---------- Reveal on scroll ---------- */
 const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}}),{threshold:.12});
 document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
-</script>
-
-<!-- ===== HẠN ƯU ĐÃI TỰ CUỘN THEO THÁNG (Q4/2026) =====
-     Trang tự tính ngày cuối tháng hiện tại, chặn trần 31/12/2026.
-     Hết hạn thì tự chuyển sang câu trung tính (bỏ số, bỏ ngày).
-     ĐỔI PROMOTION: chỉ sửa OFFER_MONEY / OFFER_END / các câu TXT_* bên dưới.
-     Khối script RIÊNG, bọc try/catch — lỗi ở đây không ảnh hưởng form và tracking. -->
-<script>
-(function(){ try{
-
-  /* ---- CẤU HÌNH ---- */
-  var OFFER_MONEY = '5.300.000đ';
-  var OFFER_END   = new Date(2026, 11, 31, 23, 59, 59);   /* tháng tính từ 0: 11 = tháng 12 */
-
-  var TXT_TAG = '⚡ Ưu đãi học phí đến {money} · hết\u00A0{short}';
-  var TXT_SUB = 'Dành cho học viên mới đăng ký khóa EFL. Ưu đãi áp dụng đến hết {date}.';
-  /* Câu dùng SAU khi chương trình kết thúc — không số, không ngày */
-  var TXT_TAG_HET  = '⚡ Nhận tư vấn ưu đãi học phí';
-  var TXT_MAIN_HET = 'Nhận tư vấn ưu đãi học phí hiện hành';
-  var TXT_SUB_HET  = 'Đăng ký khóa EFL để được tư vấn lộ trình phù hợp và nhận ưu đãi học phí hiện hành, kèm test trình độ miễn phí.';
-  var TXT_H2_HET   = '🎁 Ưu đãi đặc biệt cho học viên đăng ký sớm';
-
-  /* ---- TÍNH NGÀY ---- */
-  var now = new Date();
-  var het = now > OFFER_END;
-  var han = new Date(now.getFullYear(), now.getMonth() + 1, 0, 23, 59, 59); /* ngày cuối tháng này */
-  if (han > OFFER_END) han = OFFER_END;                                     /* chặn trần */
-
-  var p = function(n){ return (n < 10 ? '0' : '') + n; };
-  var dFull  = p(han.getDate()) + '/' + p(han.getMonth() + 1) + '/' + han.getFullYear();
-  var dShort = p(han.getDate()) + '/' + p(han.getMonth() + 1);
-
-  function fill(t){
-    return t.replace('{money}', OFFER_MONEY).replace('{date}', dFull).replace('{short}', dShort);
-  }
-
-  /* ---- ÁP VÀO TRANG (selector của LP EFL) ---- */
-  var tag  = document.querySelector('#dangky .fc-head .tag');     /* badge form hero */
-  var main = document.querySelector('.bday-offer .bd-main');      /* dòng số tiền form cuối */
-  var sub  = document.querySelector('.bday-offer .bd-sub');       /* dòng hạn form cuối */
-  var h2   = document.querySelector('.offer-box h2');             /* tiêu đề section ưu đãi */
-
-  if (tag) tag.textContent = het ? TXT_TAG_HET : fill(TXT_TAG);
-  if (sub) sub.textContent = het ? TXT_SUB_HET : fill(TXT_SUB);
-  if (het && main) main.textContent = TXT_MAIN_HET;
-  if (het && h2)   h2.textContent   = TXT_H2_HET;
-
-}catch(e){} })();
 </script>
 </body>
 </html>
