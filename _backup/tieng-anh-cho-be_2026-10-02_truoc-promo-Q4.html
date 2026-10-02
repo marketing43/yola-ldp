@@ -75,13 +75,7 @@ header{position:sticky;top:0;z-index:120;background:#fff;box-shadow:0 1px 0 rgba
 .hero:after{content:'';position:absolute;width:420px;height:420px;border-radius:50%;background:rgba(118,217,246,.25);bottom:-230px;right:26%}
 .hero > .wrap{padding-bottom:56px}
 .hero .wrap{display:grid;grid-template-columns:1.05fr .95fr;gap:32px;align-items:center;position:relative}
-.hero .promo-tag{display:inline-flex;align-items:center;gap:10px;background:var(--yellow);color:var(--navy);font-weight:800;border-radius:999px;padding:8px 18px;font-size:14px;letter-spacing:.02em;margin-bottom:18px;max-width:100%}
-.hero .promo-tag b{font-weight:800;white-space:nowrap}
-.hero .promo-tag i{font-style:normal;font-weight:700;font-size:13px;white-space:nowrap;padding-left:10px;border-left:1.5px solid rgba(0,36,103,.28);opacity:.82}
-@media(max-width:600px){
-  .hero .promo-tag{flex-direction:column;align-items:flex-start;gap:2px;border-radius:16px;padding:9px 16px;font-size:13.5px;line-height:1.35}
-  .hero .promo-tag i{font-size:12.5px;padding-left:0;border-left:none;opacity:.78}
-}
+.hero .promo-tag{display:inline-flex;align-items:center;gap:8px;background:var(--yellow);color:var(--navy);font-weight:800;border-radius:999px;padding:8px 18px;font-size:14px;letter-spacing:.02em;margin-bottom:18px}
 .hero h1{font-size:clamp(32px,4.6vw,54px);font-weight:800;margin-bottom:14px}
 .hero h1 .hl{color:var(--yellow)}
 .hero .sub{font-size:clamp(16px,1.8vw,19px);font-weight:500;max-width:520px;opacity:.96;margin-bottom:24px}
@@ -821,7 +815,8 @@ section{padding:60px 0}
 <div class="hero" id="top">
   <div class="wrap">
     <div>
-      <span class="promo-tag" id="promo-tag"><b>🎁 Ưu đãi học phí đến 14.000.000đ</b><i>Đăng ký trước 31/10/2026</i></span>
+      <span class="promo-tag" id="promo-tag"><span class="offer-copy" data-evergreen="🎁 Tiết kiệm đến 14 triệu học phí cho học viên mới">🎒 Học bổng Back to School — tiết kiệm đến 18 triệu</span></span>
+      <div class="bts-count" id="bts-count" hidden>Ưu đãi kết thúc sau <b id="bts-timer"></b></div>
       <h1>Tiếng Anh cho bé <span style="white-space:nowrap">4–14 tuổi</span></h1>
       <p class="h1-sub">Một lộ trình liền mạch <span class="hl">từ Mầm non đến Thiếu niên</span></p>
       <p class="sub">Con bắt đầu đúng điểm xuất phát và đi trọn lộ trình chuẩn Cambridge Starters – Movers – Flyers đến KET/PET trong một môi trường duy nhất. Sĩ số nhỏ, có trợ giảng riêng, học thử miễn phí.</p>
@@ -833,7 +828,7 @@ section{padding:60px 0}
       <div class="btns">
         <a class="btn2" href="#chuong-trinh">Xem chương trình theo độ tuổi</a>
       </div>
-      <p class="hero-note">(*) Học thử và kiểm tra trình độ xếp lớp miễn phí cho cả ba khóa. Ưu đãi áp dụng cho học viên mới.</p>
+      <p class="hero-note">(*) Học thử và kiểm tra trình độ xếp lớp miễn phí cho cả ba khóa. Học bổng Back to School áp dụng cho học viên mới, đến hết 20/09/2026.</p>
     </div>
     <div class="hero-art">
       <div class="form-card hero-card" id="hero-form-card">
@@ -874,12 +869,12 @@ section{padding:60px 0}
 <!-- ============ UU DAI ============ -->
 <section id="uu-dai" class="promo2">
   <div class="wrap">
-    <h2 class="p2-title">Ưu đãi YOLA dành riêng cho bé</h2>
-    <p class="p2-sub">Ưu đãi học phí đến 14.000.000đ cho học viên mới, cùng học thử miễn phí và trả góp 0% — đăng ký trước 31/10/2026.</p>
+    <h2 class="p2-title"><span class="offer-copy" data-evergreen="Ưu đãi YOLA dành riêng cho bé">Vào năm học mới thật vững vàng<br>Trọn bộ học bổng và quà tặng tháng 9<br>YOLA dành riêng cho bé</span></h2>
+    <p class="p2-sub"><span class="offer-copy" data-evergreen="Tiết kiệm đến 14 triệu học phí cho học viên mới, cùng học thử miễn phí và trả góp 0% — để lại thông tin để YOLA báo mức ưu đãi chính xác cho khóa của bé.">Đăng ký đến hết 20/09/2026 — bé nhận đủ học bổng và quà tặng dưới đây từ YOLA.</span></p>
     <div class="p2-grid">
-      <div class="p2-card" id="offer-tile-card">
-        <div class="p2-tile" style="background:linear-gradient(160deg,#FDB0C9,#f791b3)"><span>Tiết kiệm</span><b>đến<br>14 triệu</b><span>học phí</span></div>
-        <p>Ưu đãi học phí cho học viên mới — để lại thông tin để YOLA báo mức ưu đãi chính xác cho khóa của bé.</p>
+      <div class="p2-card">
+        <div class="p2-tile" style="background:linear-gradient(160deg,#FDB0C9,#f791b3)"><span>Tiết kiệm</span><b class="offer-copy" data-evergreen="đến 14 triệu">đến<br>18 triệu</b><span>học phí</span></div>
+        <p class="offer-copy" data-evergreen="Ưu đãi học phí cho học viên mới — đăng ký lộ trình dài, ưu đãi càng lớn.">Học bổng Back to School cho học viên mới — đăng ký lộ trình dài, tiết kiệm càng lớn. Đến hết 20/09/2026.</p>
       </div>
       <div class="p2-card">
         <div class="p2-tile" style="background:linear-gradient(160deg,#76D9F6,#3fc2ee)"><span>Bé học</span><b>Học thử<br>miễn phí</b><span>trước khi đăng ký</span></div>
@@ -889,7 +884,7 @@ section{padding:60px 0}
         <div class="p2-tile" style="background:linear-gradient(160deg,#FEE454,#f5d321)"><span>Trả góp</span><b>0%<br>lãi suất</b><span>học phí</span></div>
         <p>Chia nhỏ học phí thành từng đợt, không phát sinh lãi — ba mẹ nhẹ gánh đầu năm học.</p>
       </div>
-      <div class="p2-card" id="offer-gift-card">
+      <div class="p2-card b2s-only">
         <div class="p2-tile p2-gift" style="background:linear-gradient(160deg,#FEE454,#f5d321)">
           <span>Tặng bộ quà YOLA</span>
           <img class="pg1" src="../assets/img_gift_helmet.webp" width="520" height="350" alt="Quà tặng nón bảo hiểm YOLA" loading="lazy">
@@ -1097,7 +1092,7 @@ section{padding:60px 0}
   <div class="wrap">
     <div class="form-card">
       <h2>Nhận tư vấn lộ trình &amp; học phí cho bé</h2>
-      <p class="lead">Đã thấy chặng phù hợp với con? Để lại thông tin, YOLA gọi lại tư vấn điểm bắt đầu chính xác và xếp lịch học thử miễn phí. <b id="offer-mid">Ưu đãi học phí đến 14.000.000đ cho học viên mới — đăng ký trước 31/10/2026.</b></p>
+      <p class="lead">Đã thấy chặng phù hợp với con? Để lại thông tin, YOLA gọi lại tư vấn điểm bắt đầu chính xác và xếp lịch học thử miễn phí. <b class="offer-copy" data-evergreen="Tiết kiệm đến 14 triệu học phí cho học viên mới.">Học bổng Back to School — tiết kiệm đến 18 triệu, đến hết 20/09.</b></p>
       <div class="fmount" data-suffix="mid"></div>
     </div>
   </div>
@@ -1266,7 +1261,13 @@ section{padding:60px 0}
   <div class="wrap">
     <div class="form-card" style="border:1.6px solid #E4ECFA">
       <div class="last-offer">
-        <p>🎁 <b id="offer-bot">Ưu đãi học phí đến 14.000.000đ cho học viên mới — đăng&nbsp;ký&nbsp;trước&nbsp;31/10/2026</b></p>
+        <p>🎒 <b class="offer-copy" data-evergreen="Tiết kiệm đến 14 triệu học phí cho học viên mới — đăng ký ngay hôm nay">Học bổng Back to School — tiết kiệm đến 18 triệu học phí, kết thúc sau:</b></p>
+        <div class="cd-boxes b2s-only">
+          <div class="cdt"><b class="cdb" data-u="d">0</b><span>ngày</span></div>
+          <div class="cdt"><b class="cdb" data-u="h">0</b><span>giờ</span></div>
+          <div class="cdt"><b class="cdb" data-u="m">0</b><span>phút</span></div>
+          <div class="cdt"><b class="cdb" data-u="s">0</b><span>giây</span></div>
+        </div>
       </div>
       <h2>Bắt đầu lộ trình tiếng Anh của con ngay hôm nay</h2>
       <p class="lead">Đã chọn được trung tâm gần nhà? Để lại thông tin để YOLA xếp lịch học thử và kiểm tra trình độ miễn phí cho bé.</p>
@@ -1841,6 +1842,35 @@ document.querySelectorAll('a[href="#cam-ket"]').forEach(function(a){
   });
 });
 
+/* ===== Ưu đãi B2S 09/2026: countdown thật đến 20/09, sau đó tự chuyển về ưu đãi thường ===== */
+(function(){
+  var END = new Date('2026-09-20T23:59:59+07:00').getTime();
+  function expire(){
+    document.querySelectorAll('.offer-copy').forEach(function(el){
+      var alt = el.getAttribute('data-evergreen');
+      if(alt) el.textContent = alt;
+    });
+    document.querySelectorAll('.b2s-only').forEach(function(el){ el.remove(); });
+    var w=document.getElementById('bts-count'); if(w) w.remove();
+  }
+  function tick(){
+    var left = END - Date.now();
+    if(left <= 0){ expire(); clearInterval(tm); return; }
+    var d = Math.floor(left/86400000),
+        h = Math.floor(left%86400000/3600000),
+        m = Math.floor(left%3600000/60000),
+        sec = Math.floor(left%60000/1000);
+    var txt = (d>0 ? d+' ngày ' : '') + h + ' giờ ' + m + ' phút ' + sec + ' giây';
+    document.querySelectorAll('.bts-timer, #bts-timer').forEach(function(el){ el.textContent = txt; });
+    var p2=function(n){return (n<10?'0':'')+n};
+    var vals={d:p2(d),h:p2(h),m:p2(m),s:p2(sec)};
+    document.querySelectorAll('.cdb').forEach(function(el){ el.textContent = vals[el.dataset.u]; });
+    var w=document.getElementById('bts-count'); if(w) w.hidden=false;
+  }
+  tick();
+  var tm = setInterval(tick, 1000);
+})();
+
 /* Close mobile nav on click */
 document.querySelectorAll('#mnav a').forEach(function(a){a.addEventListener('click',function(){document.getElementById('mnav').classList.remove('open')})});
 </script>
@@ -1853,57 +1883,6 @@ document.querySelectorAll('#mnav a').forEach(function(a){a.addEventListener('cli
  {"@type":"Question","name":"Ba mẹ theo dõi việc học của con bằng cách nào?","acceptedAnswer":{"@type":"Answer","text":"Ba mẹ nhận tin nhắn nhận xét sau mỗi buổi học, báo cáo học tập cuối khóa và họp phụ huynh định kỳ. Khóa Mầm non có thông báo hằng ngày qua Zalo OA."}},
  {"@type":"Question","name":"Cam kết Cambridge áp dụng thế nào?","acceptedAnswer":{"@type":"Answer","text":"Khóa Tiếng Anh Thiếu nhi có cam kết đầu ra bằng điểm thi thật Starters / Movers hoặc Flyers từ 14 khiên trở lên khi thỏa các điều kiện của chương trình."}}
 ]}
-</script>
-<!-- ===== HẠN ƯU ĐÃI TỰ CUỘN THEO THÁNG (Q4/2026) =====
-     Trang tự tính ngày cuối tháng hiện tại, chặn trần 31/12/2026.
-     Hết hạn: 4 chỗ về câu trung tính, ẩn thẻ số tiền + thẻ quà tặng.
-     ĐỔI PROMOTION: chỉ sửa OFFER_MONEY / OFFER_END / các câu TXT_* bên dưới.
-     Khối script RIÊNG, bọc try/catch — lỗi ở đây không ảnh hưởng form và tracking. -->
-<script>
-(function(){ try{
-
-  /* ---- CẤU HÌNH ---- */
-  var OFFER_MONEY = '14.000.000đ';
-  var OFFER_END   = new Date(2026, 11, 31, 23, 59, 59);   /* tháng tính từ 0: 11 = tháng 12 */
-  var NB = '\u00A0';
-
-  var TXT_BADGE = '<b>🎁 Ưu đãi học phí đến {money}</b><i>Đăng'+NB+'ký'+NB+'trước'+NB+'{date}</i>';
-  var TXT_SUB   = 'Ưu đãi học phí đến {money} cho học viên mới, cùng học thử miễn phí và trả góp 0% — đăng ký trước {date}.';
-  var TXT_MID   = 'Ưu đãi học phí đến {money} cho học viên mới — đăng ký trước {date}.';
-  var TXT_BOT   = 'Ưu đãi học phí đến {money} cho học viên mới — đăng'+NB+'ký'+NB+'trước'+NB+'{date}';
-  /* Câu dùng SAU khi chương trình kết thúc — không số, không ngày */
-  var TXT_BADGE_HET = '<b>🎁 Nhận tư vấn ưu đãi học phí</b>';
-  var TXT_SUB_HET   = 'Ưu đãi học phí cho học viên mới cùng học thử miễn phí và trả góp 0% — để lại thông tin để YOLA báo mức ưu đãi chính xác cho khóa của bé.';
-  var TXT_MID_HET   = 'Để lại thông tin để YOLA báo mức ưu đãi học phí hiện hành cho khóa của bé.';
-  var TXT_BOT_HET   = 'Nhận tư vấn ưu đãi học phí hiện hành';
-
-  /* ---- TÍNH NGÀY ---- */
-  var now = new Date();
-  var het = now > OFFER_END;
-  var han = new Date(now.getFullYear(), now.getMonth() + 1, 0, 23, 59, 59); /* ngày cuối tháng này */
-  if (han > OFFER_END) han = OFFER_END;
-
-  var p = function(n){ return (n < 10 ? '0' : '') + n; };
-  var dFull = p(han.getDate()) + '/' + p(han.getMonth() + 1) + '/' + han.getFullYear();
-  function fill(t){ return t.replace('{money}', OFFER_MONEY).replace('{date}', dFull); }
-
-  /* ---- ÁP VÀO TRANG ---- */
-  var badge = document.getElementById('promo-tag');
-  var sub   = document.querySelector('#uu-dai .p2-sub');
-  var mid   = document.getElementById('offer-mid');
-  var bot   = document.getElementById('offer-bot');
-
-  if (badge) badge.innerHTML = het ? TXT_BADGE_HET : fill(TXT_BADGE);
-  if (sub)   sub.textContent   = het ? TXT_SUB_HET   : fill(TXT_SUB);
-  if (mid)   mid.textContent   = het ? TXT_MID_HET   : fill(TXT_MID);
-  if (bot)   bot.textContent   = het ? TXT_BOT_HET   : fill(TXT_BOT);
-
-  if (het) {
-    var tile = document.getElementById('offer-tile-card'); if (tile) tile.style.display = 'none';
-    var gift = document.getElementById('offer-gift-card'); if (gift) gift.style.display = 'none';
-  }
-
-}catch(e){} })();
 </script>
 </body>
 </html>

@@ -75,13 +75,7 @@ header{position:sticky;top:0;z-index:120;background:#fff;box-shadow:0 1px 0 rgba
 .hero:after{content:'';position:absolute;width:420px;height:420px;border-radius:50%;background:rgba(118,217,246,.25);bottom:-230px;right:26%}
 .hero > .wrap{padding-bottom:56px}
 .hero .wrap{display:grid;grid-template-columns:1.05fr .95fr;gap:32px;align-items:center;position:relative}
-.hero .promo-tag{display:inline-flex;align-items:center;gap:10px;background:var(--yellow);color:var(--navy);font-weight:800;border-radius:999px;padding:8px 18px;font-size:14px;letter-spacing:.02em;margin-bottom:18px;max-width:100%}
-.hero .promo-tag b{font-weight:800;white-space:nowrap}
-.hero .promo-tag i{font-style:normal;font-weight:700;font-size:13px;white-space:nowrap;padding-left:10px;border-left:1.5px solid rgba(0,36,103,.28);opacity:.82}
-@media(max-width:600px){
-  .hero .promo-tag{flex-direction:column;align-items:flex-start;gap:2px;border-radius:16px;padding:9px 16px;font-size:13.5px;line-height:1.35}
-  .hero .promo-tag i{font-size:12.5px;padding-left:0;border-left:none;opacity:.78}
-}
+.hero .promo-tag{display:inline-flex;align-items:center;gap:8px;background:var(--yellow);color:var(--navy);font-weight:800;border-radius:999px;padding:8px 18px;font-size:14px;letter-spacing:.02em;margin-bottom:18px}
 .hero h1{font-size:clamp(32px,4.6vw,54px);font-weight:800;margin-bottom:14px}
 .hero h1 .hl{color:var(--yellow)}
 .hero .sub{font-size:clamp(16px,1.8vw,19px);font-weight:500;max-width:520px;opacity:.96;margin-bottom:24px}
@@ -821,7 +815,7 @@ section{padding:60px 0}
 <div class="hero" id="top">
   <div class="wrap">
     <div>
-      <span class="promo-tag" id="promo-tag"><b>🎁 Ưu đãi học phí đến 14.000.000đ</b><i>Đăng ký trước 31/10/2026</i></span>
+      <span class="promo-tag" id="promo-tag">🎁 Ưu đãi học phí đến 14.000.000đ · đăng&nbsp;ký&nbsp;trước&nbsp;31/10/2026</span>
       <h1>Tiếng Anh cho bé <span style="white-space:nowrap">4–14 tuổi</span></h1>
       <p class="h1-sub">Một lộ trình liền mạch <span class="hl">từ Mầm non đến Thiếu niên</span></p>
       <p class="sub">Con bắt đầu đúng điểm xuất phát và đi trọn lộ trình chuẩn Cambridge Starters – Movers – Flyers đến KET/PET trong một môi trường duy nhất. Sĩ số nhỏ, có trợ giảng riêng, học thử miễn phí.</p>
@@ -1867,12 +1861,12 @@ document.querySelectorAll('#mnav a').forEach(function(a){a.addEventListener('cli
   var OFFER_END   = new Date(2026, 11, 31, 23, 59, 59);   /* tháng tính từ 0: 11 = tháng 12 */
   var NB = '\u00A0';
 
-  var TXT_BADGE = '<b>🎁 Ưu đãi học phí đến {money}</b><i>Đăng'+NB+'ký'+NB+'trước'+NB+'{date}</i>';
+  var TXT_BADGE = '🎁 Ưu đãi học phí đến {money} · đăng'+NB+'ký'+NB+'trước'+NB+'{date}';
   var TXT_SUB   = 'Ưu đãi học phí đến {money} cho học viên mới, cùng học thử miễn phí và trả góp 0% — đăng ký trước {date}.';
   var TXT_MID   = 'Ưu đãi học phí đến {money} cho học viên mới — đăng ký trước {date}.';
   var TXT_BOT   = 'Ưu đãi học phí đến {money} cho học viên mới — đăng'+NB+'ký'+NB+'trước'+NB+'{date}';
   /* Câu dùng SAU khi chương trình kết thúc — không số, không ngày */
-  var TXT_BADGE_HET = '<b>🎁 Nhận tư vấn ưu đãi học phí</b>';
+  var TXT_BADGE_HET = '🎁 Nhận tư vấn ưu đãi học phí';
   var TXT_SUB_HET   = 'Ưu đãi học phí cho học viên mới cùng học thử miễn phí và trả góp 0% — để lại thông tin để YOLA báo mức ưu đãi chính xác cho khóa của bé.';
   var TXT_MID_HET   = 'Để lại thông tin để YOLA báo mức ưu đãi học phí hiện hành cho khóa của bé.';
   var TXT_BOT_HET   = 'Nhận tư vấn ưu đãi học phí hiện hành';
@@ -1893,7 +1887,7 @@ document.querySelectorAll('#mnav a').forEach(function(a){a.addEventListener('cli
   var mid   = document.getElementById('offer-mid');
   var bot   = document.getElementById('offer-bot');
 
-  if (badge) badge.innerHTML = het ? TXT_BADGE_HET : fill(TXT_BADGE);
+  if (badge) badge.textContent = het ? TXT_BADGE_HET : fill(TXT_BADGE);
   if (sub)   sub.textContent   = het ? TXT_SUB_HET   : fill(TXT_SUB);
   if (mid)   mid.textContent   = het ? TXT_MID_HET   : fill(TXT_MID);
   if (bot)   bot.textContent   = het ? TXT_BOT_HET   : fill(TXT_BOT);
